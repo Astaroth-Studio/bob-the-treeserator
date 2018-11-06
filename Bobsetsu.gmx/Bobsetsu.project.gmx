@@ -19,6 +19,9 @@
       <sprite>sprites\sBobIdle</sprite>
       <sprite>sprites\sBobWalking</sprite>
     </sprites>
+    <sprites name="World">
+      <sprite>sprites\sTestWorldSprite</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\BG_TEMP</background>
@@ -38,12 +41,15 @@
     </objects>
     <objects name="Bob">
       <object>objects\oBobIdle</object>
-      <object>objects\oBobWalking</object>
+    </objects>
+    <objects name="World">
+      <object>objects\oTestWorldObj</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
+    <room>rooms\rTestRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
