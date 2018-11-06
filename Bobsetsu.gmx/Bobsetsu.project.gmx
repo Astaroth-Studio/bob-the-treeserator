@@ -8,14 +8,15 @@
     <sound>sound\sound_intro</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\Logo</sprite>
     <sprites name="Main Menu">
       <sprite>sprites\GameLogo</sprite>
     </sprites>
+    <sprite>sprites\Logo</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\BG_TEMP</background>
+  </backgrounds>
   <paths name="paths"/>
-  <fonts name="fonts"/>
   <objects name="objects">
     <object>objects\Logo_obj</object>
     <objects name="MainMenu">
