@@ -5,27 +5,39 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\sound_intro</sound>
+    <sound>sound\so_TeamLogo</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\sTeamLogo</sprite>
     <sprites name="Main Menu">
-      <sprite>sprites\GameLogo</sprite>
+      <sprite>sprites\sGameLogo</sprite>
     </sprites>
-    <sprite>sprites\Logo</sprite>
+    <sprites name="Bob">
+      <sprite>sprites\sBobIdle</sprite>
+      <sprite>sprites\sBobWalking</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\BG_TEMP</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts"/>
+  <fonts name="fonts">
+    <font>fonts\font_mm</font>
+  </fonts>
   <objects name="objects">
-    <object>objects\Logo_obj</object>
+    <object>objects\oTeamLogo</object>
     <objects name="MainMenu">
-      <object>objects\GameLogo_obj</object>
+      <object>objects\oGameLogo</object>
+    </objects>
+    <objects name="Bob">
+      <object>objects\oBobIdle</object>
+      <object>objects\oBobWalking</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Intro</room>
-    <room>rooms\MainMenu</room>
+    <room>rooms\rIntro</room>
+    <room>rooms\rMainMenu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
