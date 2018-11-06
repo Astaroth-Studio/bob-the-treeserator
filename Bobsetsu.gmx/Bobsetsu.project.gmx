@@ -8,7 +8,10 @@
     <sound>sound\so_TeamLogo</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\sTeamLogo</sprite>
+    <sprites name="Intro">
+      <sprite>sprites\sTeamLogo</sprite>
+      <sprite>sprites\sFade</sprite>
+    </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sGameLogo</sprite>
     </sprites>
@@ -21,12 +24,15 @@
     <background>background\BG_TEMP</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\font_mm</font>
   </fonts>
   <objects name="objects">
-    <object>objects\oTeamLogo</object>
+    <objects name="Intro">
+      <object>objects\oTeamLogo</object>
+      <object>objects\oFadeOut</object>
+      <object>objects\oFadeIn</object>
+    </objects>
     <objects name="MainMenu">
       <object>objects\oGameLogo</object>
     </objects>

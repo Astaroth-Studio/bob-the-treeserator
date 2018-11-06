@@ -52,6 +52,7 @@
   </views>
   <instances>
     <instance objName="oTeamLogo" x="245" y="234" name="inst_672CDBF9" locked="0" code="" scaleX="0.185465887188911" scaleY="0.188420012593269" colour="4294967295" rotation="0"/>
+    <instance objName="oFadeIn" x="448" y="256" name="inst_E89D6CA4" locked="0" code="" scaleX="0.303669005632401" scaleY="0.275925934314728" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
