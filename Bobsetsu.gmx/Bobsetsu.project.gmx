@@ -38,6 +38,9 @@
     <sprites name="World">
       <sprite>sprites\sTestWorldSprite</sprite>
     </sprites>
+    <sprites name="HUD">
+      <sprite>sprites\sPlaceholderHealthBar</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\BG_TEMP</background>
@@ -59,9 +62,13 @@
     </objects>
     <objects name="Bob">
       <object>objects\oBob</object>
+      <object>objects\oBobGameplay</object>
     </objects>
     <objects name="World">
       <object>objects\oTestWorldObj</object>
+    </objects>
+    <objects name="HUD">
+      <object>objects\oControlHUD</object>
     </objects>
   </objects>
   <rooms name="rooms">
