@@ -9,12 +9,12 @@
   <bboxmode>0</bboxmode>
   <bbox_left>5</bbox_left>
   <bbox_right>25</bbox_right>
-  <bbox_top>3</bbox_top>
+  <bbox_top>2</bbox_top>
   <bbox_bottom>31</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
-    <TextureGroup0>0</TextureGroup0>
+    <TextureGroup0>1</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
   <width>32</width>
@@ -22,5 +22,15 @@
   <frames>
     <frame index="0">images\sBobIdle_0.png</frame>
     <frame index="1">images\sBobIdle_1.png</frame>
+    <frame index="2">images\sBobIdle_2.png</frame>
+    <frame index="3">images\sBobIdle_3.png</frame>
+    <frame index="4">images\sBobIdle_4.png</frame>
+    <frame index="5">images\sBobIdle_5.png</frame>
+    <frame index="6">images\sBobIdle_6.png</frame>
+    <frame index="7">images\sBobIdle_7.png</frame>
+    <frame index="8">images\sBobIdle_8.png</frame>
+    <frame index="9">images\sBobIdle_9.png</frame>
+    <frame index="10">images\sBobIdle_10.png</frame>
+    <frame index="11">images\sBobIdle_11.png</frame>
   </frames>
 </sprite>
