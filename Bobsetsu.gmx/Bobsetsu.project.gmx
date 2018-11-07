@@ -14,13 +14,32 @@
     </sprites>
     <sprites name="Main Menu">
       <sprite>sprites\sGameLogo</sprite>
+      <sprite>sprites\sButton</sprite>
+      <sprite>sprites\sButtonPressed</sprite>
     </sprites>
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
       <sprite>sprites\sBobWalking</sprite>
+      <sprites name="WithGun">
+        <sprites name="Idle">
+          <sprite>sprites\sBobIdleArmed</sprite>
+          <sprite>sprites\sBobIdleFiring</sprite>
+          <sprite>sprites\sBobIdleFiringUpward</sprite>
+          <sprite>sprites\sBobIdleFiringUp</sprite>
+        </sprites>
+        <sprites name="Walking">
+          <sprite>sprites\sBobWalkingArmed</sprite>
+          <sprite>sprites\sBobWalkingFiring</sprite>
+          <sprite>sprites\sBobWalkingFiringUpward</sprite>
+          <sprite>sprites\sBobWalkingFiringUp</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="World">
       <sprite>sprites\sTestWorldSprite</sprite>
+    </sprites>
+    <sprites name="HUD">
+      <sprite>sprites\sPlaceholderHealthBar</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -38,12 +57,18 @@
     </objects>
     <objects name="MainMenu">
       <object>objects\oGameLogo</object>
+      <object>objects\oButton_Start</object>
+      <object>objects\oButton_Exit</object>
     </objects>
     <objects name="Bob">
-      <object>objects\oBobIdle</object>
+      <object>objects\oBob</object>
+      <object>objects\oBobGameplay</object>
     </objects>
     <objects name="World">
       <object>objects\oTestWorldObj</object>
+    </objects>
+    <objects name="HUD">
+      <object>objects\oControlHUD</object>
     </objects>
   </objects>
   <rooms name="rooms">
