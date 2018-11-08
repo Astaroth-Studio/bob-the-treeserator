@@ -35,15 +35,46 @@
         </sprites>
       </sprites>
     </sprites>
-    <sprites name="World">
-      <sprite>sprites\sTestWorldSprite</sprite>
-    </sprites>
     <sprites name="HUD">
       <sprite>sprites\sPlaceholderHealthBar</sprite>
     </sprites>
+    <sprites name="Background">
+      <sprite>sprites\sCloud1</sprite>
+      <sprite>sprites\sCloud2</sprite>
+      <sprite>sprites\sCloud3</sprite>
+      <sprite>sprites\sCloud4</sprite>
+      <sprite>sprites\sCloud5</sprite>
+    </sprites>
+    <sprite>sprites\sCollision</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\BG_TEMP</background>
+    <backgrounds name="Normal Set">
+      <background>background\bSky</background>
+      <background>background\bSun</background>
+    </backgrounds>
+    <backgrounds name="World">
+      <backgrounds name="Desert">
+        <background>background\top</background>
+        <background>background\bottom</background>
+        <background>background\topleft</background>
+        <background>background\topright</background>
+        <background>background\bottomright</background>
+        <background>background\bottomleft</background>
+      </backgrounds>
+      <background>background\dirtA</background>
+      <background>background\dirtB</background>
+      <background>background\dirtC</background>
+      <background>background\dirtD</background>
+      <background>background\dirtE</background>
+      <background>background\dirtF</background>
+    </backgrounds>
+    <backgrounds name="Static">
+      <background>background\barrier</background>
+      <background>background\descarA</background>
+      <background>background\descarB</background>
+      <background>background\dirtpieceA</background>
+      <background>background\thecrib</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -62,10 +93,18 @@
     </objects>
     <objects name="Bob">
       <object>objects\oBob</object>
-      <object>objects\oBobGameplay</object>
     </objects>
     <objects name="World">
-      <object>objects\oTestWorldObj</object>
+      <object>objects\oParallaxControl</object>
+      <object>objects\oCollision</object>
+      <object>objects\oCollisionBase</object>
+      <objects name="Skybox">
+        <object>objects\oCloud1</object>
+        <object>objects\oCloud2</object>
+        <object>objects\oCloud3</object>
+        <object>objects\oCloud4</object>
+        <object>objects\oCloud5</object>
+      </objects>
     </objects>
     <objects name="HUD">
       <object>objects\oControlHUD</object>
