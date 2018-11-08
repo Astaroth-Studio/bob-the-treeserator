@@ -31,7 +31,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="BG_TEMP" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="-1"/>
+    <background visible="-1" foreground="0" name="bSky" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="-1"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -55,7 +55,6 @@
     <instance objName="oButton_Start" x="513" y="300" name="inst_35D796F8" locked="0" code="" scaleX="2.54999995231628" scaleY="2.08333325386047" colour="4294967295" rotation="0"/>
     <instance objName="oButton_Start" x="513" y="300" name="inst_AF554CF3" locked="-1" code="" scaleX="2.54999995231628" scaleY="2.08333325386047" colour="4294967295" rotation="0"/>
     <instance objName="oButton_Exit" x="515" y="423" name="inst_C2F491A4" locked="0" code="" scaleX="2.55999994277954" scaleY="2.06382989883423" colour="4294967295" rotation="0"/>
-    <instance objName="oBob" x="-215" y="-26" name="inst_3FED63FC" locked="0" code="" scaleX="23.0300006866455" scaleY="23.28125" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

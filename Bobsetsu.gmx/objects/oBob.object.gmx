@@ -11,9 +11,9 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -25,53 +25,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0.075</string>
+            <string>
+BOB_SCALE = 2; // Il faut synchro avec le scale qu'on met au sprite de Bob s'il vous plait c:
+
+defaultSpeed = 0.075;
+image_speed = defaultSpeed;
+walkSpeed = 0.075;
+moveSpeed = 3000;
+maxXSpeed = 4;
+
+controls = true; // Désactivés pendant une chute
+
+phy_fixed_rotation = true;
+
+// On va régler la position de base du soleil
+background_x[1] = phy_position_x / 1.1;
+</string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="81">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
-        <id>541</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>5</kind>
-            <sprite>sBobWalking</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0.05</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
@@ -79,53 +62,75 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>000100000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <string>// Pour le cas où Bob va à gauche
+
+/*follow = false;
+startingPoint = 0
+movingValue = -1
+
+if (bobDirection == 1) {
+    if (view_xview[0] &gt; x + (sprite_width/2) - 0.70 * view_wview[0]){
+        follow = false;
+        view_xview[0] += bobSpeed * 5;
+    } else if (view_xview[0] + x + (sprite_width/2) &gt;= view_xview[0] + 0.30 * view_wview[0]) {
+        follow = true;
+    }
+} else {
+    follow = false;
+}
+
+if (follow) {
+    if (bobDirection == 1) { 
+        viewPos = x + (sprite_width/2) - 0.30 * view_wview[0]
+        if (viewPos + view_wview[0] &gt; room_width) {
+            viewPos = room_width - view_wview[0];        
+        }
+        view_xview[0] = viewPos;
+    }
+}*/
+
+phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
+
+if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
+    sprite_index = sBobWalking;
+    walkSpeed = phy_speed_x / 10;
+} else {
+    sprite_index = sBobIdle;
+    image_speed = defaultSpeed;
+}
+
+// Failling is bad
+if(phy_speed_y &gt; 1.2){
+    controls = false;
+    //sprite_index = spr_Player_Falling;
+    // TODO: Falling
+} else {
+    controls = true;
+}
+
+// The whole sun deal
+sunPos = phy_position_x / 1.1;
+background_x[1] = sunPos
+
+
+
+
+
+</string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="68">
+    <event eventtype="4" ename="oCollisionBase">
       <action>
         <libid>1</libid>
-        <id>541</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>5</kind>
-            <sprite>sBobWalking</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0.05</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
@@ -133,53 +138,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>000001000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <string>// Fuck you Baltimore
+</string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="81">
+    <event eventtype="5" enumb="39">
       <action>
         <libid>1</libid>
-        <id>541</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>5</kind>
-            <sprite>sBobIdle</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>-1</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0.075</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
@@ -187,53 +161,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>000010000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <string>if (controls) {
+    image_xscale = BOB_SCALE;
+    image_speed = walkSpeed;
+    physics_apply_force(x,y,moveSpeed,-100);
+}
+</string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="68">
+    <event eventtype="5" enumb="37">
       <action>
         <libid>1</libid>
-        <id>541</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sprite_set</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>5</kind>
-            <sprite>sBobIdle</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>-1</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0.075</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>101</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move</functionname>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
@@ -241,26 +188,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>000010000</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <string>if (controls) {
+    image_xscale = -BOB_SCALE;
+    image_speed = -walkSpeed;
+    physics_apply_force(x,y,-moveSpeed,-100);
+}
+</string>
           </argument>
         </arguments>
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectDensity>1</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>1</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectFriction>0.100000001490116</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>5,1.75</point>
+    <point>26,1.75</point>
+    <point>26,32</point>
+    <point>5,32</point>
+  </PhysicsShapePoints>
 </object>
