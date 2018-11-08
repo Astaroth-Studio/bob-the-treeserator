@@ -20,6 +20,7 @@
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
       <sprite>sprites\sBobWalking</sprite>
+      <sprite>sprites\sBobHurt</sprite>
       <sprites name="WithGun">
         <sprites name="Idle">
           <sprite>sprites\sBobIdleArmed</sprite>
@@ -34,46 +35,52 @@
           <sprite>sprites\sBobWalkingFiringUp</sprite>
         </sprites>
       </sprites>
+      <sprites name="Fighting">
+        <sprite>sprites\sBobFight1</sprite>
+        <sprite>sprites\sBobFight2</sprite>
+      </sprites>
     </sprites>
     <sprites name="HUD">
       <sprite>sprites\sPlaceholderHealthBar</sprite>
     </sprites>
-    <sprites name="Background">
-      <sprite>sprites\sCloud1</sprite>
-      <sprite>sprites\sCloud2</sprite>
-      <sprite>sprites\sCloud3</sprite>
-      <sprite>sprites\sCloud4</sprite>
-      <sprite>sprites\sCloud5</sprite>
-    </sprites>
     <sprite>sprites\sCollision</sprite>
   </sprites>
   <backgrounds name="background">
-    <backgrounds name="Normal Set">
+    <backgrounds name="SkyBox">
       <background>background\bSky</background>
       <background>background\bSun</background>
-    </backgrounds>
-    <backgrounds name="World">
+      <background>background\bLSD</background>
       <backgrounds name="Desert">
-        <background>background\top</background>
-        <background>background\bottom</background>
-        <background>background\topleft</background>
-        <background>background\topright</background>
-        <background>background\bottomright</background>
-        <background>background\bottomleft</background>
+        <background>background\bDesertParallax</background>
       </backgrounds>
-      <background>background\dirtA</background>
-      <background>background\dirtB</background>
-      <background>background\dirtC</background>
-      <background>background\dirtD</background>
-      <background>background\dirtE</background>
-      <background>background\dirtF</background>
     </backgrounds>
-    <backgrounds name="Static">
-      <background>background\barrier</background>
-      <background>background\descarA</background>
-      <background>background\descarB</background>
-      <background>background\dirtpieceA</background>
-      <background>background\thecrib</background>
+    <backgrounds name="Ground">
+      <backgrounds name="Desert">
+        <background>background\bDesertTop</background>
+        <background>background\bDesertBottom</background>
+        <background>background\bDesertTopLeft</background>
+        <background>background\bDesertTopRight</background>
+        <background>background\bDesertBottomRight</background>
+        <background>background\bDesertBottomLeft</background>
+        <background>background\bDesertInnerBottomLeft</background>
+        <background>background\bDesertInnerBottomRight</background>
+        <background>background\bDesertInnerTopLeft</background>
+        <background>background\bDesertInnerTopRight</background>
+      </backgrounds>
+      <background>background\bDirtA</background>
+      <background>background\bDirtB</background>
+      <background>background\bDirtC</background>
+      <background>background\bDirtD</background>
+      <background>background\bDirtE</background>
+      <background>background\bDirtF</background>
+    </backgrounds>
+    <backgrounds name="Props">
+      <background>background\bBarrier</background>
+      <background>background\bDescarA</background>
+      <background>background\bDescarB</background>
+      <background>background\bDirtPieceA</background>
+      <background>background\bDirtPieceB</background>
+      <background>background\bTheCrib</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -95,16 +102,8 @@
       <object>objects\oBob</object>
     </objects>
     <objects name="World">
-      <object>objects\oParallaxControl</object>
       <object>objects\oCollision</object>
       <object>objects\oCollisionBase</object>
-      <objects name="Skybox">
-        <object>objects\oCloud1</object>
-        <object>objects\oCloud2</object>
-        <object>objects\oCloud3</object>
-        <object>objects\oCloud4</object>
-        <object>objects\oCloud5</object>
-      </objects>
     </objects>
     <objects name="HUD">
       <object>objects\oControlHUD</object>

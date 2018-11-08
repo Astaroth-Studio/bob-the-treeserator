@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-BOB_SCALE = 2; // Il faut synchro avec le scale qu'on met au sprite de Bob s'il vous plait c:
+            <string>BOB_SCALE = 2; // Change this number if you rescale Bob
 
 defaultSpeed = 0.075;
 image_speed = defaultSpeed;
@@ -34,12 +33,9 @@ walkSpeed = 0.075;
 moveSpeed = 3000;
 maxXSpeed = 4;
 
-controls = true; // Désactivés pendant une chute
+controls = true; // Desactivated when falling
 
 phy_fixed_rotation = true;
-
-// On va régler la position de base du soleil
-background_x[1] = phy_position_x / 1.1;
 </string>
           </argument>
         </arguments>
@@ -56,15 +52,13 @@ background_x[1] = phy_position_x / 1.1;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>oBob</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Pour le cas où Bob va à gauche
-
-/*follow = false;
+            <string>/*follow = false;
 startingPoint = 0
 movingValue = -1
 
@@ -108,14 +102,10 @@ if(phy_speed_y &gt; 1.2){
     controls = true;
 }
 
-// The whole sun deal
-sunPos = phy_position_x / 1.1;
-background_x[1] = sunPos
-
-
-
-
-
+// Parallax Effect™
+background_x[1] =  view_xview[0] + (view_wview[0] * 0.30) + (( 1 - (x + (sprite_width/2)) / room_width)) * (view_wview[0] * 0.40);
+background_x[2] =  view_xview[0] - (view_wview[0] * 0.10) + (( 1 - (x + (sprite_width/2)) / room_width)) * view_wview[0];
+//TODO : background_x[3] =  (( 1 - (x + (sprite_width/2)) / room_width)) * background_get_width(3);
 </string>
           </argument>
         </arguments>
@@ -124,12 +114,12 @@ background_x[1] = sunPos
     <event eventtype="4" ename="oCollisionBase">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>605</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
@@ -138,8 +128,7 @@ background_x[1] = sunPos
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Fuck you Baltimore
-</string>
+            <string>Fuck you Baltimore</string>
           </argument>
         </arguments>
       </action>
