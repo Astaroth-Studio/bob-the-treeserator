@@ -103,8 +103,10 @@ if(phy_speed_y &gt; 1.2){
 }
 
 // Parallax Effect™
-background_x[1] =  view_xview[0] + (view_wview[0] * 0.30) + (( 1 - (x + (sprite_width/2)) / room_width)) * (view_wview[0] * 0.40);
-background_x[2] =  view_xview[0] - (view_wview[0] * 0.10) + (( 1 - (x + (sprite_width/2)) / room_width)) * view_wview[0];
+
+background_x[1] =  view_xview[0] + (view_wview[0] * 0.30) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.40);
+//background_x[2] =  view_xview[0] - (view_wview[0] * 0.10) + (( 1 - (x + (sprite_width/2)) / room_width)) * view_wview[0];
+background_x[2] =  view_xview[0] * 0.7;
 //TODO : background_x[3] =  (( 1 - (x + (sprite_width/2)) / room_width)) * background_get_width(3);
 </string>
           </argument>
