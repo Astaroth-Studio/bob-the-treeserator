@@ -58,7 +58,32 @@ phy_fixed_rotation = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*follow = false;
+            <string>phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
+
+if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
+    sprite_index = sBobWalking;
+    walkSpeed = phy_speed_x / 10;
+} else {
+    sprite_index = sBobIdle;
+    image_speed = defaultSpeed;
+}
+
+// Failling is bad
+if(phy_speed_y &gt; 1.2){
+    controls = false;
+    //sprite_index = spr_Player_Falling;
+    // TODO: Falling
+} else {
+    controls = true;
+}
+
+// Parallax Effect™
+background_x[1] =  view_xview[0] + (view_wview[0] * 0.30) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.40);
+background_x[2] =  view_xview[0] * 0.7;
+background_x[3] =  view_xview[0] + ((view_xview[0] / room_width) * background_get_width(3));
+
+// Code to stick Bob to the right side of the viewPort
+/*follow = false;
 startingPoint = 0
 movingValue = -1
 
@@ -82,32 +107,6 @@ if (follow) {
         view_xview[0] = viewPos;
     }
 }*/
-
-phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
-
-if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
-    sprite_index = sBobWalking;
-    walkSpeed = phy_speed_x / 10;
-} else {
-    sprite_index = sBobIdle;
-    image_speed = defaultSpeed;
-}
-
-// Failling is bad
-if(phy_speed_y &gt; 1.2){
-    controls = false;
-    //sprite_index = spr_Player_Falling;
-    // TODO: Falling
-} else {
-    controls = true;
-}
-
-// Parallax Effect™
-
-background_x[1] =  view_xview[0] + (view_wview[0] * 0.30) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.40);
-//background_x[2] =  view_xview[0] - (view_wview[0] * 0.10) + (( 1 - (x + (sprite_width/2)) / room_width)) * view_wview[0];
-background_x[2] =  view_xview[0] * 0.7;
-//TODO : background_x[3] =  (( 1 - (x + (sprite_width/2)) / room_width)) * background_get_width(3);
 </string>
           </argument>
         </arguments>
