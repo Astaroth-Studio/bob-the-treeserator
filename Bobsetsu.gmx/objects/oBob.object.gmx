@@ -107,8 +107,6 @@ if (follow) {
         view_xview[0] = viewPos;
     }
 }*/
-<<<<<<< HEAD
-=======
 
 phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
 
@@ -134,7 +132,6 @@ if(phy_speed_y &gt; 1.2){
 background_x[1] =  view_xview[0] + (view_wview[0] * 0.30) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.40);
 background_x[2] =  view_xview[0] * 0.7;
 background_x[3] = (view_wview[0]-background_width[3]) * (view_xview[0]/(room_width-view_wview[0])) + view_xview[0];
->>>>>>> 3e41e6ad4e3611e1a62b017e1e69ed13c601eb3f
 </string>
           </argument>
         </arguments>
