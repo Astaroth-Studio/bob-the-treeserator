@@ -13,7 +13,7 @@
     <TextureGroup0>3</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>128</width>
-  <height>128</height>
-  <data>images\bSun.png</data>
+  <width>1500</width>
+  <height>252</height>
+  <data>images\bLSD.png</data>
 </background>

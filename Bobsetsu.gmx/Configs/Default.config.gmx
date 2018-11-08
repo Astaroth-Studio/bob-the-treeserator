@@ -356,7 +356,7 @@
     <option_linux_sizeable>0</option_linux_sizeable>
     <option_linux_splash_png>Configs\Default\linux\splash.png</option_linux_splash_png>
     <option_linux_steam_app_id>0</option_linux_steam_app_id>
-    <option_linux_sync>0</option_linux_sync>
+    <option_linux_sync>-1</option_linux_sync>
     <option_linux_texture_page>4096</option_linux_texture_page>
     <option_linux_version_build>0</option_linux_version_build>
     <option_linux_version_major>1</option_linux_version_major>
@@ -388,7 +388,7 @@
     <option_mac_sizeable>0</option_mac_sizeable>
     <option_mac_splash_png>Configs\Default\mac\splash.png</option_mac_splash_png>
     <option_mac_steam_app_id>0</option_mac_steam_app_id>
-    <option_mac_sync>0</option_mac_sync>
+    <option_mac_sync>1</option_mac_sync>
     <option_mac_team_id></option_mac_team_id>
     <option_mac_texture_page>4096</option_mac_texture_page>
     <option_noborder>false</option_noborder>
@@ -445,7 +445,7 @@
     <option_showprogress>1</option_showprogress>
     <option_sizeable>False</option_sizeable>
     <option_stayontop>false</option_stayontop>
-    <option_sync_vertex>0</option_sync_vertex>
+    <option_sync_vertex>1</option_sync_vertex>
     <option_textureGroup0_border>2</option_textureGroup0_border>
     <option_textureGroup0_nocropping>0</option_textureGroup0_nocropping>
     <option_textureGroup0_parent>&lt;none&gt;</option_textureGroup0_parent>
@@ -461,10 +461,28 @@
     <option_textureGroup2_parent>&lt;none&gt;</option_textureGroup2_parent>
     <option_textureGroup2_scaled>0</option_textureGroup2_scaled>
     <option_textureGroup2_targets>9223372036854775807</option_textureGroup2_targets>
-    <option_textureGroup_count>3</option_textureGroup_count>
+    <option_textureGroup3_border>2</option_textureGroup3_border>
+    <option_textureGroup3_nocropping>0</option_textureGroup3_nocropping>
+    <option_textureGroup3_parent>&lt;none&gt;</option_textureGroup3_parent>
+    <option_textureGroup3_scaled>0</option_textureGroup3_scaled>
+    <option_textureGroup3_targets>9223372036854775807</option_textureGroup3_targets>
+    <option_textureGroup4_border>2</option_textureGroup4_border>
+    <option_textureGroup4_nocropping>0</option_textureGroup4_nocropping>
+    <option_textureGroup4_parent>&lt;none&gt;</option_textureGroup4_parent>
+    <option_textureGroup4_scaled>0</option_textureGroup4_scaled>
+    <option_textureGroup4_targets>9223372036854775807</option_textureGroup4_targets>
+    <option_textureGroup5_border>2</option_textureGroup5_border>
+    <option_textureGroup5_nocropping>0</option_textureGroup5_nocropping>
+    <option_textureGroup5_parent>&lt;none&gt;</option_textureGroup5_parent>
+    <option_textureGroup5_scaled>0</option_textureGroup5_scaled>
+    <option_textureGroup5_targets>9223372036854775807</option_textureGroup5_targets>
+    <option_textureGroup_count>6</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Char</option_textureGroups1>
     <option_textureGroups2>LargeTextures</option_textureGroups2>
+    <option_textureGroups3>Environnement</option_textureGroups3>
+    <option_textureGroups4>GUI</option_textureGroups4>
+    <option_textureGroups5>EnvDesert</option_textureGroups5>
     <option_tizen_app_id>http://yourdomain/Bobsetsu</option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
     <option_tizen_display_name>Bobsetsu</option_tizen_display_name>
