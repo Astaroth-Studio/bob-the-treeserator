@@ -42,6 +42,7 @@
     </sprites>
     <sprites name="HUD">
       <sprite>sprites\sPlaceholderHealthBar</sprite>
+      <sprite>sprites\sAmmoHUD</sprite>
     </sprites>
     <sprite>sprites\sCollision</sprite>
   </sprites>
