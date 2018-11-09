@@ -11,9 +11,9 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -25,35 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>yPosBloodHealthbar</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>bloodHealthbarAlpha</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>1</string>
+            <string>yPosBloodHealthbar = 0;
+bloodHealthbarAlpha = 1;
+playerHealth = 100;
+playerMoney = 0;
+playerAmmo[0] = 10;
+</string>
           </argument>
         </arguments>
       </action>
@@ -61,98 +38,6 @@
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
-        <id>723</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_draw_health</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>10</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>10</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>40</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>700</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>12</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>501</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_draw_sprite</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>-1</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>5</kind>
-            <sprite>sPlaceholderHealthBar</sprite>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>10</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>5</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>-1</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>\/ Blood Script</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -167,53 +52,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//yPosBloodHealthbar=yPosBloodHealthbar+1
-//Add Blood in place of sPlaceholderHealthBar
-//draw_sprite_ext(sPlaceholderHealthBar,-1,50,yPosBloodHealthbar,1,1,0,c_white,bloodHealthbarAlpha);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>\/ FPS in debug</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if debug_mode
+            <string>//Draw fps in debug
+if debug_mode
 {
    draw_text(1200, 1, "FPS: " + string(fps));
 }
+
+//HealthBar creation linked to playerHealth variable
+draw_healthbar(10, 10, 40, 700, playerHealth, c_black, c_red, c_red, 3, false, false);
+
+//Drawing healthbar sprite on top of it
+draw_sprite(sPlaceholderHealthBar, -1, 10, 5);
+
+//Blood at the top of the healthbar
+/*yPosBloodHealthbar=yPosBloodHealthbar+1
+Add Blood in place of sPlaceholderHealthBar
+draw_sprite_ext(sPlaceholderHealthBar,-1,50,yPosBloodHealthbar,1,1,0,c_white,bloodHealthbarAlpha);*/
+
+//Money text creation linked to playerMoney variable
+draw_set_font(font_mm);
+draw_text_colour(1000, 1, "$"+string(playerMoney)+"AUS", c_green, c_green, c_green, c_green, 1);
+
+//Ammo sprite and text creation linked to playerAmmo[0]
+draw_sprite(sAmmoHUD, -1, 763, 1);
+draw_text_colour(800, 1, string(playerAmmo[0]), c_blue, c_blue, c_blue, c_blue, 1);
 </string>
           </argument>
         </arguments>
