@@ -162,7 +162,7 @@
             <kind>1</kind>
             <string>draw_self();
 draw_set_font(font_mm);
-draw_text(x+65, y+34, "DROP IT");
+draw_text(x+65, y+34, "Quit");
 </string>
           </argument>
         </arguments>

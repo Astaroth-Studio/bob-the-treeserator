@@ -12,7 +12,7 @@
       <sprite>sprites\sTeamLogo</sprite>
       <sprite>sprites\sFade</sprite>
     </sprites>
-    <sprites name="Main Menu">
+    <sprites name="GUI">
       <sprite>sprites\sGameLogo</sprite>
       <sprite>sprites\sButton</sprite>
       <sprite>sprites\sButtonPressed</sprite>
@@ -93,10 +93,11 @@
       <object>objects\oFadeOut</object>
       <object>objects\oFadeIn</object>
     </objects>
-    <objects name="MainMenu">
+    <objects name="GUI">
       <object>objects\oGameLogo</object>
       <object>objects\oButton_Start</object>
       <object>objects\oButton_Exit</object>
+      <object>objects\oButton_Credits</object>
     </objects>
     <objects name="Bob">
       <object>objects\oBob</object>
