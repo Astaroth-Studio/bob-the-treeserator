@@ -16,6 +16,7 @@
       <sprite>sprites\sGameLogo</sprite>
       <sprite>sprites\sButton</sprite>
       <sprite>sprites\sButtonPressed</sprite>
+      <sprite>sprites\sMessageBox</sprite>
     </sprites>
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
@@ -58,14 +59,16 @@
       <backgrounds name="Desert">
         <background>background\bDesertTop</background>
         <background>background\bDesertBottom</background>
+        <background>background\bDesertLeft</background>
+        <background>background\bDesertRight</background>
         <background>background\bDesertTopLeft</background>
         <background>background\bDesertTopRight</background>
-        <background>background\bDesertBottomRight</background>
         <background>background\bDesertBottomLeft</background>
-        <background>background\bDesertInnerBottomLeft</background>
-        <background>background\bDesertInnerBottomRight</background>
+        <background>background\bDesertBottomRight</background>
         <background>background\bDesertInnerTopLeft</background>
         <background>background\bDesertInnerTopRight</background>
+        <background>background\bDesertInnerBottomLeft</background>
+        <background>background\bDesertInnerBottomRight</background>
       </backgrounds>
       <background>background\bDirtA</background>
       <background>background\bDirtB</background>
@@ -81,7 +84,10 @@
       <background>background\bDirtPieceA</background>
       <background>background\bDirtPieceB</background>
       <background>background\bTheCrib</background>
+      <background>background\bTrashBall</background>
+      <background>background\bFridge</background>
     </backgrounds>
+    <background>background\bMainMenu</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -98,8 +104,10 @@
       <object>objects\oButton_Start</object>
       <object>objects\oButton_Exit</object>
       <object>objects\oButton_Credits</object>
+      <object>objects\oMessageBox</object>
     </objects>
     <objects name="Bob">
+      <object>objects\oBobDylan</object>
       <object>objects\oBob</object>
     </objects>
     <objects name="World">
@@ -114,6 +122,8 @@
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
     <room>rooms\rTestRoom</room>
+    <room>rooms\rCredits</room>
+    <room>rooms\rFutureRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
