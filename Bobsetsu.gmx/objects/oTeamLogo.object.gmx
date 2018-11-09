@@ -50,7 +50,7 @@ audio_play_sound(so_TeamLogo,0,false);*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rCredits);
+            <string>room_goto(rTestRoom);
 // DON'T FORGET TO UNCOMMENT
 /*if (timer &lt;= 20 &amp;&amp; timer &gt;= 0) {
     instance_create(room_width/2, room_height/2, oFadeOut)

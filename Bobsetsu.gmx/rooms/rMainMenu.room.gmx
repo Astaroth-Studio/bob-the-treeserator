@@ -57,7 +57,9 @@
     <instance objName="oButton_Exit" x="514" y="544" name="inst_C2F491A4" locked="0" code="" scaleX="2.55999994277954" scaleY="2.06382989883423" colour="4294967295" rotation="0"/>
     <instance objName="oButton_Credits" x="514" y="418" name="inst_DDF0AFB7" locked="0" code="" scaleX="2.54166674613953" scaleY="2.05999994277954" colour="4294967295" rotation="0"/>
   </instances>
-  <tiles/>
+  <tiles>
+    <tile bgName="bLogoGameoof" x="36" y="591" w="197" h="128" xo="0" yo="0" id="10000996" name="inst_6620C70D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+  </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
   <PhysicsWorldLeft>0</PhysicsWorldLeft>

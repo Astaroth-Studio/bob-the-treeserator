@@ -89,6 +89,7 @@
       <background>background\bFridge</background>
     </backgrounds>
     <background>background\bMainMenu</background>
+    <background>background\bLogoGameoof</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
