@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>BOB_SCALE = 2; // Change this number if you rescale Bob
+isFiring = false;
 
 defaultSpeed = 0.075;
 image_speed = defaultSpeed;
@@ -36,6 +37,9 @@ maxXSpeed = 4;
 controls = true; // Desactivated when falling
 
 phy_fixed_rotation = true;
+
+fullShootingCooldown = 250; // Cooldown of a second
+shootingCooldown = fullShootingCooldown; // Time changing each step 
 </string>
           </argument>
         </arguments>
@@ -60,12 +64,14 @@ phy_fixed_rotation = true;
             <kind>1</kind>
             <string>phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
 
-if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
-    sprite_index = sBobWalking;
-    walkSpeed = phy_speed_x / 10;
-} else {
-    sprite_index = sBobIdle;
-    image_speed = defaultSpeed;
+if (!isFiring) {
+    if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
+        sprite_index = sBobWalking;
+        walkSpeed = phy_speed_x / 10;
+    } else {
+        sprite_index = sBobIdle;
+        image_speed = defaultSpeed;
+    }
 }
 
 // Failling is bad
@@ -81,6 +87,44 @@ if(phy_speed_y &gt; 1.2){
 background_x[1] =  view_xview[0] + (view_wview[0] * 0.30) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.40);
 background_x[2] =  view_xview[0] * 0.7;
 background_x[3] = (view_wview[0]-background_width[3]) * (view_xview[0]/(room_width-view_wview[0])) + view_xview[0];
+
+//Shooting
+if(shootingCooldown &gt;= 0) {
+    shootingCooldown-=(delta_time/1000); // delta_time is in microseconds
+}
+
+if (controls) {
+
+    //Up Left
+    if keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_up) {
+    
+        isFiring = true;
+        //show_message(isFiring);
+        if (image_xscale != -BOB_SCALE) {
+           image_xscale = -BOB_SCALE;
+        }
+        
+        if(shootingCooldown &lt;= 0) {
+            var inst = instance_create(x-32, y-8, oBullet);
+            inst.direction = 120;
+            inst.speed = 100;
+            shootingCooldown = fullShootingCooldown;
+        }
+        
+    } else if keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up) {
+    
+    } else if keyboard_check(vk_left) {
+    
+    } else if keyboard_check(vk_right) {
+    
+    } else if keyboard_check(vk_up) {
+    
+    } else {
+        isFiring = false;
+    }
+}
+
+
 
 // Code to stick Bob to the right side of the viewPort
 /*follow = false;
@@ -134,7 +178,7 @@ if (follow) {
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="39">
+    <event eventtype="5" enumb="81">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -152,7 +196,38 @@ if (follow) {
           <argument>
             <kind>1</kind>
             <string>if (controls) {
-    image_xscale = BOB_SCALE;
+    if (!isFiring) {
+        image_xscale = -BOB_SCALE;
+    }
+    image_speed = -walkSpeed;
+    physics_apply_force(x,y,-moveSpeed,-100);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (controls) {
+    if (!isFiring) {
+        image_xscale = BOB_SCALE;
+    }
     image_speed = walkSpeed;
     physics_apply_force(x,y,moveSpeed,-100);
 }
@@ -178,11 +253,40 @@ if (follow) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (controls) {
-    image_xscale = -BOB_SCALE;
-    image_speed = -walkSpeed;
-    physics_apply_force(x,y,-moveSpeed,-100);
-}
+            <string>/*if (controls) {
+    isFiring = true;
+    //show_message(isFiring);
+    if (image_xscale != -BOB_SCALE) {
+        image_xscale = -BOB_SCALE;
+    }
+    var inst = instance_create(x-32, y-8, oFloppy);
+    inst.direction = 2;
+    inst.speed = 10;
+}*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="37">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//isFighting = false;
+//show_message(isFighting);
 </string>
           </argument>
         </arguments>

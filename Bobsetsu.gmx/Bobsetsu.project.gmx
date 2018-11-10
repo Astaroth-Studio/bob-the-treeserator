@@ -143,6 +143,7 @@
         <object>objects\oMessageBox</object>
       </objects>
     </objects>
+    <object>objects\oBullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rTestRoom</room>
