@@ -163,7 +163,7 @@
             <string>draw_self();
 draw_set_font(font_mm);
 draw_set_alpha(image_alpha);
-draw_text(x+64, y+34, "CREDITS");
+draw_text(x+37, y+34, "CREDITS");
 </string>
           </argument>
         </arguments>

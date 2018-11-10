@@ -8,22 +8,16 @@
     <sound>sound\so_TeamLogo</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\sCollision</sprite>
     <sprites name="Intro">
       <sprite>sprites\sTeamLogo</sprite>
       <sprite>sprites\sFade</sprite>
-    </sprites>
-    <sprites name="GUI">
-      <sprite>sprites\sGameLogo</sprite>
-      <sprite>sprites\sButton</sprite>
-      <sprite>sprites\sButtonPressed</sprite>
-      <sprite>sprites\sMessageBox</sprite>
-      <sprite>sprites\sNewGameLogo</sprite>
-      <sprite>sprites\sSubLogo</sprite>
     </sprites>
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
       <sprite>sprites\sBobWalking</sprite>
       <sprite>sprites\sBobHurt</sprite>
+      <sprite>sprites\sBobFalling</sprite>
       <sprites name="WithGun">
         <sprites name="Idle">
           <sprite>sprites\sBobIdleArmed</sprite>
@@ -43,11 +37,34 @@
         <sprite>sprites\sBobFight2</sprite>
       </sprites>
     </sprites>
-    <sprites name="HUD">
-      <sprite>sprites\sPlaceholderHealthBar</sprite>
-      <sprite>sprites\sAmmoHUD</sprite>
+    <sprites name="Trees">
+      <sprite>sprites\sSimpleTree</sprite>
+      <sprite>sprites\sAnimatedTree</sprite>
+      <sprite>sprites\sPlantingAction</sprite>
+      <sprite>sprites\sWhereToPlant</sprite>
     </sprites>
-    <sprite>sprites\sCollision</sprite>
+    <sprites name="Interface">
+      <sprites name="HUD">
+        <sprite>sprites\sPlaceholderHealthBar</sprite>
+        <sprite>sprites\sAmmoHUD</sprite>
+      </sprites>
+      <sprites name="GUI">
+        <sprite>sprites\sButton</sprite>
+        <sprite>sprites\sButtonPressed</sprite>
+        <sprite>sprites\sMessageBox</sprite>
+        <sprite>sprites\sGameLogo</sprite>
+        <sprite>sprites\sCredits</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Enemies">
+      <sprites name="Slim">
+        <sprite>sprites\sSlimHurt</sprite>
+        <sprite>sprites\sSlimIdle</sprite>
+        <sprite>sprites\sSlimIdleFiring</sprite>
+        <sprite>sprites\sSlimWalking</sprite>
+        <sprite>sprites\sSlimWalkingFiring</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
@@ -90,28 +107,20 @@
       <background>background\bTrashBall</background>
       <background>background\bFridge</background>
     </backgrounds>
-    <background>background\bMainMenu</background>
     <background>background\bLogoGameoof</background>
-    <background>background\bMainMenuConcept</background>
+    <background>background\bMainMenu</background>
+    <background>background\bTeamLogo</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
     <font>fonts\font_mm</font>
   </fonts>
   <objects name="objects">
+    <object>objects\oCredits</object>
     <objects name="Intro">
       <object>objects\oTeamLogo</object>
       <object>objects\oFadeOut</object>
       <object>objects\oFadeIn</object>
-    </objects>
-    <objects name="GUI">
-      <object>objects\oGameLogo</object>
-      <object>objects\oButton_Start</object>
-      <object>objects\oButton_Exit</object>
-      <object>objects\oButton_Credits</object>
-      <object>objects\oMessageBox</object>
-      <object>objects\oNewGameLogo</object>
-      <object>objects\oSubLogo</object>
     </objects>
     <objects name="Bob">
       <object>objects\oBobDylan</object>
@@ -121,17 +130,26 @@
       <object>objects\oCollision</object>
       <object>objects\oCollisionBase</object>
     </objects>
-    <objects name="HUD">
-      <object>objects\oControlHUD</object>
+    <objects name="Interface">
+      <objects name="HUD">
+        <object>objects\oControlHUD</object>
+      </objects>
+      <objects name="GUI">
+        <object>objects\oGameLogo</object>
+        <object>objects\oButton_Start</object>
+        <object>objects\oButton_Exit</object>
+        <object>objects\oButton_BackCred</object>
+        <object>objects\oButton_Credits</object>
+        <object>objects\oMessageBox</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rTestRoom</room>
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
-    <room>rooms\rTestRoom</room>
+    <room>rooms\rFirstRoom</room>
     <room>rooms\rCredits</room>
-    <room>rooms\rFutureRoom</room>
-    <room>rooms\rMainMenuConcept</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -50,7 +50,7 @@ disableButtons = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rFutureRoom);
+            <string>room_goto(rFirstRoom);
 </string>
           </argument>
         </arguments>
@@ -76,17 +76,13 @@ disableButtons = false;
             <string>if(makeDissapear) {
     alphaSpeed *= 1.1;
     
-    if(oNewGameLogo.image_alpha &gt; 0) {
-        oNewGameLogo.image_alpha -= alphaSpeed;
+    if(oGameLogo.image_alpha &gt; 0) {
+        oGameLogo.image_alpha -= alphaSpeed;
     } else {
         makeDissapear = false;
         disableButtons = true;
 
         alarm[0] = 3;
-    }
-    
-    if(oSubLogo.image_alpha &gt; 0) {
-        oSubLogo.image_alpha -= alphaSpeed;
     }
     
     if(oButton_Start.image_alpha &gt; 0) {
@@ -265,7 +261,7 @@ if (!disableButtons) {
             <string>draw_self();
 draw_set_font(font_mm);
 draw_set_alpha(image_alpha);
-draw_text(x+90, y+34, "PLAY");
+draw_text(x+63, y+34, "PLAY");
 </string>
           </argument>
         </arguments>
