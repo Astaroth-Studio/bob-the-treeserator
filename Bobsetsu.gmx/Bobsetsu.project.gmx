@@ -71,6 +71,7 @@
         <sprite>sprites\sSlimWalkingFiring</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\sBullet</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
