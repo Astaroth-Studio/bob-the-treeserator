@@ -8,16 +8,37 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>0</bbox_right>
+  <bbox_right>191</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>0</bbox_bottom>
+  <bbox_bottom>109</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>6</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>32</width>
-  <height>32</height>
-  <frames/>
+  <width>192</width>
+  <height>110</height>
+  <frames>
+    <frame index="0">images\sRamBob_0.png</frame>
+    <frame index="1">images\sRamBob_1.png</frame>
+    <frame index="2">images\sRamBob_2.png</frame>
+    <frame index="3">images\sRamBob_3.png</frame>
+    <frame index="4">images\sRamBob_4.png</frame>
+    <frame index="5">images\sRamBob_5.png</frame>
+    <frame index="6">images\sRamBob_6.png</frame>
+    <frame index="7">images\sRamBob_7.png</frame>
+    <frame index="8">images\sRamBob_8.png</frame>
+    <frame index="9">images\sRamBob_9.png</frame>
+    <frame index="10">images\sRamBob_10.png</frame>
+    <frame index="11">images\sRamBob_11.png</frame>
+    <frame index="12">images\sRamBob_12.png</frame>
+    <frame index="13">images\sRamBob_13.png</frame>
+    <frame index="14">images\sRamBob_14.png</frame>
+    <frame index="15">images\sRamBob_15.png</frame>
+    <frame index="16">images\sRamBob_16.png</frame>
+    <frame index="17">images\sRamBob_17.png</frame>
+    <frame index="18">images\sRamBob_18.png</frame>
+    <frame index="19">images\sRamBob_19.png</frame>
+  </frames>
 </sprite>

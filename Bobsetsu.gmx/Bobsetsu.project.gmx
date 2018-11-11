@@ -113,10 +113,14 @@
       <background>background\bTrashBall</background>
       <background>background\bFridge</background>
     </backgrounds>
-    <background>background\bLogoGameoof</background>
-    <background>background\bMainMenu</background>
-    <background>background\bTeamLogo</background>
-    <background>background\bCinematic</background>
+    <backgrounds name="Logos">
+      <background>background\bLogoGameoof</background>
+      <background>background\bTeamLogo</background>
+    </backgrounds>
+    <backgrounds name="Backgrounds">
+      <background>background\bCinematic</background>
+      <background>background\bMainMenu</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths">
     <path>paths\pShockedBob</path>
@@ -158,6 +162,7 @@
       <object>objects\oBobDylan</object>
       <object>objects\oBoxCin</object>
       <object>objects\oArmCin</object>
+      <object>objects\oRamBo</object>
     </objects>
     <object>objects\oBullet</object>
   </objects>
@@ -166,7 +171,10 @@
     <room>rooms\rMainMenu</room>
     <rooms name="Cinematic">
       <room>rooms\rFirstRoom</room>
-      <room>rooms\room5</room>
+      <room>rooms\rSecondRoom</room>
+    </rooms>
+    <rooms name="Levels">
+      <room>rooms\rAvicii_1st_</room>
     </rooms>
     <room>rooms\rCredits</room>
     <room>rooms\rTestRoom</room>

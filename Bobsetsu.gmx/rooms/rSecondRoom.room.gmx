@@ -3,10 +3,10 @@
   <caption></caption>
   <width>1280</width>
   <height>720</height>
-  <vsnap>32</vsnap>
-  <hsnap>32</hsnap>
+  <vsnap>1</vsnap>
+  <hsnap>1</hsnap>
   <isometric>0</isometric>
-  <speed>30</speed>
+  <speed>60</speed>
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
@@ -51,8 +51,9 @@
     <view visible="0" objName="" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
+    <instance objName="oArmCin" x="860" y="250" name="inst_9160519D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="25"/>
     <instance objName="oBoxCin" x="832" y="256" name="inst_3C902FA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oArmCin" x="864" y="224" name="inst_9160519D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRamBo" x="312" y="385" name="inst_C9082D66" locked="0" code="" scaleX="2.49000000953674" scaleY="2.33636355400085" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
