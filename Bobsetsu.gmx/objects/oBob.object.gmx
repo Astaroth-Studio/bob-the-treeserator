@@ -143,9 +143,9 @@ if (controls) {
         
         //Angle 135
         bulletX = -16;
-        bulletY = -32;
+        bulletY = -24;
         bulletXspeed = -bulletSpeed;
-        bulletYspeed = -bulletSpeed;
+        bulletYspeed = -bulletSpeed*0.5;
     } else if keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up) {
     //Angle 45
         if(isMoving)
@@ -161,9 +161,9 @@ if (controls) {
         }
     
         bulletX = 16;
-        bulletY = -32;
+        bulletY = -24;
         bulletXspeed = bulletSpeed;
-        bulletYspeed = -bulletSpeed;
+        bulletYspeed = -bulletSpeed*0.5;
     } else if keyboard_check(vk_left) {
     //Angle 180
         if(isMoving)
@@ -219,10 +219,10 @@ if (controls) {
     
     //Shoot the bullet !
     if(isFiring) {
-        if(shootingCooldown &lt;= 0) {
-            show_debug_message(image_index);
+        if(shootingCooldown &lt;= 0 &amp;&amp; playerAmmo[0] &gt; 0) {
             if((!isMoving &amp;&amp; round(image_index)==4) || (isMoving)) {
                 var inst = instance_create(x+bulletX, y+bulletY, oBullet);
+                playerAmmo[0]--;
                 inst.phy_bullet = true;
                 inst.phy_speed_x = bulletXspeed;
                 inst.phy_speed_y = bulletYspeed;

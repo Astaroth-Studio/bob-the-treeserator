@@ -25,11 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>yPosBloodHealthbar = 0;
+            <string>globalvar yPosBloodHealthbar;
+globalvar bloodHealthbarAlpha;
+globalvar playerHealth;
+globalvar playerMoney;
+globalvar playerAmmo;
+
+yPosBloodHealthbar = 0;
 bloodHealthbarAlpha = 1;
 playerHealth = 100;
 playerMoney = 0;
-playerAmmo[0] = 10;
+
+playerAmmo = array_create(1);
+playerAmmo[0] = 200;
 </string>
           </argument>
         </arguments>
