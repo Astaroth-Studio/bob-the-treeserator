@@ -106,9 +106,9 @@ if (controls) {
     bulletX = 0;
     //Bullet Y spawn position
     bulletY = 0;
-    //Bullet spawn direction  &gt;|       90
-    //                        &gt;| 180 Player 0
-    bulletDir = 0;
+    //Bullet spawn direction
+    bulletXspeed = 0;
+    bulletYspeed = 0;
 
     //Switch sprite xscale depending on key and setting isFiring
     if keyboard_check(vk_left) {
@@ -144,7 +144,8 @@ if (controls) {
         //Angle 135
         bulletX = -16;
         bulletY = -32;
-        bulletDir = 135;
+        bulletXspeed = -bulletSpeed;
+        bulletYspeed = -bulletSpeed;
     } else if keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up) {
     //Angle 45
         if(isMoving)
@@ -161,7 +162,8 @@ if (controls) {
     
         bulletX = 16;
         bulletY = -32;
-        bulletDir = 45;
+        bulletXspeed = bulletSpeed;
+        bulletYspeed = -bulletSpeed;
     } else if keyboard_check(vk_left) {
     //Angle 180
         if(isMoving)
@@ -177,10 +179,11 @@ if (controls) {
     
         bulletX = -16;
         bulletY = 0;
-        bulletDir = 180;
+        bulletXspeed = -bulletSpeed;
+        bulletYspeed = 0;
+        
     } else if keyboard_check(vk_right) {
     //Angle 0
-    
         if(isMoving)
         {
             if (sprite_index != sBobWalkingFiring) {
@@ -193,7 +196,8 @@ if (controls) {
         }
         bulletX = 16;
         bulletY = 0;
-        bulletDir = 0;
+        bulletXspeed = bulletSpeed;
+        bulletYspeed = 0;
     } else if keyboard_check(vk_up) {
     //Angle 90
         if(isMoving)
@@ -209,16 +213,21 @@ if (controls) {
         bulletX = 0;
         bulletY = -32;
         bulletDir = 90;
+        bulletXspeed = 0;
+        bulletYspeed = -bulletSpeed;
     }
     
     //Shoot the bullet !
     if(isFiring) {
         if(shootingCooldown &lt;= 0) {
             show_debug_message(image_index);
-            if((!isMoving &amp;&amp; round(image_index)==3) || (isMoving)) {
+            if((!isMoving &amp;&amp; round(image_index)==4) || (isMoving)) {
                 var inst = instance_create(x+bulletX, y+bulletY, oBullet);
-                inst.direction = bulletDir;
-                inst.speed = bulletSpeed;
+                inst.phy_bullet = true;
+                inst.phy_speed_x = bulletXspeed;
+                inst.phy_speed_y = bulletYspeed;
+                //inst.speed = bulletSpeed;
+                //inst.image_angle = bulletDir;
                 shootingCooldown = fullShootingCooldown;
             }
         }
