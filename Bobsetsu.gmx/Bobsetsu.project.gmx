@@ -13,6 +13,11 @@
       <sprite>sprites\sTeamLogo</sprite>
       <sprite>sprites\sFade</sprite>
     </sprites>
+    <sprites name="Cinematic">
+      <sprite>sprites\sBoxCin</sprite>
+      <sprite>sprites\sArmCin</sprite>
+      <sprite>sprites\sRamBob</sprite>
+    </sprites>
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
       <sprite>sprites\sBobWalking</sprite>
@@ -42,6 +47,7 @@
       <sprite>sprites\sAnimatedTree</sprite>
       <sprite>sprites\sPlantingAction</sprite>
       <sprite>sprites\sWhereToPlant</sprite>
+      <sprite>sprites\sWhereDaFukIzDaTree</sprite>
     </sprites>
     <sprites name="Interface">
       <sprites name="HUD">
@@ -110,20 +116,21 @@
     <background>background\bLogoGameoof</background>
     <background>background\bMainMenu</background>
     <background>background\bTeamLogo</background>
+    <background>background\bCinematic</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pShockedBob</path>
+  </paths>
   <fonts name="fonts">
     <font>fonts\font_mm</font>
   </fonts>
   <objects name="objects">
-    <object>objects\oCredits</object>
     <objects name="Intro">
       <object>objects\oTeamLogo</object>
       <object>objects\oFadeOut</object>
       <object>objects\oFadeIn</object>
     </objects>
     <objects name="Bob">
-      <object>objects\oBobDylan</object>
       <object>objects\oBob</object>
     </objects>
     <objects name="World">
@@ -143,14 +150,26 @@
         <object>objects\oMessageBox</object>
       </objects>
     </objects>
+    <objects name="Misc">
+      <object>objects\oCredits</object>
+      <object>objects\oFokinTree</object>
+    </objects>
+    <objects name="Cinematic">
+      <object>objects\oBobDylan</object>
+      <object>objects\oBoxCin</object>
+      <object>objects\oArmCin</object>
+    </objects>
     <object>objects\oBullet</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rTestRoom</room>
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
-    <room>rooms\rFirstRoom</room>
+    <rooms name="Cinematic">
+      <room>rooms\rFirstRoom</room>
+      <room>rooms\room5</room>
+    </rooms>
     <room>rooms\rCredits</room>
+    <room>rooms\rTestRoom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

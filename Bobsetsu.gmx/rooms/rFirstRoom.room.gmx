@@ -52,6 +52,10 @@
   </views>
   <instances>
     <instance objName="oBobDylan" x="334" y="576" name="inst_F5428D42" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oFokinTree" x="992" y="445" name="inst_9BB0607C" locked="0" code="" scaleX="2" scaleY="2.53968262672424" colour="4294967295" rotation="0"/>
+    <instance objName="oFokinTree" x="1056" y="448" name="inst_552BE780" locked="0" code="" scaleX="2" scaleY="2.5" colour="4294967295" rotation="0"/>
+    <instance objName="oFokinTree" x="1184" y="448" name="inst_DA153A86" locked="0" code="" scaleX="2" scaleY="2.5" colour="4294967295" rotation="0"/>
+    <instance objName="oFokinTree" x="1120" y="448" name="inst_32B916B8" locked="0" code="" scaleX="2" scaleY="2.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bBarrier" x="192" y="576" w="52" h="32" xo="0" yo="0" id="10000933" name="inst_C6E80E4A" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
