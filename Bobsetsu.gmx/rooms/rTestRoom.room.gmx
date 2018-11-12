@@ -7,7 +7,7 @@
   <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>dialog("Hello world, I am a test dialog box. How are you doin'. Btw Bob you're totallyy raaddd. ;)#(Press enter to get rid of this annoying box)",0.75,64,500);</code>

@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>BOB_SCALE = 2; // Change this number if you rescale Bob
+            <string>global.stopTime = false;
+didIt = false;
+currentImageSpeed = image_speed;
+
+BOB_SCALE = 2; // Change this number if you rescale Bob
 isFiring = false;
 
 defaultSpeed = 0.075;
@@ -64,7 +68,16 @@ shootingCooldown = fullShootingCooldown; // Time changing each step
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
+            <string>// Parallax Effect™
+background_x[1] =  view_xview[0] + (view_wview[0] * 0.3) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.4);
+background_x[2] =  view_xview[0] * 0.7;
+background_x[3] = (view_wview[0]-background_width[3]) * (view_xview[0]/(room_width-view_wview[0])) + view_xview[0];
+
+//Code to stop bob time
+if(global.stopTime) { image_speed = 0; exit; }
+
+//Moving
+phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
 isMoving = false;
 
 // Moving &gt; Change sprite and speed
@@ -73,6 +86,13 @@ if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
        sprite_index = sBobWalking;
    }
    walkSpeed = phy_speed_x / 10;
+   
+   if(image_xscale == BOB_SCALE) {
+        image_speed = walkSpeed;
+   } else {
+        image_speed = -walkSpeed;
+   }
+   
    isMoving = true;
 } else {
     //If sprite has not already been set and is not firing &gt; Set image_speed + set sprite
@@ -92,13 +112,28 @@ if(phy_speed_y &gt; 1.2){
         sprite_index = sBobFalling;
     }
 } else {
-    controls = true;
+    if(instance_number(oDialog) == 0) {
+        controls = true;
+    }
 }
 
-// Parallax Effect™
-background_x[1] =  view_xview[0] + (view_wview[0] * 0.3) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.4);
-background_x[2] =  view_xview[0] * 0.7;
-background_x[3] = (view_wview[0]-background_width[3]) * (view_xview[0]/(room_width-view_wview[0])) + view_xview[0];
+//Moving
+if (controls) {
+    if keyboard_check(ord('D')) {
+        if (!isFiring) {
+            image_xscale = BOB_SCALE;
+        }
+        //image_speed = walkSpeed;
+        physics_apply_force(x,y,moveSpeed,-100);
+    }
+    if keyboard_check(ord('Q')) {
+        if (!isFiring) {
+            image_xscale = -BOB_SCALE;
+        }
+        //image_speed = -walkSpeed;
+        physics_apply_force(x,y,-moveSpeed,-100);
+    }
+}
 
 //Shooting
 if(shootingCooldown &gt;= 0) {
@@ -285,64 +320,6 @@ if (follow) {
           <argument>
             <kind>1</kind>
             <string>Fuck you Baltimore</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="81">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (controls) {
-    if (!isFiring) {
-        image_xscale = -BOB_SCALE;
-    }
-    image_speed = -walkSpeed;
-    physics_apply_force(x,y,-moveSpeed,-100);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="68">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (controls) {
-    if (!isFiring) {
-        image_xscale = BOB_SCALE;
-    }
-    image_speed = walkSpeed;
-    physics_apply_force(x,y,moveSpeed,-100);
-}
-</string>
           </argument>
         </arguments>
       </action>
