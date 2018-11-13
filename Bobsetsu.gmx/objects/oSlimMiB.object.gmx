@@ -149,12 +149,12 @@ if(isFiring)
         if(canShoot) {
             if(image_xscale == slimScale) {
                 bulletX = 16;
-                bulletY = 0;
+                bulletY = -4;
                 scale = 1;
                 bulletXspeed = bulletSpeed;
             } else {
                 bulletX = -16;
-                bulletY = 0;
+                bulletY = -4;
                 scale = -1;
                 bulletXspeed = -bulletSpeed;
             }
