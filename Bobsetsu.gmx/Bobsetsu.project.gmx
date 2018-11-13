@@ -126,6 +126,9 @@
   <paths name="paths">
     <path>paths\pShockedBob</path>
   </paths>
+  <scripts name="scripts">
+    <script>scripts\dialog.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_mm</font>
   </fonts>
@@ -145,6 +148,7 @@
     <objects name="Interface">
       <objects name="HUD">
         <object>objects\oControlHUD</object>
+        <object>objects\oDialog</object>
       </objects>
       <objects name="GUI">
         <object>objects\oGameLogo</object>
@@ -166,6 +170,9 @@
       <object>objects\oRamBo</object>
     </objects>
     <object>objects\oBullet</object>
+    <objects name="Enemies">
+      <object>objects\oSlimMiB</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>

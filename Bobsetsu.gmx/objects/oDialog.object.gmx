@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,19 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>globalvar yPosBloodHealthbar;
-globalvar bloodHealthbarAlpha;
-globalvar playerHealth;
-globalvar playerMoney;
-globalvar playerAmmo;
-
-yPosBloodHealthbar = 0;
-bloodHealthbarAlpha = 1;
-playerHealth = 100;
-playerMoney = 0;
-
-playerAmmo = array_create(1);
-playerAmmo[0] = 200;
+            <string>alpha = 0;
+print = "";
+time = 0;
+depth =- instance_number(oDialog);
 </string>
           </argument>
         </arguments>
@@ -60,33 +51,75 @@ playerAmmo[0] = 200;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Draw fps in debug
-if debug_mode
+            <string>//Add letters over time
+if (time &lt; text_length)
 {
-   draw_text(1150, 1, "FPS: " + string(fps));
+    time += spd;
+    print = string_copy(text, 0, time);
 }
 
-//HealthBar creation linked to playerHealth variable
-draw_healthbar(10, 10, 40, 700, playerHealth, c_black, c_red, c_red, 3, false, false);
+//Render textbox &amp; text
+draw_set_alpha(alpha);
+if(alpha &lt; 1) alpha += spd/10; else alpha = 1;
+    
+draw_set_color(c_gray);
+draw_rectangle(x, y, x+boxWidth, y+boxHeight, 0);
+draw_set_color(c_black);
+draw_rectangle(x, y, x+boxWidth, y+boxHeight, 1);
+    
+draw_set_color(c_white);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_text_ext(x+padding, y+padding, print, font_size+(font_size/2), maxLength);
+    
+draw_set_alpha(1); 
 
-//Drawing healthbar sprite on top of it
-draw_sprite(sPlaceholderHealthBar, -1, 10, 5);
-
-//Blood at the top of the healthbar
-/*yPosBloodHealthbar=yPosBloodHealthbar+1
-Add Blood in place of sPlaceholderHealthBar
-draw_sprite_ext(sPlaceholderHealthBar,-1,50,yPosBloodHealthbar,1,1,0,c_white,bloodHealthbarAlpha);*/
-
-//Money text creation linked to playerMoney variable
-draw_set_font(font_mm);
-draw_text_colour(1000, 1, "$"+string(playerMoney)+"AUS", c_green, c_green, c_green, c_green, 1);
-
-//Ammo sprite and text creation linked to playerAmmo[0]
-draw_sprite(sAmmoHUD, -1, 763, 1);
-draw_text_colour(800, 1, string(playerAmmo[0]), c_blue, c_blue, c_blue, c_blue, 1);
+if(controls) {
+    controls = false;
+}
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="13">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>controls</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>203</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_kill_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

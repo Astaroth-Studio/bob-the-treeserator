@@ -30,7 +30,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="oCollision">
+    <event eventtype="4" ename="oCollisionBase">
       <action>
         <libid>1</libid>
         <id>203</id>
@@ -75,9 +75,9 @@
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>-1</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>32,0</point>
-    <point>32,32</point>
-    <point>0,32</point>
+    <point>3,1</point>
+    <point>30,1</point>
+    <point>30,31</point>
+    <point>3,31</point>
   </PhysicsShapePoints>
 </object>

@@ -25,8 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>BOB_SCALE = 2; // Change this number if you rescale Bob
-isFiring = false;
+            <string>global.stopTime = false;
+
+BOB_SCALE = 2; // Change this number if you rescale Bob
+isFighting = false;
+isShooting = false;
 
 defaultSpeed = 0.075;
 image_speed = defaultSpeed;
@@ -34,6 +37,7 @@ walkSpeed = 0.075;
 moveSpeed = 3000;
 maxXSpeed = 4;
 
+globalvar controls;
 controls = true; // Desactivated when falling
 
 phy_fixed_rotation = true;
@@ -41,6 +45,13 @@ phy_fixed_rotation = true;
 bulletSpeed = 8;
 fullShootingCooldown = 250; // Cooldown of 250 milliseconds
 shootingCooldown = fullShootingCooldown; // Time changing each step 
+
+//Punch variables
+inPunch = false;
+maxStopTimer = 250;
+stopTimer = maxStopTimer;
+currentRandomX = 0;
+currentX = 0;
 </string>
           </argument>
         </arguments>
@@ -63,43 +74,93 @@ shootingCooldown = fullShootingCooldown; // Time changing each step
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
+            <string>// Parallax Effect™
+background_x[1] =  view_xview[0] + (view_wview[0] * 0.3) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.4);
+background_x[2] =  view_xview[0] * 0.7;
+background_x[3] = (view_wview[0]-background_width[3]) * (view_xview[0]/(room_width-view_wview[0])) + view_xview[0];
+
+/*-------[ Punching System ]-------*/
+if(inPunch) {
+    stopTimer = stopTimer-(delta_time/1000);
+    
+    progress=stopTimer/maxStopTimer;
+    if(progress &lt;= 0.5) {
+        view_xview[0] = currentX + (currentRandomX * (progress/0.5));
+    } else {
+        view_xview[0] = currentX;
+    }
+    
+    if(stopTimer &lt;= 0) {
+        stopTimer = maxStopTimer;
+        global.stopTime = false;
+        physics_pause_enable(false);
+        inPunch = false;
+    }
+}
+
+//Everything below this code will not be executed after stopTime has been set to true
+if(global.stopTime) { image_speed = 0; exit; }
+
+/*-------[ Slowing down ]-------*/
+phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
 isMoving = false;
 
-// Moving &gt; Change sprite and speed
+/*--[ Changing sprite direction and speed] --*/
 if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
-   if(sprite_index != sBobWalking &amp;&amp; !isFiring) {
+   if(sprite_index != sBobWalking &amp;&amp; !isFighting) {
        sprite_index = sBobWalking;
    }
    walkSpeed = phy_speed_x / 10;
+   
+   if(image_xscale == BOB_SCALE) {
+        image_speed = walkSpeed;
+   } else {
+        image_speed = -walkSpeed;
+   }
+   
    isMoving = true;
 } else {
     //If sprite has not already been set and is not firing &gt; Set image_speed + set sprite
-    if(sprite_index != sBobIdle &amp;&amp; !isFiring) {
+    if(sprite_index != sBobIdle &amp;&amp; !isFighting) {
         sprite_index = sBobIdle;
         image_speed = defaultSpeed;
-    } else if (isFiring) {
+    } else if (isShooting) {
         image_speed = defaultSpeed*3;
     }
     isMoving = false;
 }
 
-// Failling is bad
+/*------[ Falling is bad ]------*/
 if(phy_speed_y &gt; 1.2){
     controls = false;
     if(sprite_index != sBobWalking) {
         sprite_index = sBobFalling;
     }
 } else {
-    controls = true;
+    if(instance_number(oDialog) == 0) {
+        controls = true;
+    }
 }
 
-// Parallax Effect™
-background_x[1] =  view_xview[0] + (view_wview[0] * 0.30) + (( 1 - (view_xview[0] / room_width))) * (view_wview[0] * 0.40);
-background_x[2] =  view_xview[0] * 0.7;
-background_x[3] = (view_wview[0]-background_width[3]) * (view_xview[0]/(room_width-view_wview[0])) + view_xview[0];
+/*-------[ Moving ]-------*/
+if (controls) {
+    if keyboard_check(ord('D')) {
+        if (!isFighting) {
+            image_xscale = BOB_SCALE;
+        }
+        //image_speed = walkSpeed;
+        physics_apply_force(x,y,moveSpeed,-100);
+    }
+    if keyboard_check(ord('Q')) {
+        if (!isFighting) {
+            image_xscale = -BOB_SCALE;
+        }
+        //image_speed = -walkSpeed;
+        physics_apply_force(x,y,-moveSpeed,-100);
+    }
+}
 
-//Shooting
+/*-------[ Shooting ]-------*/
 if(shootingCooldown &gt;= 0) {
     shootingCooldown-=(delta_time/1000); // delta_time is in microseconds
 }
@@ -115,20 +176,24 @@ if (controls) {
 
     //Switch sprite xscale depending on key and setting isFiring
     if keyboard_check(vk_left) {
-        isFiring = true;
+        isShooting = true;
+        isFighting = true;
         if (image_xscale != -BOB_SCALE) {
            image_xscale = -BOB_SCALE;
         }
     } else if keyboard_check(vk_right) {
-        isFiring = true;
+        isShooting = true;
+        isFighting = true;
         if (image_xscale != BOB_SCALE) {
            image_xscale = BOB_SCALE;
         }
     } else if keyboard_check(vk_up) {
-        isFiring = true;
+        isShooting = true;
+        isFighting = true;
     } else {
         // Not pressing any keys &amp;gt; isFiring = false
-        isFiring = false;
+        isShooting = false;
+        isFighting = false;
     }
     
     //Up Left
@@ -221,7 +286,7 @@ if (controls) {
     }
     
     //Shoot the bullet !
-    if(isFiring) {
+    if(isShooting) {
         if(shootingCooldown &lt;= 0 &amp;&amp; playerAmmo[0] &gt; 0) {
             var inst = instance_create(x+bulletX, y+bulletY, oBullet);
             playerAmmo[0]--;
@@ -230,11 +295,9 @@ if (controls) {
             inst.phy_speed_y = bulletYspeed;
 
             shootingCooldown = fullShootingCooldown;
-            }
+        }
     }
 }
-
-
 
 // Code to stick Bob to the right side of the viewPort
 /*follow = false;
@@ -288,7 +351,7 @@ if (follow) {
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="81">
+    <event eventtype="10" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -305,41 +368,18 @@ if (follow) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (controls) {
-    if (!isFiring) {
-        image_xscale = -BOB_SCALE;
-    }
-    image_speed = -walkSpeed;
-    physics_apply_force(x,y,-moveSpeed,-100);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="5" enumb="68">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (controls) {
-    if (!isFiring) {
-        image_xscale = BOB_SCALE;
-    }
-    image_speed = walkSpeed;
-    physics_apply_force(x,y,moveSpeed,-100);
+            <string>//Setting randoms on button press
+if(!inPunch) {
+    currentX = view_xview[0];
+    currentRandomX = irandom(64)-32;
+    
+    //show_debug_message(string(currentX)+","+string(currentY));
+    //show_debug_message(string(currentRandomX)+","+string(currentRandomY));
+    
+    global.stopTime = true;
+    physics_pause_enable(true);
+    
+    inPunch = true;
 }
 </string>
           </argument>
@@ -349,7 +389,7 @@ if (follow) {
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>1</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
