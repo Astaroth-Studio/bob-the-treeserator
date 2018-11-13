@@ -46,6 +46,9 @@ bulletSpeed = 8;
 fullShootingCooldown = 250; // Cooldown of 250 milliseconds
 shootingCooldown = fullShootingCooldown; // Time changing each step 
 
+recoveryTimeMaxCooldown = 1000;
+recoveryTimeCooldown = recoveryTimeMaxCooldown;
+
 //Punch variables
 inPunch = false;
 maxStopTimer = 250;
@@ -158,6 +161,11 @@ if (controls) {
         //image_speed = -walkSpeed;
         physics_apply_force(x,y,-moveSpeed,-100);
     }
+}
+
+/*-------[ Recovery Time ]-------*/
+if(recoveryTimeCooldown &gt;= 0) {
+    recoveryTimeCooldown-=(delta_time/1000); // delta_time is in microseconds
 }
 
 /*-------[ Shooting ]-------*/
@@ -324,6 +332,36 @@ if (follow) {
         view_xview[0] = viewPos;
     }
 }*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oSlimBullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(recoveryTimeCooldown &lt;= 0) {
+    recoveryTimeCooldown = recoveryTimeMaxCooldown;
+    
+    playerHealth -= global.slimBulletDamage;
+    if(playerHealth &lt;= 0) {
+        playerHealth = 0;
+    }
+}
 </string>
           </argument>
         </arguments>

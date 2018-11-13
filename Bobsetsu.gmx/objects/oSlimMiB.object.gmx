@@ -29,6 +29,7 @@
 slimIdleImageSpeed = 0.3;
 image_speed = slimIdleImageSpeed;
 slimWalkingImageSpeed = 1;
+phy_fixed_rotation = true;
 
 slimSpeed=8;
 
@@ -42,6 +43,7 @@ isFiring = false;
 
 bulletSpeed = 10;
 canShoot = true;
+global.slimBulletDamage = 10;
 
 isHurt = false;
 </string>
@@ -148,16 +150,18 @@ if(isFiring)
             if(image_xscale == slimScale) {
                 bulletX = 16;
                 bulletY = 0;
+                scale = 1;
                 bulletXspeed = bulletSpeed;
             } else {
                 bulletX = -16;
                 bulletY = 0;
+                scale = -1;
                 bulletXspeed = -bulletSpeed;
             }
             var inst = instance_create(x+bulletX, y+bulletY, oSlimBullet);
             inst.phy_bullet = true;
             inst.phy_speed_x = bulletXspeed;
-            
+            inst.image_xscale = scale;
             canShoot = false;
         }
     } else {
