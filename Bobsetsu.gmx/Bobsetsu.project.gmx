@@ -169,10 +169,10 @@
       <object>objects\oArmCin</object>
       <object>objects\oRamBo</object>
     </objects>
-    <object>objects\oBullet</object>
     <objects name="Enemies">
       <object>objects\oSlimMiB</object>
     </objects>
+    <object>objects\oBullet</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>
