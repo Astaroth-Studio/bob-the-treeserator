@@ -60,6 +60,7 @@
         <sprite>sprites\sMessageBox</sprite>
         <sprite>sprites\sGameLogo</sprite>
         <sprite>sprites\sCredits</sprite>
+        <sprite>sprites\sFullscreen</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemies">
@@ -160,6 +161,7 @@
         <object>objects\oButton_BackCred</object>
         <object>objects\oButton_Credits</object>
         <object>objects\oMessageBox</object>
+        <object>objects\oFullscreen</object>
       </objects>
     </objects>
     <objects name="Misc">
