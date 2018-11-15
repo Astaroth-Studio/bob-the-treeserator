@@ -42,12 +42,16 @@ controls = true; // Desactivated when falling
 
 phy_fixed_rotation = true;
 
-bulletSpeed = 8;
-fullShootingCooldown = 250; // Cooldown of 250 milliseconds
+bulletSpeed = 15;
+fullShootingCooldown = 400; // Cooldown in milliseconds
 shootingCooldown = fullShootingCooldown; // Time changing each step 
+
+recoveryTimeMaxCooldown = 1000;
+recoveryTimeCooldown = recoveryTimeMaxCooldown;
 
 //Punch variables
 inPunch = false;
+inTruePunch = false;
 maxStopTimer = 250;
 stopTimer = maxStopTimer;
 currentRandomX = 0;
@@ -83,18 +87,24 @@ background_x[3] = (view_wview[0]-background_width[3]) * (view_xview[0]/(room_wid
 if(inPunch) {
     stopTimer = stopTimer-(delta_time/1000);
     
-    progress=stopTimer/maxStopTimer;
-    if(progress &lt;= 0.5) {
-        view_xview[0] = currentX + (currentRandomX * (progress/0.5));
-    } else {
-        view_xview[0] = currentX;
+    if(inTruePunch) {
+        progress=stopTimer/maxStopTimer;
+        if(progress &lt;= 0.5) {
+            view_xview[0] = currentX + (currentRandomX * (progress/0.5));
+        } else {
+            view_xview[0] = currentX;
+        }
     }
     
     if(stopTimer &lt;= 0) {
         stopTimer = maxStopTimer;
-        global.stopTime = false;
-        physics_pause_enable(false);
+        if(inTruePunch) {
+            global.stopTime = false;
+            physics_pause_enable(false);
+            inTruePunch = false;
+        }
         inPunch = false;
+        isFighting = false;
     }
 }
 
@@ -159,6 +169,24 @@ if (controls) {
         physics_apply_force(x,y,-moveSpeed,-100);
     }
 }
+/*-------[ Collision detection ]-------*/
+if(place_meeting(x, y, oSlimBullet)) {
+    with(instance_nearest(x, y, oSlimBullet)) {
+        instance_destroy();
+    }
+    if(recoveryTimeCooldown &lt;= 0) {
+        recoveryTimeCooldown = recoveryTimeMaxCooldown;
+        
+        playerHealth -= global.slimBulletDamage;
+        if(playerHealth &lt;= 0) {
+            playerHealth = 0;
+        }
+    }
+}
+/*-------[ Recovery Time ]-------*/
+if(recoveryTimeCooldown &gt;= 0) {
+    recoveryTimeCooldown-=(delta_time/1000); // delta_time is in microseconds
+}
 
 /*-------[ Shooting ]-------*/
 if(shootingCooldown &gt;= 0) {
@@ -166,135 +194,192 @@ if(shootingCooldown &gt;= 0) {
 }
 /* Need to simplify */
 if (controls) {
-    //Bullet X spawn position
-    bulletX = 0;
-    //Bullet Y spawn position
-    bulletY = 0;
-    //Bullet spawn direction
-    bulletXspeed = 0;
-    bulletYspeed = 0;
-
-    //Switch sprite xscale depending on key and setting isFiring
-    if keyboard_check(vk_left) {
-        isShooting = true;
-        isFighting = true;
-        if (image_xscale != -BOB_SCALE) {
-           image_xscale = -BOB_SCALE;
-        }
-    } else if keyboard_check(vk_right) {
-        isShooting = true;
-        isFighting = true;
-        if (image_xscale != BOB_SCALE) {
-           image_xscale = BOB_SCALE;
-        }
-    } else if keyboard_check(vk_up) {
-        isShooting = true;
-        isFighting = true;
-    } else {
-        // Not pressing any keys &amp;gt; isFiring = false
-        isShooting = false;
-        isFighting = false;
-    }
-    
-    //Up Left
-    if keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_up) {
-        if(isMoving)
-        {
-            if (sprite_index != sBobWalkingFiringUpward) {
-                sprite_index = sBobWalkingFiringUpward;
-            }
-        } else {
-            if (sprite_index != sBobIdleFiringUpward) {
-                sprite_index = sBobIdleFiringUpward;
-            }
-        }
-        
-        //Angle 135
-        bulletX = -16;
-        bulletY = -24;
-        bulletXspeed = -bulletSpeed;
-        bulletYspeed = -bulletSpeed*0.5;
-    } else if keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up) {
-    //Angle 45
-        if(isMoving)
-        {
-            if (sprite_index != sBobWalkingFiringUpward) {
-                sprite_index = sBobWalkingFiringUpward;
-            }
-        } else {
-            if (sprite_index != sBobIdleFiringUpward) {
-                sprite_index = sBobIdleFiringUpward;
-                
-            }
-        }
-    
-        bulletX = 16;
-        bulletY = -24;
-        bulletXspeed = bulletSpeed;
-        bulletYspeed = -bulletSpeed*0.5;
-    } else if keyboard_check(vk_left) {
-    //Angle 180
-        if(isMoving)
-        {
-            if (sprite_index != sBobWalkingFiring) {
-                sprite_index = sBobWalkingFiring;
-            }
-        } else {
-            if (sprite_index != sBobIdleFiring) {
-                sprite_index = sBobIdleFiring;
-            }
-        }
-    
-        bulletX = -24;
-        bulletY = 0;
-        bulletXspeed = -bulletSpeed;
-        bulletYspeed = 0;
-        
-    } else if keyboard_check(vk_right) {
-    //Angle 0
-        if(isMoving)
-        {
-            if (sprite_index != sBobWalkingFiring) {
-                sprite_index = sBobWalkingFiring;
-            }
-        } else {
-            if (sprite_index != sBobIdleFiring) {
-                sprite_index = sBobIdleFiring;
-            }
-        }
-        bulletX = 24;
-        bulletY = 0;
-        bulletXspeed = bulletSpeed;
-        bulletYspeed = 0;
-    } else if keyboard_check(vk_up) {
-    //Angle 90
-        if(isMoving)
-        {
-            if (sprite_index != sBobWalkingFiringUp) {
-                sprite_index = sBobWalkingFiringUp;
-            }
-        } else {
-            if (sprite_index != sBobIdleFiringUp) {
-                sprite_index = sBobIdleFiringUp;
-            }
-        }
+    if(playerAmmo[0] &gt; 0) {
+        //Bullet X spawn position
         bulletX = 0;
-        bulletY = -32;
-        bulletDir = 90;
+        //Bullet Y spawn position
+        bulletY = 0;
+        //Bullet spawn direction
         bulletXspeed = 0;
-        bulletYspeed = -bulletSpeed;
-    }
+        bulletYspeed = 0;
     
-    //Shoot the bullet !
-    if(isShooting) {
-        if(shootingCooldown &lt;= 0 &amp;&amp; playerAmmo[0] &gt; 0) {
-            var inst = instance_create(x+bulletX, y+bulletY, oBullet);
-            playerAmmo[0]--;
-            inst.phy_bullet = true;
-            inst.phy_speed_x = bulletXspeed;
-            inst.phy_speed_y = bulletYspeed;
-
-            shootingCooldown = fullShootingCooldown;
+        //Switch sprite xscale depending on key and setting isFiring
+        if keyboard_check(vk_left) {
+            isShooting = true;
+            isFighting = true;
+            if (image_xscale != -BOB_SCALE) {
+               image_xscale = -BOB_SCALE;
+            }
+        } else if keyboard_check(vk_right) {
+            isShooting = true;
+            isFighting = true;
+            if (image_xscale != BOB_SCALE) {
+               image_xscale = BOB_SCALE;
+            }
+        } else if keyboard_check(vk_up) {
+            isShooting = true;
+            isFighting = true;
+        } else {
+            // Not pressing any keys &amp;gt; isFiring = false
+            isShooting = false;
+            isFighting = false;
+        }
+        
+        //Up Left
+        if keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_up) {
+            if(isMoving)
+            {
+                if (sprite_index != sBobWalkingFiringUpward) {
+                    sprite_index = sBobWalkingFiringUpward;
+                }
+            } else {
+                if (sprite_index != sBobIdleFiringUpward) {
+                    sprite_index = sBobIdleFiringUpward;
+                }
+            }
+            
+            //Angle 135
+            bulletX = -16;
+            bulletY = -24;
+            bulletXspeed = -bulletSpeed;
+            bulletYspeed = -bulletSpeed*0.5;
+        } else if keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up) {
+        //Angle 45
+            if(isMoving)
+            {
+                if (sprite_index != sBobWalkingFiringUpward) {
+                    sprite_index = sBobWalkingFiringUpward;
+                }
+            } else {
+                if (sprite_index != sBobIdleFiringUpward) {
+                    sprite_index = sBobIdleFiringUpward;
+                    
+                }
+            }
+        
+            bulletX = 16;
+            bulletY = -24;
+            bulletXspeed = bulletSpeed;
+            bulletYspeed = -bulletSpeed*0.5;
+        } else if keyboard_check(vk_left) {
+        //Angle 180
+            if(isMoving)
+            {
+                if (sprite_index != sBobWalkingFiring) {
+                    sprite_index = sBobWalkingFiring;
+                }
+            } else {
+                if (sprite_index != sBobIdleFiring) {
+                    sprite_index = sBobIdleFiring;
+                }
+            }
+        
+            bulletX = -24;
+            bulletY = 0;
+            bulletXspeed = -bulletSpeed;
+            bulletYspeed = 0;
+            
+        } else if keyboard_check(vk_right) {
+        //Angle 0
+            if(isMoving)
+            {
+                if (sprite_index != sBobWalkingFiring) {
+                    sprite_index = sBobWalkingFiring;
+                }
+            } else {
+                if (sprite_index != sBobIdleFiring) {
+                    sprite_index = sBobIdleFiring;
+                }
+            }
+            bulletX = 24;
+            bulletY = 0;
+            bulletXspeed = bulletSpeed;
+            bulletYspeed = 0;
+        } else if keyboard_check(vk_up) {
+        //Angle 90
+            if(isMoving)
+            {
+                if (sprite_index != sBobWalkingFiringUp) {
+                    sprite_index = sBobWalkingFiringUp;
+                }
+            } else {
+                if (sprite_index != sBobIdleFiringUp) {
+                    sprite_index = sBobIdleFiringUp;
+                }
+            }
+            bulletX = 0;
+            bulletY = -32;
+            bulletDir = 90;
+            bulletXspeed = 0 + phy_speed_x;
+            bulletYspeed = -bulletSpeed;
+        }
+        
+        //Shoot the bullet !
+        if(isShooting) {
+            if(shootingCooldown &lt;= 0) {
+                var inst = instance_create(x+bulletX, y+bulletY, oBullet);
+                playerAmmo[0]--;
+                inst.phy_bullet = true;
+                inst.phy_speed_x = bulletXspeed;
+                inst.phy_speed_y = bulletYspeed;
+    
+                shootingCooldown = fullShootingCooldown;
+            }
+        }
+    //Doesn't have ammo &gt; Punch
+    } else if(!inPunch) {
+        if keyboard_check_released(vk_left) {
+            isFighting = true;
+            if (image_xscale != -BOB_SCALE) {
+                image_xscale = -BOB_SCALE;
+            }
+            if(irandom(1) == 0) {
+                sprite_index = sBobFight1;
+            } else {
+                sprite_index = sBobFight2;
+            }
+            inPunch = true;
+            
+            //show_debug_message("Test");
+            collision_object = collision_rectangle(x-16,y+16,x-32,y+-16, oSlimMiB, false, true);
+            if(collision_object != noone)/*|| place_meeting(x-16, y, oBigMiB)*/{
+            
+                currentX = view_xview[0];
+                currentRandomX = irandom(64)-32;
+                global.stopTime = true;
+                physics_pause_enable(true);
+                inTruePunch = true;
+                
+                with (collision_object) {
+                    instance_destroy();
+                }
+            }
+        } else if keyboard_check_released(vk_right) {
+            
+            isFighting = true;
+            if (image_xscale != BOB_SCALE) {
+                image_xscale = BOB_SCALE;
+            }
+            if(irandom(1) == 0) {
+                sprite_index = sBobFight1;
+            } else {
+                sprite_index = sBobFight2;
+            }
+            inPunch = true;
+            
+            collision_object = collision_rectangle(x+16,y+16,x+32,y+-16, oSlimMiB, false, true);
+            if(collision_object != noone)/*|| place_meeting(x-16, y, oBigMiB)*/{
+                
+                currentX = view_xview[0];
+                currentRandomX = irandom(64)-32;
+                global.stopTime = true;
+                physics_pause_enable(true);
+                inTruePunch = true;
+                
+                with (collision_object) {
+                    instance_destroy();
+                }
+            }
         }
     }
 }

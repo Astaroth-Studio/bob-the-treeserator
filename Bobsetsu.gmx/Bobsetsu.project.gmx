@@ -71,7 +71,10 @@
         <sprite>sprites\sSlimWalkingFiring</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sBullet</sprite>
+    <sprites name="Bullets">
+      <sprite>sprites\sSlimBullet</sprite>
+      <sprite>sprites\sBullet</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
@@ -172,7 +175,10 @@
     <objects name="Enemies">
       <object>objects\oSlimMiB</object>
     </objects>
-    <object>objects\oBullet</object>
+    <objects name="Bullets">
+      <object>objects\oBullet</object>
+      <object>objects\oSlimBullet</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>

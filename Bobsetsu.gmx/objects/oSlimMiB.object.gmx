@@ -25,7 +25,27 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0.3;
+            <string>slimScale = 2;
+slimIdleImageSpeed = 0.3;
+image_speed = slimIdleImageSpeed;
+slimWalkingImageSpeed = 1;
+phy_fixed_rotation = true;
+
+slimSpeed=8;
+
+//Stopping close to Bob
+minRange=150;
+//Detection range to Bob
+range=400;
+
+//Stop if next to bob and fire
+isFiring = false;
+
+bulletSpeed = 10;
+canShoot = true;
+global.slimBulletDamage = 10;
+
+isHurt = false;
 </string>
           </argument>
         </arguments>
@@ -48,23 +68,180 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.stopTime) { image_speed=0; exit; } else { image_speed=0.3; }
+            <string>if(global.stopTime) { image_speed=0; exit; } else { image_speed=slimIdleImageSpeed; }
+
+//show_debug_message(distance_to_object(oBob));
+
+/*if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
+    if(isFiring) {
+        sprite_index = sSlimWalkingFiring;
+    } else {
+        sprite_index = sSlimWalking;
+    }
+    image_speed = slimWalkingImageSpeed;
+} else {
+    if(isFiring) {
+        sprite_index = sSlimIdleFiring;
+    } else {
+        sprite_index = sSlimIdle;
+    }
+    image_speed = slimIdleImageSpeed;
+}*/
+if(isHurt) {
+    if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
+        instance_destroy();
+    }
+    exit;
+}
+
+if(distance_to_object(oBob) &lt; range) {
+    if(x &lt;= oBob.x) 
+    {
+        image_xscale= slimScale;
+        if(distance_to_object(oBob) &lt; minRange) {
+            isFiring = true;
+            phy_speed_x = 0;
+            
+            /* Animation */
+            sprite_index = sSlimIdleFiring;
+            image_speed = slimIdleImageSpeed;
+            /* --------- */
+            
+        } else if(!isFiring) {
+            phy_speed_x = slimSpeed;
+            
+            /* Animation */
+            sprite_index = sSlimWalking;
+            image_speed = slimWalkingImageSpeed;
+            /* --------- */
+        }
+    } else {
+        image_xscale= -slimScale;
+        if(distance_to_object(oBob) &lt; minRange) {
+            isFiring = true;
+            phy_speed_x = 0;
+            
+            /* Animation */
+            sprite_index = sSlimIdleFiring;
+            image_speed = slimIdleImageSpeed;
+            /* --------- */
+        } else if(!isFiring) {
+            phy_speed_x = -slimSpeed;
+            
+            /* Animation */
+            sprite_index = sSlimWalking;
+            image_speed = slimWalkingImageSpeed;
+            /* --------- */
+        }
+    }
+} else {
+    isFiring = false;
+    
+    /* Animation */
+    sprite_index = sSlimIdle;
+    image_speed = slimIdleImageSpeed;
+    /* --------- */
+}
+
+if(isFiring)
+{
+    if(floor(image_index)==1) {
+        if(canShoot) {
+            if(image_xscale == slimScale) {
+                bulletX = 16;
+                bulletY = -4;
+                scale = 1;
+                bulletXspeed = bulletSpeed;
+            } else {
+                bulletX = -16;
+                bulletY = -4;
+                scale = -1;
+                bulletXspeed = -bulletSpeed;
+            }
+            var inst = instance_create(x+bulletX, y+bulletY, oSlimBullet);
+            inst.phy_bullet = true;
+            inst.phy_speed_x = bulletXspeed;
+            inst.image_xscale = scale;
+            canShoot = false;
+        }
+    } else {
+        if(!canShoot) canShoot = true;
+    }
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="oBullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>isHurt = true;
+sprite_index = sSlimHurt;
+
+if(image_xscale == slimScale) {
+    phy_speed_x = 2;
+} else {
+    phy_speed_x = -2;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oCollisionBase">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Fuck you baltimore 2</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
-  <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectDensity>1</PhysicsObjectDensity>
+  <PhysicsObjectRestitution>0</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
-  <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectLinearDamping>1</PhysicsObjectLinearDamping>
+  <PhysicsObjectAngularDamping>0</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.100000001490116</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>12,0</point>
+    <point>20,0</point>
+    <point>20,32</point>
+    <point>12,32</point>
+  </PhysicsShapePoints>
 </object>

@@ -74,9 +74,12 @@ draw_text_ext(x+padding, y+padding, print, font_size+(font_size/2), maxLength);
     
 draw_set_alpha(1); 
 
-if(controls) {
+/*if(controls) {
     controls = false;
-}
+}*/
+
+global.stopTime = true;
+physics_pause_enable(true);
 </string>
           </argument>
         </arguments>
@@ -85,9 +88,9 @@ if(controls) {
     <event eventtype="10" enumb="13">
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
@@ -99,11 +102,9 @@ if(controls) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>controls</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>true</string>
+            <string>global.stopTime = false;
+physics_pause_enable(false);
+</string>
           </argument>
         </arguments>
       </action>
