@@ -46,6 +46,13 @@ canShoot = true;
 global.slimBulletDamage = 10;
 
 isHurt = false;
+hurtTimerMax = 100;
+hurtTimer = hurtTimerMax;
+
+//Healthbars
+paddingHealthbar=15; //Distance from the sprite to the height of the healthBar
+barHeight=8;
+slimHealth = 100;
 </string>
           </argument>
         </arguments>
@@ -87,9 +94,38 @@ isHurt = false;
     }
     image_speed = slimIdleImageSpeed;
 }*/
-if(isHurt) {
-    if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
+
+/*-------[ Collision detection ]-------*/
+if(place_meeting(x, y, oBullet)) {
+    with(instance_nearest(x, y, oBullet)) {
         instance_destroy();
+    }
+    isHurt = true;
+    sprite_index = sSlimHurt;
+    slimHealth -= global.bulletDamage;
+
+    //Appear damage obj
+    var inst = instance_create(x,y,oDamage);
+    with (inst) {
+        damage = global.bulletDamage;
+        //enemySpriteHeight = sprite_height;
+    }
+    
+    if(slimHealth &lt;= 0) {
+        slimHealth = 0;
+    }
+}
+
+
+if(isHurt) {
+    hurtTimer -= delta_time/1000;
+    if(hurtTimer &lt;= 0) {
+        hurtTimer = hurtTimerMax;
+        sprite_index = sSlimIdle;
+        if(slimHealth &lt;= 0) {
+            instance_destroy();
+        }
+        isHurt = false;
     }
     exit;
 }
@@ -173,37 +209,6 @@ if(isFiring)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="oBullet">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>isHurt = true;
-sprite_index = sSlimHurt;
-
-if(image_xscale == slimScale) {
-    phy_speed_x = 2;
-} else {
-    phy_speed_x = -2;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="oCollisionBase">
       <action>
         <libid>1</libid>
@@ -222,6 +227,32 @@ if(image_xscale == slimScale) {
           <argument>
             <kind>1</kind>
             <string>Fuck you baltimore 2</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+draw_set_colour(c_red);
+draw_healthbar(x-(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar, x+(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar-barHeight, slimHealth, c_black, c_red, c_red, 0, false, false);
+</string>
           </argument>
         </arguments>
       </action>

@@ -42,6 +42,7 @@ controls = true; // Desactivated when falling
 
 phy_fixed_rotation = true;
 
+global.bulletDamage = 15;
 bulletSpeed = 15;
 fullShootingCooldown = 400; // Cooldown in milliseconds
 shootingCooldown = fullShootingCooldown; // Time changing each step 
