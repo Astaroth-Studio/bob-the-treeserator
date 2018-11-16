@@ -46,7 +46,8 @@ global.bulletDamage = 15;
 global.fistDamage = 35;
 bulletSpeed = 15;
 fullShootingCooldown = 400; // Cooldown in milliseconds
-shootingCooldown = fullShootingCooldown; // Time changing each step 
+shootingCooldown = fullShootingCooldown; // Time changing each step
+currentWeapon = 0;
 
 recoveryTimeMaxCooldown = 1000;
 recoveryTimeCooldown = recoveryTimeMaxCooldown;
@@ -205,13 +206,21 @@ if(recoveryTimeCooldown &gt;= 0) {
     recoveryTimeCooldown-=(delta_time/1000); // delta_time is in microseconds
 }
 
-/*-------[ Shooting ]-------*/
+/*-------[ Combat System - Switching Weapon ]-------*/
+
+if (keyboard_check_released(ord('A'))) {
+    if(currentWeapon == 1) currentWeapon = 0; else currentWeapon++;
+}
+
+/*-------[ Combat System - Shooting ]-------*/
 if(shootingCooldown &gt;= 0) {
     shootingCooldown-=(delta_time/1000); // delta_time is in microseconds
 }
+
 /* Need to simplify */
 if (controls) {
-    if(playerAmmo[0] &gt; 0) {
+    //if(playerAmmo[0] &gt; 0) {
+    if(currentWeapon == 1) {
         //Bullet X spawn position
         bulletX = 0;
         //Bullet Y spawn position
@@ -332,7 +341,7 @@ if (controls) {
         }
         
         //Shoot the bullet !
-        if(isShooting) {
+        if(isShooting &amp;&amp; playerAmmo[0] &gt; 0) {
             if(shootingCooldown &lt;= 0) {
                 var inst = instance_create(x+bulletX, y+bulletY, oBullet);
                 playerAmmo[0]--;
@@ -343,8 +352,8 @@ if (controls) {
                 shootingCooldown = fullShootingCooldown;
             }
         }
-    //Doesn't have ammo &gt; Punch
-    } else if(!inPunch) {
+    /*-------[ Combat System - Punch ]-------*/
+    } else if(currentWeapon == 0 &amp;&amp; !inPunch) {
         if keyboard_check_released(vk_left) {
             isFighting = true;
             if (image_xscale != -BOB_SCALE) {
