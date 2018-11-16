@@ -3,7 +3,7 @@
   <spriteName>sBullet</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>timeFalldown = 250;
+treeRange = 25;
 </string>
           </argument>
         </arguments>
@@ -55,8 +56,15 @@ if(timeFalldown&lt;=0) {
 
 //if(physics_test_overlap(x, y, 0, oCollisionBase)) {
 if(place_meeting(x, y, oCollisionBase)) {
+instance_destroy();
+    var closestTree = instance_nearest(x, y, oTree);
+    if(closestTree != noone) {
+        if(distance_to_object(closestTree) &lt;= treeRange) {
+            exit;
+        }
+    }
     instance_create(x, y, oTree);
-    instance_destroy();
+    
 }
 </string>
           </argument>
