@@ -90,10 +90,7 @@ if(face != noone) {
 
 draw_set_alpha(1); 
 
-/*if(controls) {
-    controls = false;
-}*/
-
+//Stop Time
 global.stopTime = true;
 physics_pause_enable(true);
 </string>

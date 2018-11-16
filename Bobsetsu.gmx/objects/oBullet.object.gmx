@@ -56,7 +56,8 @@ if(timeFalldown&lt;=0) {
 
 //if(physics_test_overlap(x, y, 0, oCollisionBase)) {
 if(place_meeting(x, y, oCollisionBase)) {
-instance_destroy();
+    instance_destroy();
+    
     var closestTree = instance_nearest(x, y, oTree);
     if(closestTree != noone) {
         if(distance_to_object(closestTree) &lt;= treeRange) {
