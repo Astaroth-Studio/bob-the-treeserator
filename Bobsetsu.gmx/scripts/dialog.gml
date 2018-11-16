@@ -1,4 +1,4 @@
-//dialog("Text",speed,x,y);
+//dialog("Text",speed,x,y,facesprite);
 
 txt = instance_create(argument2,argument3,oDialog);
 with (txt)
@@ -8,6 +8,8 @@ with (txt)
     text = argument0;
     spd = argument1;
     font = font_mm;
+    
+    face = argument4;
     
     text_length = string_length(text);
     font_size = font_get_size(font);

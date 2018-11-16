@@ -49,8 +49,7 @@ phy_fixed_rotation = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message(image_index);
-if(image_speed == 0.2 &amp;&amp; floor(image_index) == 29) {
+            <string>if(image_speed == 0.2 &amp;&amp; floor(image_index) == 29) {
     image_speed = 0;
 }
 </string>
