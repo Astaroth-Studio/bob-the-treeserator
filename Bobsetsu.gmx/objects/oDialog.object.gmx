@@ -68,7 +68,14 @@ if(alpha &lt; 1) alpha += spd/10; else alpha = 1;
 //draw_set_color(c_black);
 //draw_rectangle(x, y, x+boxWidth, y+boxHeight, 1);
 
-draw_sprite_stretched(sMessageBox, 0, x, y, boxWidth, boxHeight);
+if(bSprite != noone) {
+    draw_sprite_stretched(bSprite, 0, x, y, boxWidth, boxHeight);
+} else {
+    draw_set_color(c_gray);
+    draw_rectangle(x, y, x+boxWidth, y+boxHeight, 0);
+    draw_set_color(c_black);
+    draw_rectangle(x, y, x+boxWidth, y+boxHeight, 1);
+}
 
 draw_set_color(c_white);
 draw_set_halign(fa_left);
