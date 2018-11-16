@@ -7,6 +7,7 @@
   <sounds name="sound">
     <sound>sound\so_TeamLogo</sound>
     <sound>sound\soundDialog</sound>
+    <sound>sound\soPunch</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sCollision</sprite>

@@ -28,26 +28,26 @@
             <string>slimScale = 2;
 slimIdleImageSpeed = 0.3;
 image_speed = slimIdleImageSpeed;
-slimWalkingImageSpeed = 1;
+slimWalkingImageSpeed = 0.5;
 phy_fixed_rotation = true;
 
-slimSpeed=8;
+slimSpeed=4;
 
 //Stopping close to Bob
 minRange=150;
 //Detection range to Bob
-range=400;
+range=600;
 
 //Stop if next to bob and fire
 isFiring = false;
 
-bulletSpeed = 10;
+bulletSpeed = 4;
 canShoot = true;
 global.slimBulletDamage = 10;
 
 punched = false;
 isHurt = false;
-hurtTimerMax = 100;
+hurtTimerMax = 250;
 hurtTimer = hurtTimerMax;
 
 //Healthbars
@@ -115,9 +115,7 @@ if(place_meeting(x, y, oBullet) || punched) {
         }
         slimHealth -= global.fistDamage;
         punched = false;
-    }
-    else
-    {
+    } else {
         with (inst) {
             damage= global.bulletDamage;
         }
@@ -129,12 +127,14 @@ if(place_meeting(x, y, oBullet) || punched) {
     }
 }
 
-
 if(isHurt) {
     hurtTimer -= delta_time/1000;
     if(hurtTimer &lt;= 0) {
         hurtTimer = hurtTimerMax;
         sprite_index = sSlimIdle;
+        if(isFiring = true) {
+            sprite_index = sSlimIdleFiring;
+        }
         if(slimHealth &lt;= 0) {
             instance_destroy();
         }
@@ -264,7 +264,7 @@ if(isFiring)
             <string>draw_self();
 
 draw_set_colour(c_red);
-draw_healthbar(x-(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar, x+(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar-barHeight, slimHealth, c_black, c_red, c_red, 0, true, false);
+draw_healthbar(x-(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar, x+(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar-barHeight, slimHealth, c_black, c_red, c_red, 0, true, true);
 </string>
           </argument>
         </arguments>
