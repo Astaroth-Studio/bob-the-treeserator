@@ -28,7 +28,7 @@
             <string>alpha = 0;
 print = "";
 time = 0;
-depth =- instance_number(oDialog);
+depth = -instance_number(oDialog);
 </string>
           </argument>
         </arguments>
@@ -63,14 +63,17 @@ if (time &lt; text_length)
 draw_set_alpha(alpha);
 if(alpha &lt; 1) alpha += spd/10; else alpha = 1;
     
-draw_set_color(c_gray);
-draw_rectangle(x, y, x+boxWidth, y+boxHeight, 0);
-draw_set_color(c_black);
-draw_rectangle(x, y, x+boxWidth, y+boxHeight, 1);
-    
+//draw_set_color(c_gray);
+//draw_rectangle(x, y, x+boxWidth, y+boxHeight, 0);
+//draw_set_color(c_black);
+//draw_rectangle(x, y, x+boxWidth, y+boxHeight, 1);
+
+draw_sprite_stretched(sMessageBox, 0, x, y, boxWidth, boxHeight);
+
 draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
+
 draw_text_ext(x+padding, y+padding, print, font_size+(font_size/2), maxLength);
     
 draw_set_alpha(1); 
