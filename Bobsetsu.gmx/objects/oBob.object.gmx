@@ -43,6 +43,7 @@ controls = true; // Desactivated when falling
 phy_fixed_rotation = true;
 
 global.bulletDamage = 15;
+global.fistDamage = 35;
 bulletSpeed = 15;
 fullShootingCooldown = 400; // Cooldown in milliseconds
 shootingCooldown = fullShootingCooldown; // Time changing each step 
@@ -352,7 +353,7 @@ if (controls) {
                 inTruePunch = true;
                 
                 with (collision_object) {
-                    instance_destroy();
+                    punched = true;
                 }
             }
         } else if keyboard_check_released(vk_right) {
@@ -378,7 +379,7 @@ if (controls) {
                 inTruePunch = true;
                 
                 with (collision_object) {
-                    instance_destroy();
+                    punched = true;
                 }
             }
         }

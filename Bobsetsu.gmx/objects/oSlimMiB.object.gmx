@@ -45,6 +45,7 @@ bulletSpeed = 10;
 canShoot = true;
 global.slimBulletDamage = 10;
 
+punched = false;
 isHurt = false;
 hurtTimerMax = 100;
 hurtTimer = hurtTimerMax;
@@ -96,19 +97,31 @@ slimHealth = 100;
 }*/
 
 /*-------[ Collision detection ]-------*/
-if(place_meeting(x, y, oBullet)) {
-    with(instance_nearest(x, y, oBullet)) {
-        instance_destroy();
+if(place_meeting(x, y, oBullet) || punched) {
+    if(!punched) {
+        with(instance_nearest(x, y, oBullet)) {
+            instance_destroy();
+        }
     }
     isHurt = true;
     sprite_index = sSlimHurt;
-    slimHealth -= global.bulletDamage;
+    
 
     //Appear damage obj
     var inst = instance_create(x,y,oDamage);
-    with (inst) {
-        damage = global.bulletDamage;
-        //enemySpriteHeight = sprite_height;
+    if(punched) {
+        with (inst) {
+            damage= global.fistDamage;
+        }
+        slimHealth -= global.fistDamage;
+        punched = false;
+    }
+    else
+    {
+        with (inst) {
+            damage= global.bulletDamage;
+        }
+        slimHealth -= global.bulletDamage;
     }
     
     if(slimHealth &lt;= 0) {
