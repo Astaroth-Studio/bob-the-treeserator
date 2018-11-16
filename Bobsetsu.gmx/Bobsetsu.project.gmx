@@ -183,6 +183,7 @@
       <object>objects\oBullet</object>
       <object>objects\oSlimBullet</object>
     </objects>
+    <object>objects\oTree</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>
