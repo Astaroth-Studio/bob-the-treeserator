@@ -73,6 +73,13 @@
         <sprite>sprites\sSlimWalking</sprite>
         <sprite>sprites\sSlimWalkingFiring</sprite>
       </sprites>
+      <sprites name="BigBoi">
+        <sprite>sprites\sBigBoiHurt</sprite>
+        <sprite>sprites\sBigBoiIdle</sprite>
+        <sprite>sprites\sBigBoiWallking</sprite>
+        <sprite>sprites\sBigBoiPrepPunch</sprite>
+        <sprite>sprites\sBigBoiPunch</sprite>
+      </sprites>
     </sprites>
     <sprites name="Bullets">
       <sprite>sprites\sSlimBullet</sprite>
