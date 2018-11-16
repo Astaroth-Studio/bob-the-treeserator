@@ -38,8 +38,7 @@ Thumbs.db
 
 # Ignore Config Files #
 #######################
-Bobsetsu.gmx\Configs\Default
-Bobsetsu.gmx\help.rtf
+Bobsetsu.gmx/Configs/Default
 Bobsetsu.gmx/Configs/Default/windows/splash.png
 Bobsetsu.gmx/Configs/Default/windows/runner_icon.ico
 Bobsetsu.gmx/Configs/Default/windows/Runner_header.bmp
