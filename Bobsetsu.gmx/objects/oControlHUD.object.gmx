@@ -34,7 +34,7 @@ globalvar playerAmmo;
 yPosBloodHealthbar = 0;
 bloodHealthbarAlpha = 1;
 playerHealth = 100;
-playerMoney = 0;
+playerMoney = 2500;
 
 playerAmmo = array_create(1);
 playerAmmo[0] = 200;
@@ -79,11 +79,17 @@ draw_sprite_ext(sPlaceholderHealthBar,-1,50,yPosBloodHealthbar,1,1,0,c_white,blo
 
 //Money text creation linked to playerMoney variable
 draw_set_font(font_mm);
+draw_set_halign(fa_left);
 draw_text_colour(1000, 1, "$"+string(playerMoney)+"AUS", c_green, c_green, c_green, c_green, 1);
 
 //Ammo sprite and text creation linked to playerAmmo[0]
-draw_sprite(sAmmoHUD, -1, 763, 1);
-draw_text_colour(800, 1, string(playerAmmo[0]), c_blue, c_blue, c_blue, c_blue, 1);
+
+if(currentWeapon == 0) {
+    draw_sprite(sFist, -1, 763, 1);
+} else if(currentWeapon == 1) {
+    draw_sprite(sAmmoHUD, -1, 763, 1);
+    draw_text_colour(800, 1, string(playerAmmo[0]), c_blue, c_blue, c_blue, c_blue, 1);
+}
 </string>
           </argument>
         </arguments>
@@ -136,7 +142,7 @@ draw_text_colour(800, 1, string(playerAmmo[0]), c_blue, c_blue, c_blue, c_blue, 
             <kind>1</kind>
             <string>if debug_mode
 {
-    playerAmmo[0] = 0;
+    playerMoney = 1000;
 }
 </string>
           </argument>

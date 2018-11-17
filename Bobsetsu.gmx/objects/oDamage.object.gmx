@@ -40,6 +40,8 @@ lastPosYMax = -(irandom(16));
 
 alpha = 1;
 
+color = c_red;
+
 // Time appearing
 timeAppear = 1000;
 time = timeAppear;
@@ -98,7 +100,7 @@ if(time &lt;= 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text_colour(x, y, damage, c_red, c_red, c_red, c_red, alpha);
+            <string>draw_text_colour(x, y, text, color, color, color, color, alpha);
 </string>
           </argument>
         </arguments>

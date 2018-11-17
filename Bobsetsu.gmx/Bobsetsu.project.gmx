@@ -55,6 +55,7 @@
       <sprites name="HUD">
         <sprite>sprites\sPlaceholderHealthBar</sprite>
         <sprite>sprites\sAmmoHUD</sprite>
+        <sprite>sprites\sFist</sprite>
       </sprites>
       <sprites name="GUI">
         <sprite>sprites\sButton</sprite>
@@ -147,6 +148,7 @@
     <font>fonts\font_mm</font>
   </fonts>
   <objects name="objects">
+    <object>objects\oShop</object>
     <objects name="Intro">
       <object>objects\oTeamLogo</object>
       <object>objects\oFadeOut</object>
@@ -194,7 +196,6 @@
       <object>objects\oSlimBullet</object>
     </objects>
     <object>objects\oTree</object>
-    <object>objects\oShop</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>

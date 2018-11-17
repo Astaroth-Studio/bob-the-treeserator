@@ -98,13 +98,13 @@ if(place_meeting(x, y, oBullet) || punched) {
     var inst = instance_create(x,y,oDamage);
     if(punched) {
         with (inst) {
-            damage= global.fistDamage;
+            text = global.fistDamage;
         }
         bigBoiHealth -= global.fistDamage;
         punched = false;
     } else {
         with (inst) {
-            damage= global.bulletDamage;
+            text = global.bulletDamage;
         }
         bigBoiHealth -= global.bulletDamage;
     }
