@@ -85,6 +85,7 @@
       <sprite>sprites\sSlimBullet</sprite>
       <sprite>sprites\sBullet</sprite>
     </sprites>
+    <sprite>sprites\sShop</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
@@ -193,6 +194,7 @@
       <object>objects\oSlimBullet</object>
     </objects>
     <object>objects\oTree</object>
+    <object>objects\oShop</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>
