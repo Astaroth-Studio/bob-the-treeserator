@@ -89,6 +89,34 @@ draw_text_colour(800, 1, string(playerAmmo[0]), c_blue, c_blue, c_blue, c_blue, 
         </arguments>
       </action>
     </event>
+    <event eventtype="10" enumb="116">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if debug_mode
+{
+    var inst = instance_create(oBob.x, oBob.y-100, oBigBoi);
+    inst.image_xscale = 3;
+    inst.image_yscale = 3;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="10" enumb="115">
       <action>
         <libid>1</libid>

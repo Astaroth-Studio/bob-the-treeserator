@@ -52,6 +52,11 @@ currentWeapon = 0;
 recoveryTimeMaxCooldown = 1000;
 recoveryTimeCooldown = recoveryTimeMaxCooldown;
 
+punched = false;
+isHurt = false;
+hurtTimerMax = 150;
+hurtTimer = hurtTimerMax;
+
 maxJumps = 2;
 jumpsLeft = maxJumps;
 jumpPower = 500;
@@ -117,6 +122,18 @@ if(inPunch) {
 
 //Everything below this code will not be executed after stopTime has been set to true
 if(global.stopTime) { image_speed = 0; exit; }
+
+/*-------[ Hurt Animation ]-------*/
+if(isHurt) {
+    hurtTimer -= delta_time/1000;
+    if(hurtTimer &lt;= 0) {
+        if(playerHealth &lt;= 0) {
+            //Dying
+        }
+        isHurt = false;
+    }
+    exit;
+}
 
 /*-------[ Slowing down ]-------*/
 phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
@@ -196,10 +213,24 @@ if(place_meeting(x, y, oSlimBullet)) {
         recoveryTimeCooldown = recoveryTimeMaxCooldown;
         
         playerHealth -= global.slimBulletDamage;
-        if(playerHealth &lt;= 0) {
-            playerHealth = 0;
-        }
+        
+        hurtTimer = hurtTimerMax;
+        isHurt = true;
+        sprite_index = sBobHurt;
     }
+}
+/*-------[ Punched detection ]-------*/
+if(punched) {
+    if(recoveryTimeCooldown &lt;= 0) {
+        recoveryTimeCooldown = recoveryTimeMaxCooldown;
+        
+        playerHealth -= global.bigBoiDamage;
+        
+        hurtTimer = hurtTimerMax;
+        isHurt = true;
+        sprite_index = sBobHurt;
+    }
+    punched = false;
 }
 /*-------[ Recovery Time ]-------*/
 if(recoveryTimeCooldown &gt;= 0) {
@@ -367,7 +398,10 @@ if (controls) {
             inPunch = true;
             
             //show_debug_message("Test");
-            collision_object = collision_rectangle(x-16,y+16,x-32,y+-16, oSlimMiB, false, true);
+            collision_object = collision_rectangle(x-16,y+16,x-32,y-16, oSlimMiB, false, true);
+            if(collision_object == noone) {
+                collision_object = collision_rectangle(x-16,y+16,x-32,y-16, oBigBoi, false, true);
+            }
             if(collision_object != noone)/*|| place_meeting(x-16, y, oBigMiB)*/{
             
                 currentX = view_xview[0];
@@ -393,7 +427,10 @@ if (controls) {
             }
             inPunch = true;
             
-            collision_object = collision_rectangle(x+16,y+16,x+32,y+-16, oSlimMiB, false, true);
+            collision_object = collision_rectangle(x+16,y+16,x+32,y-16, oSlimMiB, false, true);
+            if(collision_object == noone) {
+                collision_object = collision_rectangle(x+16,y+16,x+32,y-16, oBigBoi, false, true);
+            }
             if(collision_object != noone)/*|| place_meeting(x-16, y, oBigMiB)*/{
                 
                 currentX = view_xview[0];

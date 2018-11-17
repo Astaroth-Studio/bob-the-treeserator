@@ -76,7 +76,7 @@
       <sprites name="BigBoi">
         <sprite>sprites\sBigBoiHurt</sprite>
         <sprite>sprites\sBigBoiIdle</sprite>
-        <sprite>sprites\sBigBoiWallking</sprite>
+        <sprite>sprites\sBigBoiWalking</sprite>
         <sprite>sprites\sBigBoiPrepPunch</sprite>
         <sprite>sprites\sBigBoiPunch</sprite>
       </sprites>
@@ -186,6 +186,7 @@
     </objects>
     <objects name="Enemies">
       <object>objects\oSlimMiB</object>
+      <object>objects\oBigBoi</object>
     </objects>
     <objects name="Bullets">
       <object>objects\oBullet</object>

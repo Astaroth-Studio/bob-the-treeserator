@@ -20,13 +20,13 @@
   <width>32</width>
   <height>32</height>
   <frames>
-    <frame index="0">images\sBigBoiWallking_0.png</frame>
-    <frame index="1">images\sBigBoiWallking_1.png</frame>
-    <frame index="2">images\sBigBoiWallking_2.png</frame>
-    <frame index="3">images\sBigBoiWallking_3.png</frame>
-    <frame index="4">images\sBigBoiWallking_4.png</frame>
-    <frame index="5">images\sBigBoiWallking_5.png</frame>
-    <frame index="6">images\sBigBoiWallking_6.png</frame>
-    <frame index="7">images\sBigBoiWallking_7.png</frame>
+    <frame index="0">images\sBigBoiWalking_0.png</frame>
+    <frame index="1">images\sBigBoiWalking_1.png</frame>
+    <frame index="2">images\sBigBoiWalking_2.png</frame>
+    <frame index="3">images\sBigBoiWalking_3.png</frame>
+    <frame index="4">images\sBigBoiWalking_4.png</frame>
+    <frame index="5">images\sBigBoiWalking_5.png</frame>
+    <frame index="6">images\sBigBoiWalking_6.png</frame>
+    <frame index="7">images\sBigBoiWalking_7.png</frame>
   </frames>
 </sprite>
