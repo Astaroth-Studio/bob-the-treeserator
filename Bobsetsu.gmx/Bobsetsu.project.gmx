@@ -160,6 +160,7 @@
     <objects name="World">
       <object>objects\oCollision</object>
       <object>objects\oCollisionBase</object>
+      <object>objects\oWhereToPlant</object>
     </objects>
     <objects name="Interface">
       <objects name="HUD">
@@ -205,7 +206,7 @@
       <room>rooms\rSecondRoom</room>
     </rooms>
     <rooms name="Levels">
-      <room>rooms\rAvicii_1st_</room>
+      <room>rooms\rFirstLevel</room>
     </rooms>
     <room>rooms\rCredits</room>
     <room>rooms\rTestRoom</room>
