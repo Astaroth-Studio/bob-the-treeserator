@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>timeFalldown = 250;
-treeRange = 25;
 </string>
           </argument>
         </arguments>
@@ -58,14 +57,13 @@ if(timeFalldown&lt;=0) {
 if(place_meeting(x, y, oCollisionBase)) {
     instance_destroy();
     
-    var closestTree = instance_nearest(x, y, oTree);
-    if(closestTree != noone) {
-        if(distance_to_object(closestTree) &lt;= treeRange) {
-            exit;
+    var closestWhereToPlant = instance_nearest(x, y, oWhereToPlant);
+    if(closestWhereToPlant != noone) {
+        if(distance_to_object(closestWhereToPlant) == 0) {
+            instance_create(closestWhereToPlant.x, closestWhereToPlant.y, oTree);
+            with(closestWhereToPlant) { instance_destroy(); }
         }
     }
-    instance_create(x, y, oTree);
-    
 }
 </string>
           </argument>
