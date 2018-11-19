@@ -58,8 +58,6 @@ isHurt = false;
 hurtTimerMax = 150;
 hurtTimer = hurtTimerMax;
 
-maxJumps = 2;
-jumpsLeft = maxJumps;
 jumpPower = 500;
 
 //Punch variables
@@ -166,14 +164,12 @@ if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
 }
 
 /*------[ Jumping! ]------*/
-if(keyboard_check_released(ord('Z')) &amp;&amp; jumpsLeft &gt; 0) {
-    jumpsLeft--;
+if(keyboard_check_released(ord('Z')) &amp;&amp; place_meeting(x,y+1,oCollisionBase)) {
     phy_linear_velocity_y = -jumpPower;
-    show_debug_message("JumpsLeft=" + string(jumpsLeft));
 }
-if (physics_test_overlap(x, y, 0, oCollisionBase) &amp;&amp; phy_linear_velocity_y &gt; 0.1) {
+/*if (physics_test_overlap(x, y, 0, oCollisionBase) &amp;&amp; phy_linear_velocity_y &gt; 0.1) {
     jumpsLeft = maxJumps;
-}
+}*/
 
 /*------[ Falling is bad ]------*/
 
