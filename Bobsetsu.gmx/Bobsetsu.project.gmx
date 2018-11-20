@@ -176,6 +176,7 @@
         <object>objects\oButton_Credits</object>
         <object>objects\oMessageBox</object>
         <object>objects\oFullscreen</object>
+        <object>objects\oMainMenuConfig</object>
       </objects>
     </objects>
     <objects name="Misc">

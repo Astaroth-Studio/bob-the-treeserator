@@ -164,7 +164,8 @@ if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
 }
 
 /*------[ Jumping! ]------*/
-if(keyboard_check_released(vk_space) &amp;&amp; place_meeting(x,y+1,oCollisionBase)) {
+//if(keyboard_check_released(vk_space) 
+if(keyboard_check_released(global.keyJump) &amp;&amp; place_meeting(x,y+1,oCollisionBase)) {
     phy_linear_velocity_y = -jumpPower;
 }
 /*if (physics_test_overlap(x, y, 0, oCollisionBase) &amp;&amp; phy_linear_velocity_y &gt; 0.1) {
@@ -186,14 +187,16 @@ if(keyboard_check_released(vk_space) &amp;&amp; place_meeting(x,y+1,oCollisionBa
 
 /*-------[ Moving ]-------*/
 if (controls) {
-    if keyboard_check(ord('D')) {
+    //if keyboard_check(ord('D')) {
+    if keyboard_check(global.keyRight) {
         if (!isFighting) {
             image_xscale = BOB_SCALE;
         }
         //image_speed = walkSpeed;
         physics_apply_force(x,y,moveSpeed,-100);
     }
-    if keyboard_check(ord('Q')) {
+    //if keyboard_check(ord('Q')) {
+    if keyboard_check(global.keyLeft) {
         if (!isFighting) {
             image_xscale = -BOB_SCALE;
         }
@@ -236,7 +239,8 @@ if(recoveryTimeCooldown &gt;= 0) {
 
 /*-------[ Combat System - Switching Weapon ]-------*/
 
-if (keyboard_check_released(ord('A'))) {
+//if (keyboard_check_released(ord('A'))) {
+if (keyboard_check_released(global.keySwitch)) {
     if(currentWeapon == 1) currentWeapon = 0; else currentWeapon++;
 }
 
@@ -258,19 +262,22 @@ if (controls) {
         bulletYspeed = 0;
     
         //Switch sprite xscale depending on key and setting isFiring
-        if keyboard_check(vk_left) {
+        //if keyboard_check(vk_left) {
+        if keyboard_check(global.keyAttackLeft) {
             isShooting = true;
             isFighting = true;
             if (image_xscale != -BOB_SCALE) {
                image_xscale = -BOB_SCALE;
             }
-        } else if keyboard_check(vk_right) {
+        //} else if keyboard_check(vk_right) {
+        } else if keyboard_check(global.keyAttackRight) {
             isShooting = true;
             isFighting = true;
             if (image_xscale != BOB_SCALE) {
                image_xscale = BOB_SCALE;
             }
-        } else if keyboard_check(vk_up) {
+        //} else if keyboard_check(vk_up) {
+        } else if keyboard_check(global.keyAttackUp) {
             isShooting = true;
             isFighting = true;
         } else {
@@ -288,7 +295,8 @@ if (controls) {
         }
         
         //Up Left
-        if keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_up) {
+        //if keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_up) {
+        if keyboard_check(global.keyAttackLeft) &amp;&amp; keyboard_check(global.keyAttackUp) {
             if(isMoving)
             {
                 if (sprite_index != sBobWalkingFiringUpward) {
@@ -305,7 +313,8 @@ if (controls) {
             bulletY = -24;
             bulletXspeed = -bulletSpeed;
             bulletYspeed = -bulletSpeed*0.5;
-        } else if keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up) {
+        //} else if keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up) {
+        } else if keyboard_check(global.keyAttackRight) &amp;&amp; keyboard_check(global.keyAttackUp) {
         //Angle 45
             if(isMoving)
             {
@@ -323,7 +332,8 @@ if (controls) {
             bulletY = -24;
             bulletXspeed = bulletSpeed;
             bulletYspeed = -bulletSpeed*0.5;
-        } else if keyboard_check(vk_left) {
+        //} else if keyboard_check(vk_left) {
+        } else if keyboard_check(global.keyAttackLeft) {
         //Angle 180
             if(isMoving)
             {
@@ -341,7 +351,8 @@ if (controls) {
             bulletXspeed = -bulletSpeed;
             bulletYspeed = 0;
             
-        } else if keyboard_check(vk_right) {
+        //} else if keyboard_check(vk_right) {
+        } else if keyboard_check(global.keyAttackRight) {
         //Angle 0
             if(isMoving)
             {
@@ -357,7 +368,8 @@ if (controls) {
             bulletY = 0;
             bulletXspeed = bulletSpeed;
             bulletYspeed = 0;
-        } else if keyboard_check(vk_up) {
+        //} else if keyboard_check(vk_up) {
+        } else if keyboard_check(global.keyAttackUp) {
         //Angle 90
             if(isMoving)
             {
@@ -390,7 +402,8 @@ if (controls) {
         }
     /*-------[ Combat System - Punch ]-------*/
     } else if(currentWeapon == 0 &amp;&amp; !inPunch) {
-        if keyboard_check_released(vk_left) {
+        //if keyboard_check_released(vk_left) {
+        if keyboard_check_released(global.keyAttackLeft) {
             isFighting = true;
             if (image_xscale != -BOB_SCALE) {
                 image_xscale = -BOB_SCALE;
@@ -419,7 +432,8 @@ if (controls) {
                     punched = true;
                 }
             }
-        } else if keyboard_check_released(vk_right) {
+        //} else if keyboard_check_released(vk_right) {
+        } else if keyboard_check_released(global.keyAttackRight) {
             
             isFighting = true;
             if (image_xscale != BOB_SCALE) {

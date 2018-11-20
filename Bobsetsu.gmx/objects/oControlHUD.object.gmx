@@ -38,6 +38,25 @@ playerMoney = 2500;
 
 playerAmmo = array_create(1);
 playerAmmo[0] = 200;
+
+/* Temporary Reading Keys config */
+
+ini_open("config.ini");
+
+//Read the keyys
+global.keyLeft = ini_read_string("Keys", "Left", "81");
+global.keyRight = ini_read_string("Keys", "Right", "68");
+global.keyJump = ini_read_string("Keys", "Jump", "32");
+global.keyAttackLeft = ini_read_string("Keys", "AttackLeft", "37");
+global.keyAttackUp = ini_read_string("Keys", "AttackUp", "38");
+global.keyAttackRight = ini_read_string("Keys", "AttackRight", "39");
+global.keySwitch = ini_read_string("Keys", "Switch", "65");
+global.keyInteract = ini_read_string("Keys", "Interact", "69");
+
+//Do u want fullscreen?
+window_set_fullscreen(ini_read_real("Config", "Fullscreen", "0"));
+
+ini_close();
 </string>
           </argument>
         </arguments>
