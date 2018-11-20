@@ -164,7 +164,7 @@ if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
 }
 
 /*------[ Jumping! ]------*/
-if(keyboard_check_released(ord('Z')) &amp;&amp; place_meeting(x,y+1,oCollisionBase)) {
+if(keyboard_check_released(vk_space) &amp;&amp; place_meeting(x,y+1,oCollisionBase)) {
     phy_linear_velocity_y = -jumpPower;
 }
 /*if (physics_test_overlap(x, y, 0, oCollisionBase) &amp;&amp; phy_linear_velocity_y &gt; 0.1) {
@@ -277,6 +277,14 @@ if (controls) {
             // Not pressing any keys &amp;gt; isFiring = false
             isShooting = false;
             isFighting = false;
+        }
+        
+        if(!isShooting) {
+            if(!isMoving &amp;&amp; sprite_index != sBobIdleArmed) {
+                sprite_index = sBobIdleArmed;
+            } else if(isMoving &amp;&amp; sprite_index != sBobWalkingArmed) {
+                sprite_index = sBobWalkingArmed;
+            }
         }
         
         //Up Left
@@ -547,7 +555,7 @@ if(distance_to_object(oShop) == 0) {
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="32">
+    <event eventtype="10" enumb="69">
       <action>
         <libid>1</libid>
         <id>603</id>
