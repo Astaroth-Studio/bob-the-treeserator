@@ -51,7 +51,10 @@ globalvar currentWeapon;
 currentWeapon = 0;
 
 recoveryTimeMaxCooldown = 1000;
-recoveryTimeCooldown = recoveryTimeMaxCooldown;
+recoveryTimeCooldown = 0;
+maxBlinkingSteps = 5; // Steps between blinking
+blinkingSteps = 0;
+blinkingInvert = false;
 
 punched = false;
 isHurt = false;
@@ -235,6 +238,18 @@ if(punched) {
 /*-------[ Recovery Time ]-------*/
 if(recoveryTimeCooldown &gt;= 0) {
     recoveryTimeCooldown-=(delta_time/1000); // delta_time is in microseconds
+    
+    blinkingSteps++;
+    if(blinkingSteps &gt;= maxBlinkingSteps) {
+        blinkingInvert = !blinkingInvert;
+        blinkingSteps = 0;
+    }
+    if(blinkingInvert)
+        image_alpha = 0;
+    else
+        image_alpha = 1;
+} else if(blinkingInvert) {
+    blinkingInvert = false;
 }
 
 /*-------[ Combat System - Switching Weapon ]-------*/

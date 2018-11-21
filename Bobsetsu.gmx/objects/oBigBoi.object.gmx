@@ -92,7 +92,6 @@ if(place_meeting(x, y, oBullet) || punched) {
     }
     isHurt = true;
     sprite_index = sBigBoiHurt;
-    
 
     //Appear damage obj
     var inst = instance_create(x,y,oDamage);
@@ -117,6 +116,7 @@ if(place_meeting(x, y, oBullet) || punched) {
 /*-------[ Hurt Animation ]-------*/
 if(isHurt) {
     hurtTimer -= delta_time/1000;
+    image_blend = c_red;
     if(hurtTimer &lt;= 0) {
         hurtTimer = hurtTimerMax;
         sprite_index = sBigBoiIdle;
@@ -125,6 +125,7 @@ if(isHurt) {
             instance_destroy();
         }
         isHurt = false;
+        image_blend = c_white;
     }
     exit;
 }

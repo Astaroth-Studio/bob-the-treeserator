@@ -130,6 +130,8 @@ if(place_meeting(x, y, oBullet) || punched) {
 
 if(isHurt) {
     hurtTimer -= delta_time/1000;
+    image_blend = c_red;
+    
     if(hurtTimer &lt;= 0) {
         hurtTimer = hurtTimerMax;
         if(isFiring = true) sprite_index = sSlimIdleFiring; else sprite_index = sSlimIdle;
@@ -137,6 +139,7 @@ if(isHurt) {
             instance_destroy();
         }
         isHurt = false;
+        image_blend = c_white;
     }
     exit;
 }
