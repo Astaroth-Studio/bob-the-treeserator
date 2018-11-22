@@ -83,6 +83,16 @@ bigBoiHealth = 100;
             <kind>1</kind>
             <string>if(global.stopTime) { image_speed=0; exit; } else { if(isWalking) { image_speed=bigBoiWalkingImageSpeed; } else if(punching) { image_speed=bigBoiPunchingImageSpeed; } else { image_speed=bigBoiIdleImageSpeed; }}
 
+/*if(!isHurt &amp;&amp; !punching) {
+    if ((phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) &amp;&amp; )) {
+        sprite_index = sBigBoiWalking;
+        image_speed = bigBoiWalkingImageSpeed;
+    } else {
+        sprite_index = sBigBoiIdle;
+        image_speed = bigBoiIdleImageSpeed;
+    }
+}*/
+
 /*-------[ Collision detection ]-------*/
 if(place_meeting(x, y, oBullet) || punched) {
     if(!punched) {
@@ -120,6 +130,7 @@ if(isHurt) {
     if(hurtTimer &lt;= 0) {
         hurtTimer = hurtTimerMax;
         sprite_index = sBigBoiIdle;
+        image_speed = bigBoiIdleImageSpeed;
 
         if(bigBoiHealth &lt;= 0) {
             instance_destroy();
@@ -140,85 +151,54 @@ if(distanceToBob &lt; detectionRange) {
 
 /*-------[ Movement ]-------*/
 if(detectedBob) {
+    if(isWalking) isWalking = false;
     if(x &lt;= oBob.x) 
     {
         image_xscale = bigBoiScale;
-        if(isWalking) isWalking = false;
-        
-        if(!punching) {
-            if(!isWalking) isWalking = true;
-            
-            if(distanceToBob &lt; punchingDistance) {
-                punching = true;
-                sprite_index = sBigBoiPrepPunch;
-                image_speed = bigBoiPunchingImageSpeed;
-            } else {
-                phy_speed_x = bigBoiSpeed;
-            
-                /* Animation */
-                sprite_index = sBigBoiWalking;
-                image_speed = bigBoiWalkingImageSpeed;
-                /* --------- */
-            }
-        } else {
-            if(floor(image_index) == 10) {
-                sprite_index = sBigBoiPunch;
-                finalPunch = true;
-                depth = -1;
-                
-                with(oBob) {
-                    punched = true;
-                }
-            }
-            if(finalPunch) {
-                punchTimer -= delta_time/1000;
-                
-                if(punchTimer &lt;= 0) {
-                    punchTimer = punchTimerMax;
-                    finalPunch = false;
-                    punching = false;
-                    depth = 0;
-                }
-            }
-        }
     } else {
         image_xscale = -bigBoiScale;
-        if(isWalking) isWalking = false;
+    }
         
-        if(!punching) {
-            if(!isWalking) isWalking = true;
+    if(!punching) {
+        if(!isWalking) isWalking = true;
             
-            if(distanceToBob &lt; punchingDistance) {
-                punching = true;
-                sprite_index = sBigBoiPrepPunch;
-                image_speed = bigBoiPunchingImageSpeed;
-            } else {
-                phy_speed_x = -bigBoiSpeed;
+        if(distanceToBob &lt; punchingDistance) {
+            punching = true;
+            sprite_index = sBigBoiPrepPunch;
+            image_speed = bigBoiPunchingImageSpeed;
+        } else {
+            phy_speed_x = bigBoiSpeed;
+            
+            /* Animation */
                 
-                 /* Animation */
+            if(!place_meeting(x-1, y, oCollisionBase) || !place_meeting(x+1, y, oCollisionBase)) {
                 sprite_index = sBigBoiWalking;
                 image_speed = bigBoiWalkingImageSpeed;
-                /* --------- */
+            } else {
+                sprite_index = sBigBoiIdle;
+                image_speed = bigBoiIdleImageSpeed;
             }
-        } else {
-            if(floor(image_index) == 10) {
-                sprite_index = sBigBoiPunch;
-                finalPunch = true;
-                depth = -1;
                 
-                with(oBob) {
-                    punched = true;
-                }
+            /* --------- */
+        }
+    } else {
+        if(floor(image_index) == 10) {
+            sprite_index = sBigBoiPunch;
+            finalPunch = true;
+            depth = -1;
+                
+            with(oBob) {
+                punched = true;
             }
-            if(finalPunch) {
-                punchTimer -= delta_time/1000;
+        }
+        if(finalPunch) {
+            punchTimer -= delta_time/1000;
                 
-                if(punchTimer &lt;= 0) {
-                    punchTimer = punchTimerMax;
-                    finalPunch = false;
-                    punching = false;
-                    depth = 0;
-                }
+            if(punchTimer &lt;= 0) {
+                punchTimer = punchTimerMax;
+                finalPunch = false;
+                punching = false;
+                depth = 0;
             }
         }
     }

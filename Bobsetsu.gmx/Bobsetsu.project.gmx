@@ -9,6 +9,12 @@
     <sound>sound\soundDialog</sound>
     <sound>sound\soPunch</sound>
     <sound>sound\soWoosh</sound>
+    <sounds name="Walking">
+      <sounds name="Sand">
+        <sound>sound\soWalkingSand01</sound>
+        <sound>sound\soWalkingSand02</sound>
+      </sounds>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sGaia</sprite>

@@ -77,24 +77,23 @@ slimHealth = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.stopTime) { image_speed=0; exit; } else { image_speed=slimIdleImageSpeed; }
+            <string>if(global.stopTime) { image_speed=0; exit; } //else { image_speed=slimIdleImageSpeed; }
 
 //show_debug_message(distance_to_object(oBob));
 
-/*if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
-    if(isFiring) {
-        sprite_index = sSlimWalkingFiring;
-    } else {
+/*if(!isHurt) {
+    if ((phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) &amp;&amp; (!place_meeting(x-1, y, oCollisionBase) || !place_meeting(x+1, y, oCollisionBase))) {
         sprite_index = sSlimWalking;
-    }
-    image_speed = slimWalkingImageSpeed;
-} else {
-    if(isFiring) {
-        sprite_index = sSlimIdleFiring;
+        image_speed = slimWalkingImageSpeed;
     } else {
-        sprite_index = sSlimIdle;
+        if(isFiring) {
+            sprite_index = sSlimIdleFiring;
+            image_speed = slimIdleFiringImageSpeed;
+        } else {
+            sprite_index = sSlimIdle;
+            image_speed = slimIdleImageSpeed;
+        }
     }
-    image_speed = slimIdleImageSpeed;
 }*/
 
 /*-------[ Collision detection ]-------*/
@@ -161,9 +160,16 @@ if(distance_to_object(oBob) &lt; range) {
             phy_speed_x = slimSpeed;
             
             /* Animation */
-            sprite_index = sSlimWalking;
-            image_speed = slimWalkingImageSpeed;
+            if(!place_meeting(x-1, y, oCollisionBase) || !place_meeting(x+1, y, oCollisionBase)) {
+                sprite_index = sSlimWalking;
+                image_speed = slimWalkingImageSpeed;
+            } else {
+                sprite_index = sSlimIdle;
+                image_speed = slimIdleImageSpeed;
+            }
+            
             /* --------- */
+
         }
     } else {
         image_xscale= -slimScale;
@@ -178,10 +184,13 @@ if(distance_to_object(oBob) &lt; range) {
         } else if(!isFiring) {
             phy_speed_x = -slimSpeed;
             
-            /* Animation */
-            sprite_index = sSlimWalking;
-            image_speed = slimWalkingImageSpeed;
-            /* --------- */
+            if(!place_meeting(x-1, y, oCollisionBase) || !place_meeting(x+1, y, oCollisionBase)) {
+                sprite_index = sSlimWalking;
+                image_speed = slimWalkingImageSpeed;
+            } else {
+                sprite_index = sSlimIdle;
+                image_speed = slimIdleImageSpeed;
+            }
         }
     }
 } else {
