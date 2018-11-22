@@ -143,6 +143,7 @@
   </paths>
   <scripts name="scripts">
     <script>scripts\dialog.gml</script>
+    <script>scripts\takeDamage.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_mm</font>

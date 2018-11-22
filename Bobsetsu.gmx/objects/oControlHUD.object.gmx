@@ -39,6 +39,9 @@ playerMoney = 2500;
 playerAmmo = array_create(1);
 playerAmmo[0] = 200;
 
+global.greyHealthBarDowning = false;
+hbStartToDown = false;
+
 /* Temporary Reading Keys config */
 
 ini_open("config.ini");
@@ -57,6 +60,61 @@ global.keyInteract = ini_read_string("Keys", "Interact", "69");
 window_set_fullscreen(ini_read_real("Config", "Fullscreen", "0"));
 
 ini_close();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hbStartToDown = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Making the grey health bar go down
+
+if(global.greyHealthBarDowning &amp;&amp; hbStartToDown) {
+show_debug_message("DOWNIIING");
+    global.oldXHealthBar--;
+    if(global.oldXHealthBar &lt;= global.endXHealthBar) {
+        global.greyHealthBarDowning = false;
+        hbStartToDown = false;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -86,10 +144,23 @@ if debug_mode
 }
 
 //HealthBar creation linked to playerHealth variable
-draw_healthbar(10, 10, 40, 700, playerHealth, c_black, c_red, c_red, 3, false, false);
+//draw_healthbar(10, 10, 40, 700, playerHealth, c_black, c_red, c_red, 3, false, false);
+
+global.endXHealthBar = 10+(230*(playerHealth/100));
+
+//Draw Damage Bar behind the healthBar
+if(global.greyHealthBarDowning) {
+    draw_set_colour(c_gray);
+    draw_rectangle(global.endXHealthBar, 10, global.oldXHealthBar, 30, false);
+}
+
+//Draw HealthBar
+draw_set_colour(c_red);
+draw_rectangle(10, 10, global.endXHealthBar, 30, false);
+
 
 //Drawing healthbar sprite on top of it
-draw_sprite(sPlaceholderHealthBar, -1, 10, 5);
+//draw_sprite(sPlaceholderHealthBar, -1, 10, 5);
 
 //Blood at the top of the healthbar
 /*yPosBloodHealthbar=yPosBloodHealthbar+1

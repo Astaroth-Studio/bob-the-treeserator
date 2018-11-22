@@ -129,9 +129,9 @@ if(global.stopTime) { image_speed = 0; exit; }
 if(isHurt) {
     hurtTimer -= delta_time/1000;
     if(hurtTimer &lt;= 0) {
-        if(playerHealth &lt;= 0) {
+        /*if(playerHealth &lt;= 0) {
             //Dying
-        }
+        }*/
         isHurt = false;
     }
     exit;
@@ -215,7 +215,8 @@ if(place_meeting(x, y, oSlimBullet)) {
     if(recoveryTimeCooldown &lt;= 0) {
         recoveryTimeCooldown = recoveryTimeMaxCooldown;
         
-        playerHealth -= global.slimBulletDamage;
+        //playerHealth -= global.slimBulletDamage;
+        takeDamage(global.slimBulletDamage);
         
         hurtTimer = hurtTimerMax;
         isHurt = true;
@@ -227,7 +228,8 @@ if(punched) {
     if(recoveryTimeCooldown &lt;= 0) {
         recoveryTimeCooldown = recoveryTimeMaxCooldown;
         
-        playerHealth -= global.bigBoiDamage;
+        //playerHealth -= global.bigBoiDamage;
+        takeDamage(global.bigBoiDamage);
         
         hurtTimer = hurtTimerMax;
         isHurt = true;
