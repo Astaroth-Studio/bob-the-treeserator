@@ -445,6 +445,8 @@ if (controls) {
                 physics_pause_enable(true);
                 inTruePunch = true;
                 
+                audio_play_sound(soPunch,1,0);
+                
                 with (collision_object) {
                     punched = true;
                 }
@@ -474,6 +476,8 @@ if (controls) {
                 global.stopTime = true;
                 physics_pause_enable(true);
                 inTruePunch = true;
+                
+                audio_play_sound(soPunch,1,0);
                 
                 with (collision_object) {
                     punched = true;

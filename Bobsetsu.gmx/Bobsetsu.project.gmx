@@ -10,6 +10,8 @@
     <sound>sound\soPunch</sound>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\sGaia</sprite>
+    <sprite>sprites\sShop</sprite>
     <sprite>sprites\sCollision</sprite>
     <sprites name="Intro">
       <sprite>sprites\sTeamLogo</sprite>
@@ -86,7 +88,6 @@
       <sprite>sprites\sSlimBullet</sprite>
       <sprite>sprites\sBullet</sprite>
     </sprites>
-    <sprite>sprites\sShop</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
@@ -149,19 +150,20 @@
     <font>fonts\font_mm</font>
   </fonts>
   <objects name="objects">
-    <object>objects\oShop</object>
+    <object>objects\oCredits</object>
+    <object>objects\oBob</object>
     <objects name="Intro">
       <object>objects\oTeamLogo</object>
       <object>objects\oFadeOut</object>
       <object>objects\oFadeIn</object>
     </objects>
-    <objects name="Bob">
-      <object>objects\oBob</object>
-    </objects>
     <objects name="World">
       <object>objects\oCollision</object>
       <object>objects\oCollisionBase</object>
       <object>objects\oWhereToPlant</object>
+      <object>objects\oShop</object>
+      <object>objects\oTree</object>
+      <object>objects\oGaia</object>
     </objects>
     <objects name="Interface">
       <objects name="HUD">
@@ -180,15 +182,12 @@
         <object>objects\oMainMenuConfig</object>
       </objects>
     </objects>
-    <objects name="Misc">
-      <object>objects\oCredits</object>
-      <object>objects\oFokinTree</object>
-    </objects>
     <objects name="Cinematic">
       <object>objects\oBobDylan</object>
       <object>objects\oBoxCin</object>
       <object>objects\oArmCin</object>
       <object>objects\oRamBo</object>
+      <object>objects\oFokinTree</object>
     </objects>
     <objects name="Enemies">
       <object>objects\oSlimMiB</object>
@@ -198,7 +197,6 @@
       <object>objects\oBullet</object>
       <object>objects\oSlimBullet</object>
     </objects>
-    <object>objects\oTree</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>

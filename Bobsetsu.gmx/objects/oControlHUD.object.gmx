@@ -108,7 +108,6 @@ ini_close();
             <string>//Making the grey health bar go down
 
 if(global.greyHealthBarDowning &amp;&amp; hbStartToDown) {
-show_debug_message("DOWNIIING");
     global.oldXHealthBar--;
     if(global.oldXHealthBar &lt;= global.endXHealthBar) {
         global.greyHealthBarDowning = false;

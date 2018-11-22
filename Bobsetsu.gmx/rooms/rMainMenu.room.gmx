@@ -55,6 +55,7 @@
     <instance objName="oButton_Credits" x="252" y="192" name="inst_65166404" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oButton_Exit" x="450" y="288" name="inst_778C9189" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oGameLogo" x="636" y="59" name="inst_10885AF9" locked="0" code="" scaleX="4.09600019454956" scaleY="3.79661011695862" colour="4294967295" rotation="0"/>
+    <instance objName="oFullscreen" x="1184" y="32" name="inst_9B5C8410" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bLogoGameoof" x="1130" y="596" w="197" h="128" xo="0" yo="0" id="10001001" name="inst_C5EFCD30" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
