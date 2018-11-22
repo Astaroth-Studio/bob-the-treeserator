@@ -53,7 +53,6 @@
     </sprites>
     <sprites name="Interface">
       <sprites name="HUD">
-        <sprite>sprites\sPlaceholderHealthBar</sprite>
         <sprite>sprites\sAmmoHUD</sprite>
         <sprite>sprites\sFist</sprite>
       </sprites>

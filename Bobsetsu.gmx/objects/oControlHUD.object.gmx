@@ -108,7 +108,6 @@ ini_close();
             <string>//Making the grey health bar go down
 
 if(global.greyHealthBarDowning &amp;&amp; hbStartToDown) {
-show_debug_message("DOWNIIING");
     global.oldXHealthBar--;
     if(global.oldXHealthBar &lt;= global.endXHealthBar) {
         global.greyHealthBarDowning = false;
@@ -149,14 +148,17 @@ if debug_mode
 global.endXHealthBar = 10+(230*(playerHealth/100));
 
 //Draw Damage Bar behind the healthBar
+
 if(global.greyHealthBarDowning) {
     draw_set_colour(c_gray);
     draw_rectangle(global.endXHealthBar, 10, global.oldXHealthBar, 30, false);
 }
 
-//Draw HealthBar
-draw_set_colour(c_red);
-draw_rectangle(10, 10, global.endXHealthBar, 30, false);
+if(playerHealth != 0) {
+    //Draw HealthBar
+    draw_set_colour(c_red);
+    draw_rectangle(10, 10, global.endXHealthBar, 30, false);
+}
 
 
 //Drawing healthbar sprite on top of it
