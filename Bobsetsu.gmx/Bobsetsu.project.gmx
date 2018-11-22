@@ -8,6 +8,7 @@
     <sound>sound\so_TeamLogo</sound>
     <sound>sound\soundDialog</sound>
     <sound>sound\soPunch</sound>
+    <sound>sound\soWoosh</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sGaia</sprite>

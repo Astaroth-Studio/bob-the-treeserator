@@ -65,7 +65,7 @@ jumpPower = 500;
 
 //Punch variables
 inPunch = false;
-inTruePunch = false;
+global.inTruePunch = false;
 maxStopTimer = 250;
 stopTimer = maxStopTimer;
 currentRandomX = 0;
@@ -101,8 +101,9 @@ background_x[3] = (view_wview[0]-background_width[3]) * (view_xview[0]/(room_wid
 if(inPunch) {
     stopTimer = stopTimer-(delta_time/1000);
     
-    if(inTruePunch) {
+    if(global.inTruePunch) {
         progress=stopTimer/maxStopTimer;
+        if(image_alpha == 0) image_alpha = 1;
         if(progress &lt;= 0.5) {
             view_xview[0] = currentX + (currentRandomX * (progress/0.5));
         } else {
@@ -112,10 +113,10 @@ if(inPunch) {
     
     if(stopTimer &lt;= 0) {
         stopTimer = maxStopTimer;
-        if(inTruePunch) {
+        if(global.inTruePunch) {
             global.stopTime = false;
             physics_pause_enable(false);
-            inTruePunch = false;
+            global.inTruePunch = false;
         }
         inPunch = false;
         isFighting = false;
@@ -443,13 +444,15 @@ if (controls) {
                 currentRandomX = irandom(64)-32;
                 global.stopTime = true;
                 physics_pause_enable(true);
-                inTruePunch = true;
+                global.inTruePunch = true;
                 
                 audio_play_sound(soPunch,1,0);
                 
                 with (collision_object) {
                     punched = true;
                 }
+            } else {
+                audio_play_sound(soWoosh,1,0);
             }
         //} else if keyboard_check_released(vk_right) {
         } else if keyboard_check_released(global.keyAttackRight) {
@@ -475,13 +478,15 @@ if (controls) {
                 currentRandomX = irandom(64)-32;
                 global.stopTime = true;
                 physics_pause_enable(true);
-                inTruePunch = true;
+                global.inTruePunch = true;
                 
                 audio_play_sound(soPunch,1,0);
                 
                 with (collision_object) {
                     punched = true;
                 }
+            } else {
+                audio_play_sound(soWoosh,1,0);
             }
         }
     }
@@ -535,27 +540,6 @@ if (follow) {
           <argument>
             <kind>1</kind>
             <string>Fuck you Baltimore</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//jumpsLeft = maxJumps;
-</string>
           </argument>
         </arguments>
       </action>
