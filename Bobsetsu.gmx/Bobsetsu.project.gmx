@@ -163,6 +163,7 @@
   <scripts name="scripts">
     <script>scripts\dialog.gml</script>
     <script>scripts\takeDamage.gml</script>
+    <script>scripts\floatingText.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_mm</font>

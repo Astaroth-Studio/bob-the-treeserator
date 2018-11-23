@@ -107,17 +107,12 @@ if(place_meeting(x, y, oBullet) || punched) {
     sprite_index = sBigBoiHurt;
 
     //Appear damage obj
-    var inst = instance_create(x,y,oDamage);
     if(punched) {
-        with (inst) {
-            text = global.fistDamage;
-        }
+        floatingText(x, y, global.fistDamage, c_red);
         bigBoiHealth -= global.fistDamage;
         punched = false;
     } else {
-        with (inst) {
-            text = global.bulletDamage;
-        }
+        floatingText(x, y, global.bulletDamage, c_red);
         bigBoiHealth -= global.bulletDamage;
     }
     

@@ -111,17 +111,12 @@ if(place_meeting(x, y, oBullet) || punched) {
     
 
     //Appear damage obj
-    var inst = instance_create(x,y,oDamage);
     if(punched) {
-        with (inst) {
-            text = global.fistDamage;
-        }
+        floatingText(x, y, global.fistDamage, c_red);
         slimHealth -= global.fistDamage;
         punched = false;
     } else {
-        with (inst) {
-            text = global.bulletDamage;
-        }
+        floatingText(x, y, global.bulletDamage, c_red);
         slimHealth -= global.bulletDamage;
     }
     
