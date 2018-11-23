@@ -76,9 +76,11 @@
         <sprite>sprites\sCredits</sprite>
         <sprite>sprites\sBorder</sprite>
         <sprite>sprites\sFullscreen</sprite>
+        <sprite>sprites\sFullscreenPressed</sprite>
         <sprites name="Keys">
           <sprite>sprites\sAKey</sprite>
           <sprite>sprites\sEKey</sprite>
+          <sprite>sprites\sDKey</sprite>
           <sprite>sprites\sQKey</sprite>
           <sprite>sprites\sLeftKey</sprite>
           <sprite>sprites\sRightKey</sprite>
@@ -157,6 +159,15 @@
     <backgrounds name="Backgrounds">
       <background>background\bMainMenu</background>
     </backgrounds>
+    <backgrounds name="Texts">
+      <background>background\bWhatYaWantText</background>
+      <background>background\bMovingText</background>
+      <background>background\bShootingText</background>
+      <background>background\bJumpingText</background>
+      <background>background\bKeyboardLayoutText</background>
+      <background>background\bAzertyText</background>
+      <background>background\bQwertyText</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths">
     <path>paths\pShockedBob</path>
@@ -203,8 +214,11 @@
         <objects name="KeySelection">
           <object>objects\oLeftSelect</object>
           <object>objects\oRightSelect</object>
+          <object>objects\oLeftKeyboardSelect</object>
+          <object>objects\oRightKeyboardSelect</object>
           <object>objects\oAKey</object>
           <object>objects\oEKey</object>
+          <object>objects\oDKey</object>
           <object>objects\oQKey</object>
           <object>objects\oLeftKey</object>
           <object>objects\oRightKey</object>
@@ -235,7 +249,11 @@
   <rooms name="rooms">
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
-    <room>rooms\rChooseKeys</room>
+    <rooms name="Settings">
+      <room>rooms\rKeyboardLayout</room>
+      <room>rooms\rChooseKeysAzerty</room>
+      <room>rooms\rChooseKeysQwerty</room>
+    </rooms>
     <rooms name="Cinematic">
       <room>rooms\rFirstRoom</room>
       <room>rooms\rSecondRoom</room>

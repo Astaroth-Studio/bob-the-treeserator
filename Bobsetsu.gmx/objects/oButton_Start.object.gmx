@@ -156,7 +156,7 @@ disableButtons = false;
             <kind>1</kind>
             <string>if (!disableButtons) {
     makeDissapear = true;
-    room_goto(rFirstRoom);
+    room_goto(rKeyboardLayout);
 }
 </string>
           </argument>

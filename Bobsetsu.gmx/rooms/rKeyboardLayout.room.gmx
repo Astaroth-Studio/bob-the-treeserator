@@ -3,15 +3,16 @@
   <caption></caption>
   <width>1280</width>
   <height>720</height>
-  <vsnap>1</vsnap>
-  <hsnap>1</hsnap>
+  <vsnap>16</vsnap>
+  <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
-  <colour>0</colour>
+  <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
-  <enableViews>0</enableViews>
+  <code>instance_create(room_width/2, room_height/2, oFadeIn);
+global.keyboardLayout = 0;</code>
+  <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
@@ -31,7 +32,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bMainMenu" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -41,7 +42,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1280" hview="720" xport="0" yport="0" wport="1280" hport="720" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -51,13 +52,14 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="oArmCin" x="884" y="231" name="inst_9160519D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="25"/>
-    <instance objName="oBoxCin" x="827" y="274" name="inst_3C902FA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRamBo" x="311" y="381" name="inst_C9082D66" locked="0" code="" scaleX="2.45026183128357" scaleY="2.36999988555908" colour="4294967295" rotation="0"/>
-    <instance objName="oFrameCinematic" x="-4" y="-1" name="inst_A932FF4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPanel1" x="311" y="62" name="inst_904A8A19" locked="0" code="" scaleX="4.13684225082397" scaleY="2.3199999332428" colour="4294967295" rotation="0"/>
+    <instance objName="oLeftKeyboardSelect" x="32" y="240" name="inst_2CBE90BF" locked="0" code="" scaleX="1.44000005722046" scaleY="0.560000002384186" colour="4294967295" rotation="0"/>
+    <instance objName="oRightKeyboardSelect" x="624" y="240" name="inst_4D716082" locked="0" code="" scaleX="1.52380955219269" scaleY="0.560000002384186" colour="4294967295" rotation="0"/>
   </instances>
-  <tiles/>
+  <tiles>
+    <tile bgName="bKeyboardLayoutText" x="160" y="80" w="980" h="64" xo="0" yo="0" id="10002415" name="inst_F783B4C2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bAzertyText" x="64" y="288" w="516" h="132" xo="0" yo="0" id="10002418" name="inst_C51F8713" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bQwertyText" x="656" y="288" w="540" h="132" xo="0" yo="0" id="10002419" name="inst_21AE0B42" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+  </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
   <PhysicsWorldLeft>0</PhysicsWorldLeft>

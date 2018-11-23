@@ -486,7 +486,12 @@
     <option_textureGroup7_parent>&lt;none&gt;</option_textureGroup7_parent>
     <option_textureGroup7_scaled>0</option_textureGroup7_scaled>
     <option_textureGroup7_targets>9223372036854775807</option_textureGroup7_targets>
-    <option_textureGroup_count>8</option_textureGroup_count>
+    <option_textureGroup8_border>2</option_textureGroup8_border>
+    <option_textureGroup8_nocropping>0</option_textureGroup8_nocropping>
+    <option_textureGroup8_parent>&lt;none&gt;</option_textureGroup8_parent>
+    <option_textureGroup8_scaled>0</option_textureGroup8_scaled>
+    <option_textureGroup8_targets>9223372036854775807</option_textureGroup8_targets>
+    <option_textureGroup_count>9</option_textureGroup_count>
     <option_textureGroups0>Default</option_textureGroups0>
     <option_textureGroups1>Char</option_textureGroups1>
     <option_textureGroups2>LargeTextures</option_textureGroups2>
@@ -495,6 +500,7 @@
     <option_textureGroups5>EnvDesert</option_textureGroups5>
     <option_textureGroups6>Cinematic</option_textureGroups6>
     <option_textureGroups7>Enemies</option_textureGroups7>
+    <option_textureGroups8>Texts</option_textureGroups8>
     <option_tizen_app_id>http://yourdomain/Bobsetsu</option_tizen_app_id>
     <option_tizen_build_version>0</option_tizen_build_version>
     <option_tizen_display_name>Bobsetsu</option_tizen_display_name>
