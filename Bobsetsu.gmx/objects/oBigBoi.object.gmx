@@ -155,8 +155,10 @@ if(detectedBob) {
     if(x &lt;= oBob.x) 
     {
         image_xscale = bigBoiScale;
+        phySpeed = bigBoiSpeed;
     } else {
         image_xscale = -bigBoiScale;
+        phySpeed = -bigBoiSpeed;
     }
         
     if(!punching) {
@@ -167,7 +169,7 @@ if(detectedBob) {
             sprite_index = sBigBoiPrepPunch;
             image_speed = bigBoiPunchingImageSpeed;
         } else {
-            phy_speed_x = bigBoiSpeed;
+            phy_speed_x = phySpeed;
             
             /* Animation */
                 
