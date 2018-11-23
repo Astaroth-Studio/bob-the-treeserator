@@ -71,7 +71,17 @@
         <sprite>sprites\sMessageBox</sprite>
         <sprite>sprites\sGameLogo</sprite>
         <sprite>sprites\sCredits</sprite>
+        <sprite>sprites\sBorder</sprite>
         <sprite>sprites\sFullscreen</sprite>
+        <sprites name="Keys">
+          <sprite>sprites\sAKey</sprite>
+          <sprite>sprites\sEKey</sprite>
+          <sprite>sprites\sQKey</sprite>
+          <sprite>sprites\sLeftKey</sprite>
+          <sprite>sprites\sRightKey</sprite>
+          <sprite>sprites\sUpKey</sprite>
+          <sprite>sprites\sSpaceKey</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Enemies">
@@ -186,6 +196,17 @@
         <object>objects\oMessageBox</object>
         <object>objects\oFullscreen</object>
         <object>objects\oMainMenuConfig</object>
+        <objects name="KeySelection">
+          <object>objects\oLeftSelect</object>
+          <object>objects\oRightSelect</object>
+          <object>objects\oAKey</object>
+          <object>objects\oEKey</object>
+          <object>objects\oQKey</object>
+          <object>objects\oLeftKey</object>
+          <object>objects\oRightKey</object>
+          <object>objects\oUpKey</object>
+          <object>objects\oSpaceKey</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Cinematic">
@@ -207,6 +228,7 @@
   <rooms name="rooms">
     <room>rooms\rIntro</room>
     <room>rooms\rMainMenu</room>
+    <room>rooms\rChooseKeys</room>
     <rooms name="Cinematic">
       <room>rooms\rFirstRoom</room>
       <room>rooms\rSecondRoom</room>

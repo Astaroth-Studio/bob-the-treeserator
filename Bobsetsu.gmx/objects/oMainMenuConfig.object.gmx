@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Weirdly, the 3rd value is 'default' so no need to test is the file exists
+            <string>//Weirdly, the 3rd value is 'default' so no need to test if the file exists
 //ini_write_string(section, key, value);
 
 /*Keys Attributions

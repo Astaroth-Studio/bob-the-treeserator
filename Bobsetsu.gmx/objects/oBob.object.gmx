@@ -48,7 +48,7 @@ bulletSpeed = 15;
 fullShootingCooldown = 400; // Cooldown in milliseconds
 shootingCooldown = fullShootingCooldown; // Time changing each step
 globalvar currentWeapon;
-currentWeapon = 0;
+currentWeapon = 1;
 
 recoveryTimeMaxCooldown = 1000;
 recoveryTimeCooldown = 0;
@@ -520,32 +520,6 @@ if (controls) {
         }
     }
 }
-
-// Code to stick Bob to the right side of the viewPort
-/*follow = false;
-startingPoint = 0
-movingValue = -1
-
-if (bobDirection == 1) {
-    if (view_xview[0] &gt; x + (sprite_width/2) - 0.70 * view_wview[0]){
-        follow = false;
-        view_xview[0] += bobSpeed * 5;
-    } else if (view_xview[0] + x + (sprite_width/2) &gt;= view_xview[0] + 0.30 * view_wview[0]) {
-        follow = true;
-    }
-} else {
-    follow = false;
-}
-
-if (follow) {
-    if (bobDirection == 1) { 
-        viewPos = x + (sprite_width/2) - 0.30 * view_wview[0]
-        if (viewPos + view_wview[0] &gt; room_width) {
-            viewPos = room_width - view_wview[0];        
-        }
-        view_xview[0] = viewPos;
-    }
-}*/
 </string>
           </argument>
         </arguments>
