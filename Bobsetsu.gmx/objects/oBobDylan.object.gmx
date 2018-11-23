@@ -29,12 +29,95 @@
 visible = false;
 alarm_set(0,60);
 alarm_set(1,150);
+alarm_set(2,800);
+alarm_set(3,1250);
 
 dezoom = false;
 WheresDaTree = false;
+BulletIzThere = false;
 
 oFokinTree.visible = false;
+
+timer = 1250;
+
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>224</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_another_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>11</kind>
+            <room>rSecondRoom</room>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>WheresDaTree</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>541</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sprite_set</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>5</kind>
+            <sprite>sBobThrowing</sprite>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0.25</string>
           </argument>
         </arguments>
       </action>
@@ -176,7 +259,24 @@ oFokinTree.visible = false;
 
 if(WheresDaTree) {
     oFokinTree.visible = true;
+} else {
+    oFokinTree.visible = false;
 }
+
+if(sprite_index == sBobThrowing &amp;&amp; floor(image_index) == 2 &amp;&amp; BulletIzThere == false) {
+    image_speed = 0;
+    BulletIzThere = true;
+    with(instance_create(752, 416, oBulletDylan)) {
+        if (path_index = -1) {
+            path_start(pBullet, 4, path_action_stop, 0);
+        }
+    }
+}
+
+if (timer &lt;= 20 &amp;&amp; timer &gt;= 0) {
+    instance_create(room_width/2, room_height/2, oFadeOut)
+}
+timer -= 1;
 </string>
           </argument>
         </arguments>

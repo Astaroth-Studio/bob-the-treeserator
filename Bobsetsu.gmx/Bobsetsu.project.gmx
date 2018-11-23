@@ -40,6 +40,7 @@
       <sprite>sprites\sBobWalking</sprite>
       <sprite>sprites\sBobHurt</sprite>
       <sprite>sprites\sBobFalling</sprite>
+      <sprite>sprites\sBobThrowing</sprite>
       <sprites name="WithGun">
         <sprites name="Idle">
           <sprite>sprites\sBobIdleArmed</sprite>
@@ -174,6 +175,7 @@
   </backgrounds>
   <paths name="paths">
     <path>paths\pShockedBob</path>
+    <path>paths\pBullet</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\dialog.gml</script>
@@ -238,6 +240,8 @@
       <object>objects\oFokinTree</object>
       <object>objects\oFrameCinematic</object>
       <object>objects\oPanel1</object>
+      <object>objects\oTreeDummy</object>
+      <object>objects\oBulletDylan</object>
     </objects>
     <objects name="Enemies">
       <object>objects\oSlimMiB</object>
