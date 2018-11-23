@@ -51,6 +51,9 @@ isHurt = false;
 hurtTimerMax = 250;
 hurtTimer = hurtTimerMax;
 
+globalvar slimMoneyDropMax;
+slimMoneyDropMax = 10; //Will be eleven coz +1
+
 //Healthbars
 paddingHealthbar=15; //Distance from the sprite to the height of the healthBar
 barHeight=8;
@@ -136,6 +139,12 @@ if(isHurt) {
         if(isFiring = true) sprite_index = sSlimIdleFiring; else sprite_index = sSlimIdle;
         if(slimHealth &lt;= 0) {
             instance_destroy();
+            
+            var money = instance_create(x, y, oMoneyItem);
+            
+            with(money) {
+                value = irandom(slimMoneyDropMax)+1;
+            }
         }
         isHurt = false;
         image_blend = c_white;

@@ -15,6 +15,7 @@
         <sound>sound\soWalkingSand02</sound>
       </sounds>
     </sounds>
+    <sound>sound\soPickup</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sGaia</sprite>
@@ -104,6 +105,7 @@
       <sprite>sprites\sSlimBullet</sprite>
       <sprite>sprites\sBullet</sprite>
     </sprites>
+    <sprite>sprites\sMoneyItem</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
@@ -224,6 +226,7 @@
       <object>objects\oBullet</object>
       <object>objects\oSlimBullet</object>
     </objects>
+    <object>objects\oMoneyItem</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>

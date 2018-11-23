@@ -169,6 +169,16 @@ if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
     isMoving = false;
 }
 
+/*------[ Pickup money ]------*/
+
+if(place_meeting(x, y, oMoneyItem)) {
+    with(instance_nearest(x,y, oMoneyItem)) {
+        playerMoney += value;
+        audio_play_sound(soPickup, 1, false);
+        instance_destroy();
+    }
+}
+
 /*------[ Walking Sounds ! + Jumping ! ]------*/
 if(place_meeting(x,y+1,oCollisionBase)) {
     if(keyboard_check_pressed(global.keyJump))

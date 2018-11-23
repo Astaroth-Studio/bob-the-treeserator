@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -34,7 +34,7 @@ globalvar playerAmmo;
 yPosBloodHealthbar = 0;
 bloodHealthbarAlpha = 1;
 playerHealth = 100;
-playerMoney = 2500;
+playerMoney = 0;
 
 playerAmmo = array_create(1);
 playerAmmo[0] = 200;
@@ -139,7 +139,9 @@ if(global.greyHealthBarDowning &amp;&amp; hbStartToDown) {
             <string>//Draw fps in debug
 if debug_mode
 {
-   draw_text(1150, 1, "FPS: " + string(fps));
+    draw_set_halign(fa_left);
+    draw_set_colour(c_black);
+    draw_text(1150, 1, "FPS: " + string(fps));
 }
 
 //HealthBar creation linked to playerHealth variable

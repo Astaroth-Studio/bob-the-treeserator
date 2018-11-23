@@ -55,6 +55,9 @@ isHurt = false;
 hurtTimerMax = 250;
 hurtTimer = hurtTimerMax;
 
+globalvar bigBoiMoneyDropMax;
+bigBoiMoneyDropMax = 100; //Will be 101 coz +1
+
 //Healthbars
 paddingHealthbar=15; //Distance from the sprite to the height of the healthBar
 barHeight=8;
@@ -134,6 +137,11 @@ if(isHurt) {
 
         if(bigBoiHealth &lt;= 0) {
             instance_destroy();
+            
+            var money = instance_create(x, y, oMoneyItem);
+            with(money) {
+                value = irandom(bigBoiMoneyDropMax)+1;
+            }
         }
         isHurt = false;
         image_blend = c_white;
