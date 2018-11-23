@@ -29,6 +29,8 @@
       <sprite>sprites\sBoxCin</sprite>
       <sprite>sprites\sArmCin</sprite>
       <sprite>sprites\sRamBob</sprite>
+      <sprite>sprites\sFrameCinematic</sprite>
+      <sprite>sprites\sFirstPanel</sprite>
     </sprites>
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
@@ -153,7 +155,6 @@
       <background>background\bTeamLogo</background>
     </backgrounds>
     <backgrounds name="Backgrounds">
-      <background>background\bCinematic</background>
       <background>background\bMainMenu</background>
     </backgrounds>
   </backgrounds>
@@ -218,6 +219,8 @@
       <object>objects\oArmCin</object>
       <object>objects\oRamBo</object>
       <object>objects\oFokinTree</object>
+      <object>objects\oFrameCinematic</object>
+      <object>objects\oPanel1</object>
     </objects>
     <objects name="Enemies">
       <object>objects\oSlimMiB</object>
