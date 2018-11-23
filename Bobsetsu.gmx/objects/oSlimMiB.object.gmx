@@ -109,7 +109,8 @@ if(place_meeting(x, y, oBullet) || punched) {
     isHurt = true;
     sprite_index = sSlimHurt;
     
-
+    if(irandom(1) == 0) audio_play_sound(soSlimHurt01, 1, false); else audio_play_sound(soSlimHurt02, 1, false);
+    
     //Appear damage obj
     if(punched) {
         floatingText(x, y, global.fistDamage, c_red);

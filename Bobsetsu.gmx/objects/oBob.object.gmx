@@ -442,6 +442,8 @@ if (controls) {
         //Shoot the bullet !
         if(isShooting &amp;&amp; playerAmmo[0] &gt; 0) {
             if(shootingCooldown &lt;= 0) {
+                audio_play_sound(soBobShooting, 1, false);
+            
                 var inst = instance_create(x+bulletX, y+bulletY, oBullet);
                 playerAmmo[0]--;
                 inst.phy_bullet = true;
