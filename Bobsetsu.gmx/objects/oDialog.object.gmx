@@ -83,7 +83,7 @@ draw_set_valign(fa_top);
 
 if(face != noone) {
     draw_sprite(face, 0, x+padding, y+padding);
-    draw_text_ext(2*padding+x+face.sprite_width, y+padding, print, font_size+(font_size/2), maxLength-face.sprite_width-padding);
+    draw_text_ext(2*padding+x+face.sprite_width, y+padding, print, font_size+(font_size/2), maxLength);
 } else {
     draw_text_ext(x+padding, y+padding, print, font_size+(font_size/2), maxLength);
 }
