@@ -22,6 +22,10 @@
         <sound>sound\soSlimHurt01</sound>
         <sound>sound\soSlimHurt02</sound>
       </sounds>
+      <sounds name="BigBoi">
+        <sound>sound\soBigBoiHurt01</sound>
+        <sound>sound\soBigBoiHurt02</sound>
+      </sounds>
     </sounds>
   </sounds>
   <sprites name="sprites">
