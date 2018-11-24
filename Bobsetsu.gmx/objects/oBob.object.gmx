@@ -61,7 +61,7 @@ isHurt = false;
 hurtTimerMax = 150;
 hurtTimer = hurtTimerMax;
 
-jumpPower = 500;
+jumpPower = 600;
 
 playWalkingSound = false;
 
