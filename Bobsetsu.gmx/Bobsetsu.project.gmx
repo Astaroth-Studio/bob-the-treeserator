@@ -24,6 +24,7 @@
     <sprite>sprites\sGaia</sprite>
     <sprite>sprites\sShop</sprite>
     <sprite>sprites\sCollision</sprite>
+    <sprite>sprites\sMoneyItem</sprite>
     <sprites name="Intro">
       <sprite>sprites\sTeamLogo</sprite>
       <sprite>sprites\sFade</sprite>
@@ -91,6 +92,7 @@
           <sprite>sprites\sUpKey</sprite>
           <sprite>sprites\sSpaceKey</sprite>
         </sprites>
+        <sprite>sprites\sChangeWeapon</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemies">
@@ -113,7 +115,6 @@
       <sprite>sprites\sSlimBullet</sprite>
       <sprite>sprites\sBullet</sprite>
     </sprites>
-    <sprite>sprites\sMoneyItem</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
@@ -171,6 +172,9 @@
       <background>background\bKeyboardLayoutText</background>
       <background>background\bAzertyText</background>
       <background>background\bQwertyText</background>
+      <background>background\bDontForget</background>
+      <background>background\bArrow</background>
+      <background>background\bPressF</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths">
@@ -215,7 +219,9 @@
         <object>objects\oButton_Credits</object>
         <object>objects\oMessageBox</object>
         <object>objects\oFullscreen</object>
+        <object>objects\oChangeWeapon</object>
         <object>objects\oMainMenuConfig</object>
+        <object>objects\oFrame</object>
         <objects name="KeySelection">
           <object>objects\oLeftSelect</object>
           <object>objects\oRightSelect</object>

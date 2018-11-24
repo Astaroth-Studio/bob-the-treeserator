@@ -83,7 +83,19 @@
     <instance objName="oWhereToPlant" x="3008" y="480" name="inst_FF919BBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWhereToPlant" x="3232" y="448" name="inst_C6BB1805" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWhereToPlant" x="3552" y="576" name="inst_C4A0C48D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oGaia" x="4352" y="480" name="inst_177B8808" locked="0" code="" scaleX="2.06451606750488" scaleY="2.04255318641663" colour="4294967295" rotation="0"/>
+    <instance objName="oGaia" x="4288" y="480" name="inst_177B8808" locked="0" code="" scaleX="2.06451606750488" scaleY="2.04255318641663" colour="4294967295" rotation="0"/>
+    <instance objName="oQKey" x="1152" y="448" name="inst_D8BA0B81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oDKey" x="1216" y="448" name="inst_D9E7FE2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFrame" x="1139" y="431" name="inst_546D442D" locked="0" code="" scaleX="0.307692319154739" scaleY="0.175308644771576" colour="4294967295" rotation="0"/>
+    <instance objName="oChangeWeapon" x="1850" y="290" name="inst_E8BD6F7B" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="oFrame" x="1826" y="362" name="inst_07F31207" locked="0" code="" scaleX="0.272952854633331" scaleY="0.15384615957737" colour="4294967295" rotation="0"/>
+    <instance objName="oAKey" x="1864" y="374" name="inst_079B0EED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFrame" x="2210" y="350" name="inst_58BDB4B2" locked="0" code="" scaleX="0.418316841125488" scaleY="0.253101736307144" colour="4294967295" rotation="0"/>
+    <instance objName="oLeftKey" x="2240" y="401" name="inst_983E98A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oRightKey" x="2318" y="401" name="inst_D9094FE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oUpKey" x="2278" y="364" name="inst_F441EEF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oFrame" x="1476" y="429" name="inst_DF90EFBE" locked="0" code="" scaleX="0.396039605140686" scaleY="0.158415839076042" colour="4294967295" rotation="0"/>
+    <instance objName="oSpaceKey" x="1523" y="444" name="inst_3AE9D87E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bBarrier" x="192" y="576" w="52" h="32" xo="0" yo="0" id="10000933" name="inst_C6E80E4A" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -751,6 +763,12 @@
     <tile bgName="bDesertTop" x="2304" y="576" w="32" h="32" xo="0" yo="0" id="10002397" name="inst_7E8082BE" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bDesertTop" x="2336" y="576" w="32" h="32" xo="0" yo="0" id="10002398" name="inst_9AC8A5A1" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bDesertTop" x="2368" y="576" w="32" h="32" xo="0" yo="0" id="10002399" name="inst_F70078AC" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bMovingText" x="1158" y="392" w="84" h="30" xo="0" yo="0" id="10002420" name="inst_4AE81708" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bShootingText" x="2240" y="310" w="106" h="30" xo="0" yo="0" id="10002421" name="inst_C825ACCF" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bJumpingText" x="1504" y="384" w="102" h="30" xo="0" yo="0" id="10002423" name="inst_1B161BC7" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bDontForget" x="2816" y="304" w="412" h="62" xo="0" yo="0" id="10002425" name="inst_C9F269A0" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bArrow" x="2993" y="392" w="60" h="88" xo="0" yo="0" id="10002426" name="inst_F56B17F6" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bPressF" x="4597" y="460" w="362" h="34" xo="0" yo="0" id="10002427" name="inst_729D45B4" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="0" y="576" w="48" h="48" xo="0" yo="0" id="10000922" name="inst_A8C8476C" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="-10" y="605" w="48" h="48" xo="0" yo="0" id="10000923" name="inst_8E8E2527" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="64" y="608" w="48" h="48" xo="0" yo="0" id="10000924" name="inst_441A6FA3" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
