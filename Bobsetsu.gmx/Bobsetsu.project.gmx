@@ -9,16 +9,20 @@
     <sound>sound\soundDialog</sound>
     <sound>sound\soPunch</sound>
     <sound>sound\soWoosh</sound>
+    <sound>sound\soPickup</sound>
+    <sound>sound\soBobShooting</sound>
     <sounds name="Walking">
       <sounds name="Sand">
         <sound>sound\soWalkingSand01</sound>
         <sound>sound\soWalkingSand02</sound>
       </sounds>
     </sounds>
-    <sound>sound\soPickup</sound>
-    <sound>sound\soBobShooting</sound>
-    <sound>sound\soSlimHurt01</sound>
-    <sound>sound\soSlimHurt02</sound>
+    <sounds name="Hurt">
+      <sounds name="Slim">
+        <sound>sound\soSlimHurt01</sound>
+        <sound>sound\soSlimHurt02</sound>
+      </sounds>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sGaia</sprite>
