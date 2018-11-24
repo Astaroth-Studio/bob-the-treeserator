@@ -11,6 +11,57 @@
     <event eventtype="6" enumb="7">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(global.keyboardLayout == 0) {
+    global.keyLeft = 37;//Left
+    global.keyRight = 39;//Right
+    global.keyJump = 32;//Space
+    global.keyAttackLeft = 81;//Q
+    global.keyAttackRight = 68//D
+    global.keyAttackUp = 90;//Z
+    global.keyInteract = 69;//E
+    global.keySwitch = 65; //A
+
+} else {
+    global.keyLeft = 37; //Left
+    global.keyRight = 39;//Right
+    global.keyJump = 32;//Space
+    global.keyAttackLeft = 65;//A
+    global.keyAttackRight = 68;//D
+    global.keyAttackUp = 87;//W
+    global.keyInteract = 69;//E
+    global.keySwitch = 81;//Q
+
+}
+
+/*ini_write_real("Keys", "Left", global.keyLeft);
+ini_write_real("Keys", "Right", global.keyRight);
+ini_write_real("Keys", "Jump", global.keyJump);
+ini_write_real("Keys", "AttackLeft", global.keyAttackLeft);
+ini_write_real("Keys", "AttackRight", global.keyAttackRight);
+ini_write_real("Keys", "AttackUp", global.keyAttackUp);
+ini_write_real("Keys", "Switch", global.keySwitch);
+ini_write_real("Keys", "Interact", global.keyInteract);*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>224</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -25,7 +76,7 @@
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>rFirstRoom</room>
+            <room>rFirstLevel</room>
           </argument>
         </arguments>
       </action>

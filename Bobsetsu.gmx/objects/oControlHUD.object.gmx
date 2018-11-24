@@ -46,7 +46,18 @@ hbStartToDown = false;
 
 ini_open("config.ini");
 
-//Read the keyys
+
+//Don't forget to comment
+global.keyLeft = 81; //Q
+global.keyRight = 68;//D
+global.keyJump = 32;//Space
+global.keyAttackLeft = 37;//Left
+global.keyAttackRight = 39;//Right
+global.keyAttackUp = 38;//Up
+global.keyInteract = 69;//E
+global.keySwitch = 65; //A
+
+/*//Read the keyys
 global.keyLeft = ini_read_string("Keys", "Left", "81");
 global.keyRight = ini_read_string("Keys", "Right", "68");
 global.keyJump = ini_read_string("Keys", "Jump", "32");
@@ -59,7 +70,7 @@ global.keyInteract = ini_read_string("Keys", "Interact", "69");
 //Do u want fullscreen?
 window_set_fullscreen(ini_read_real("Config", "Fullscreen", "0"));
 
-ini_close();
+ini_close();*/
 </string>
           </argument>
         </arguments>
