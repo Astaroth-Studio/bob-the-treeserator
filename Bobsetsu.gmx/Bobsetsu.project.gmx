@@ -6,11 +6,8 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\so_TeamLogo</sound>
-    <sound>sound\soundDialog</sound>
-    <sound>sound\soPunch</sound>
-    <sound>sound\soWoosh</sound>
+    <sound>sound\soDialog</sound>
     <sound>sound\soPickup</sound>
-    <sound>sound\soBobShooting</sound>
     <sounds name="Walking">
       <sounds name="Sand">
         <sound>sound\soWalkingSand01</sound>
@@ -25,6 +22,16 @@
       <sounds name="BigBoi">
         <sound>sound\soBigBoiHurt01</sound>
         <sound>sound\soBigBoiHurt02</sound>
+      </sounds>
+      <sounds name="Bob">
+        <sound>sound\soBobHurt</sound>
+      </sounds>
+    </sounds>
+    <sounds name="Attack">
+      <sounds name="Bob">
+        <sound>sound\soBobShooting</sound>
+        <sound>sound\soWoosh</sound>
+        <sound>sound\soPunch</sound>
       </sounds>
     </sounds>
   </sounds>
