@@ -93,6 +93,8 @@
           <sprite>sprites\sRightKey</sprite>
           <sprite>sprites\sUpKey</sprite>
           <sprite>sprites\sSpaceKey</sprite>
+          <sprite>sprites\sWKey</sprite>
+          <sprite>sprites\sZKey</sprite>
         </sprites>
         <sprite>sprites\sChangeWeapon</sprite>
       </sprites>
