@@ -1,4 +1,4 @@
-//dialog("Text",speed,x,y,facesprite,backgroundsprite);
+//dialog("Text",speed,x,y,facesprite,backgroundsprite, UpOrDown);
 
 txt = instance_create(argument2,argument3,oDialog);
 with (txt)
@@ -27,5 +27,7 @@ with (txt)
     //boxWidth = text_width + (padding*2);
     //boxHeight = text_height + (padding*2);
     boxWidth = view_wview[0]-(padding*2);
-    boxHeight = view_hview[0]-y-padding;
+    
+    if(argument6) boxHeight = text_height + (padding*2); else boxHeight = view_hview[0]-y-padding;
+    
 }

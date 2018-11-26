@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>dialog("Hello world, I am a test dialog box. How are you doin'. Btw Bob you're totallyy raaddd. ;)#(Press enter to get rid of this annoying box)",0.75,16,500, noone, noone);</code>
+  <code>dialog("Hello world, I am a test dialog box. How are you doin'. Btw Bob you're totallyy raaddd. ;)#(Press enter to get rid of this annoying box)",0.75,16,500, noone, noone, false);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
