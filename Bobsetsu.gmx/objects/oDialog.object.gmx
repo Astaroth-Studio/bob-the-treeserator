@@ -56,7 +56,7 @@ if (time &lt; text_length)
 {
     time += spd;
     print = string_copy(text, 0, time);
-    audio_play_sound(soDialog, 0, false);
+    audio_play_sound(soundDialog, 0, false);
 }
 
 //Render textbox &amp; text

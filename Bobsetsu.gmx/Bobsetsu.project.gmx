@@ -5,35 +5,20 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
+    <sound>sound\soWalkingSand02</sound>
+    <sound>sound\soWalkingSand01</sound>
+    <sound>sound\soSlimHurt02</sound>
+    <sound>sound\soSlimHurt01</sound>
+    <sound>sound\soBigBoiHurt02</sound>
+    <sound>sound\soBigBoiHurt01</sound>
+    <sound>sound\soBobHurt</sound>
+    <sound>sound\soBobShooting</sound>
+    <sound>sound\soPunch</sound>
+    <sound>sound\soWoosh</sound>
+    <sound>sound\soSlimDying</sound>
     <sound>sound\so_TeamLogo</sound>
-    <sound>sound\soDialog</sound>
+    <sound>sound\soundDialog</sound>
     <sound>sound\soPickup</sound>
-    <sounds name="Walking">
-      <sounds name="Sand">
-        <sound>sound\soWalkingSand01</sound>
-        <sound>sound\soWalkingSand02</sound>
-      </sounds>
-    </sounds>
-    <sounds name="Hurt">
-      <sounds name="Slim">
-        <sound>sound\soSlimHurt01</sound>
-        <sound>sound\soSlimHurt02</sound>
-      </sounds>
-      <sounds name="BigBoi">
-        <sound>sound\soBigBoiHurt01</sound>
-        <sound>sound\soBigBoiHurt02</sound>
-      </sounds>
-      <sounds name="Bob">
-        <sound>sound\soBobHurt</sound>
-      </sounds>
-    </sounds>
-    <sounds name="Attack">
-      <sounds name="Bob">
-        <sound>sound\soBobShooting</sound>
-        <sound>sound\soWoosh</sound>
-        <sound>sound\soPunch</sound>
-      </sounds>
-    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sGaia</sprite>
@@ -85,6 +70,8 @@
       <sprites name="HUD">
         <sprite>sprites\sAmmoHUD</sprite>
         <sprite>sprites\sFist</sprite>
+        <sprite>sprites\sHealthBarFrame</sprite>
+        <sprite>sprites\sHealthBarInner</sprite>
       </sprites>
       <sprites name="GUI">
         <sprite>sprites\sButton</sprite>
@@ -107,6 +94,8 @@
           <sprite>sprites\sRightKey</sprite>
           <sprite>sprites\sUpKey</sprite>
           <sprite>sprites\sSpaceKey</sprite>
+          <sprite>sprites\sWKey</sprite>
+          <sprite>sprites\sZKey</sprite>
         </sprites>
       </sprites>
     </sprites>

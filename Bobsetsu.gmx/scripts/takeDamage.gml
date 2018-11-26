@@ -10,9 +10,9 @@ if(!global.greyHealthBarDowning) {
     hbStartToDown = false;
 }
 
-audio_play_sound(soBobHurt, 1, false);
+audio_play_sound(soBobHurt, 1, 0);
 playerHealth -= argument0;
-global.endXHealthBar = 10+(230*(playerHealth/100));
+global.endXHealthBar = (264*(playerHealth/100));
 
 if(playerHealth <= 0) {
     playerHealth = 0;
