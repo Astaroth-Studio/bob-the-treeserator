@@ -157,7 +157,7 @@ if debug_mode
 
 //HealthBar creation linked to playerHealth variable
 //draw_healthbar(10, 10, 40, 700, playerHealth, c_black, c_red, c_red, 3, false, false);
-global.endXHealthBar = 10+(230*(playerHealth/100));
+/*global.endXHealthBar = 10+(230*(playerHealth/100));
 
 //Draw Damage Bar behind the healthBar
 if(global.greyHealthBarDowning) {
@@ -169,7 +169,26 @@ if(playerHealth != 0) {
     //Draw HealthBar
     draw_set_colour(c_red);
     draw_rectangle(10, 10, global.endXHealthBar, 30, false);
+}*/
+
+//HealthBar creation linked to playerHealth variable
+//draw_healthbar(10, 10, 40, 700, playerHealth, c_black, c_red, c_red, 3, false, false);
+global.endXHealthBar = (264*(playerHealth/100));
+
+//Draw Damage Bar behind the healthBar
+if(global.greyHealthBarDowning) {
+    draw_set_colour(c_gray);
+    draw_sprite_part_ext(sHealthBarInner, 0, 0, 0, global.oldXHealthBar, 48, 10, 10, 1, 1, c_gray, 1);
 }
+
+if(playerHealth != 0) {
+    //Draw HealthBar
+    draw_set_colour(c_red);
+    
+    draw_sprite_part(sHealthBarInner, 0, 0, 0, global.endXHealthBar, 48, 10, 10);
+}
+
+draw_sprite(sHealthBarFrame, 0, 10, 10);
 
 //Drawing healthbar sprite on top of it
 //draw_sprite(sPlaceholderHealthBar, -1, 10, 5);
