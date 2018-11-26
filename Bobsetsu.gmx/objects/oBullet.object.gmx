@@ -60,7 +60,7 @@ if(place_meeting(x, y, oCollisionBase)) {
     var closestWhereToPlant = instance_nearest(x, y, oWhereToPlant);
     if(closestWhereToPlant != noone) {
         if(distance_to_object(closestWhereToPlant) == 0) {
-            instance_create(closestWhereToPlant.x, closestWhereToPlant.y, oTree);
+            instance_create(closestWhereToPlant.x+16, closestWhereToPlant.y+32, oTree);
             with(closestWhereToPlant) { instance_destroy(); }
         }
     }

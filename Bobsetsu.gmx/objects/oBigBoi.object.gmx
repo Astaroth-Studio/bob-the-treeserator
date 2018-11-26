@@ -49,6 +49,11 @@ punchingDistance = 5;
 punchTimerMax = 300;
 punchTimer = punchTimerMax;
 
+dying = false;
+blinkingSteps = 0;
+blinkingStepsMax = 3;
+blinkingInvert = false;
+
 punched = false;
 isWalking = false;
 isHurt = false;
@@ -63,6 +68,35 @@ paddingHealthbar=15; //Distance from the sprite to the height of the healthBar
 barHeight=8;
 enemyMaxHealth = 250;
 enemyHealth = enemyMaxHealth;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var money = instance_create(x, y, oMoneyItem);
+            
+with(money) {
+    value = irandom(bigBoiMoneyDropMax)+1;
+}
+
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -128,19 +162,20 @@ if(place_meeting(x, y, oBullet) || punched) {
 if(isHurt) {
     hurtTimer -= delta_time/1000;
     image_blend = c_red;
+    
+    if(enemyHealth &lt;= 0) {
+        dying = true;
+        alarm[10] = 0.5 * room_speed; //DeathTimer
+    }
+    
     if(hurtTimer &lt;= 0) {
         hurtTimer = hurtTimerMax;
+
+
+        
         sprite_index = sBigBoiIdle;
         image_speed = bigBoiIdleImageSpeed;
-
-        if(enemyHealth &lt;= 0) {
-            instance_destroy();
-            
-            var money = instance_create(x, y, oMoneyItem);
-            with(money) {
-                value = irandom(bigBoiMoneyDropMax)+1;
-            }
-        }
+        
         isHurt = false;
         image_blend = c_white;
     }
@@ -255,10 +290,21 @@ if(detectedBob) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if(dying) {
+    blinkingSteps++ 
+    if(blinkingSteps &gt; blinkingStepsMax) {
+        blinkingSteps = 0;
+        blinkingInvert = !blinkingInvert;
+    }
+    if(blinkingInvert) {
+        draw_self();
+    }
+} else {
+    draw_self();
 
-draw_set_colour(c_red);
-draw_healthbar(x-(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar, x+(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar-barHeight, enemyHealth/enemyMaxHealth*100, c_black, c_red, c_red, 0, true, true);
+    draw_set_colour(c_red);
+    draw_healthbar(x-(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar, x+(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar-barHeight, enemyHealth/enemyMaxHealth*100, c_black, c_red, c_red, 0, true, true);
+}
 </string>
           </argument>
         </arguments>
