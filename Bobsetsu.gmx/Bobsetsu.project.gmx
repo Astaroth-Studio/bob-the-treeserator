@@ -119,6 +119,7 @@
       <sprite>sprites\sSlimBullet</sprite>
       <sprite>sprites\sBullet</sprite>
     </sprites>
+    <sprite>sprites\sBeer</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
@@ -199,6 +200,7 @@
     <object>objects\oCredits</object>
     <object>objects\oBob</object>
     <object>objects\oMoneyItem</object>
+    <object>objects\oBeer</object>
     <objects name="Intro">
       <object>objects\oTeamLogo</object>
       <object>objects\oFadeOut</object>
