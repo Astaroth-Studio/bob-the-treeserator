@@ -61,7 +61,8 @@ bigBoiMoneyDropMax = 100; //Will be 101 coz +1
 //Healthbars
 paddingHealthbar=15; //Distance from the sprite to the height of the healthBar
 barHeight=8;
-bigBoiHealth = 100;
+enemyMaxHealth = 250;
+enemyHealth = enemyMaxHealth;
 </string>
           </argument>
         </arguments>
@@ -111,15 +112,15 @@ if(place_meeting(x, y, oBullet) || punched) {
     //Appear damage obj
     if(punched) {
         floatingText(x, y, global.fistDamage, c_red);
-        bigBoiHealth -= global.fistDamage;
+        enemyHealth -= global.fistDamage;
         punched = false;
     } else {
         floatingText(x, y, global.bulletDamage, c_red);
-        bigBoiHealth -= global.bulletDamage;
+        enemyHealth -= global.bulletDamage;
     }
     
-    if(bigBoiHealth &lt;= 0) {
-        bigBoiHealth = 0;
+    if(enemyHealth &lt;= 0) {
+        enemyHealth = 0;
     }
 }
 
@@ -132,7 +133,7 @@ if(isHurt) {
         sprite_index = sBigBoiIdle;
         image_speed = bigBoiIdleImageSpeed;
 
-        if(bigBoiHealth &lt;= 0) {
+        if(enemyHealth &lt;= 0) {
             instance_destroy();
             
             var money = instance_create(x, y, oMoneyItem);
@@ -257,7 +258,7 @@ if(detectedBob) {
             <string>draw_self();
 
 draw_set_colour(c_red);
-draw_healthbar(x-(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar, x+(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar-barHeight, bigBoiHealth, c_black, c_red, c_red, 0, true, true);
+draw_healthbar(x-(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar, x+(abs(sprite_width)/2), y-(sprite_height/2)-paddingHealthbar-barHeight, enemyHealth/enemyMaxHealth*100, c_black, c_red, c_red, 0, true, true);
 </string>
           </argument>
         </arguments>

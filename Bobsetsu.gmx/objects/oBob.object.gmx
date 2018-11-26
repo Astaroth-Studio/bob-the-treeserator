@@ -42,8 +42,8 @@ controls = true; // Desactivated when falling
 
 phy_fixed_rotation = true;
 
-global.bulletDamage = 15;
-global.fistDamage = 35;
+global.bulletDamage = 40;
+global.fistDamage = 60;
 bulletSpeed = 15;
 fullShootingCooldown = 400; // Cooldown in milliseconds
 shootingCooldown = fullShootingCooldown; // Time changing each step
@@ -473,8 +473,8 @@ if (controls) {
             if(collision_object == noone) {
                 collision_object = collision_rectangle(x-16,y+16,x-32,y-16, oBigBoi, false, true);
             }
-            if(collision_object != noone)/*|| place_meeting(x-16, y, oBigMiB)*/{
-            
+            if(collision_object != noone &amp;&amp; collision_object.enemyHealth &gt; 0)/*|| place_meeting(x-16, y, oBigMiB)*/{
+                
                 currentX = view_xview[0];
                 if(irandom(1)==0) currentRandomX = -32; else currentRandomX =32;
                 global.stopTime = true;
@@ -486,6 +486,7 @@ if (controls) {
                 with (collision_object) {
                     punched = true;
                 }
+                
             } else {
                 audio_play_sound(soWoosh,1,0);
             }
@@ -507,7 +508,7 @@ if (controls) {
             if(collision_object == noone) {
                 collision_object = collision_rectangle(x+16,y+16,x+32,y-16, oBigBoi, false, true);
             }
-            if(collision_object != noone)/*|| place_meeting(x-16, y, oBigMiB)*/{
+            if(collision_object != noone &amp;&amp; collision_object.enemyHealth &gt; 0)/*|| place_meeting(x-16, y, oBigMiB)*/{
                 
                 currentX = view_xview[0];
                 if(irandom(1)==0) currentRandomX = -32; else currentRandomX =32;
@@ -574,9 +575,22 @@ if (controls) {
             <string>draw_self();
 
 if(distance_to_object(oShop) == 0) {
-    draw_set_color(c_white);
+    draw_set_color(c_black);
     draw_set_halign(fa_center);
-    draw_text(x, y-sprite_height, "10 ammos = $10AUS");
+    
+    shopText = "10 ammos = $10AUS";
+
+    draw_text(x+1, y-sprite_height+1, shopText);  
+    draw_text(x-1, y-sprite_height-1, shopText);  
+    draw_text(x, y-sprite_height+1, shopText);  
+    draw_text(x+1, y-sprite_height, shopText);  
+    draw_text(x, y-sprite_height-1, shopText);  
+    draw_text(x-1, y-sprite_height, shopText);  
+    draw_text(x-1, y-sprite_height+1, shopText);  
+    draw_text(x+1, y-sprite_height-1, shopText);
+    
+    draw_set_color(c_white);
+    draw_text(x, y-sprite_height, shopText);
 }
 
 </string>
