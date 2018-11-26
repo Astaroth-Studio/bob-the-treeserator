@@ -45,11 +45,9 @@
       <sprite>sprites\sFade</sprite>
     </sprites>
     <sprites name="Cinematic">
-      <sprite>sprites\sBoxCin</sprite>
-      <sprite>sprites\sArmCin</sprite>
       <sprite>sprites\sRamBob</sprite>
-      <sprite>sprites\sFrameCinematic</sprite>
       <sprite>sprites\sFirstPanel</sprite>
+      <sprite>sprites\sBoxArmed</sprite>
     </sprites>
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
@@ -95,8 +93,11 @@
         <sprite>sprites\sGameLogo</sprite>
         <sprite>sprites\sCredits</sprite>
         <sprite>sprites\sBorder</sprite>
+        <sprite>sprites\sChangeWeapon</sprite>
         <sprite>sprites\sFullscreen</sprite>
         <sprite>sprites\sFullscreenPressed</sprite>
+        <sprite>sprites\sReturn</sprite>
+        <sprite>sprites\sReturnPressed</sprite>
         <sprites name="Keys">
           <sprite>sprites\sAKey</sprite>
           <sprite>sprites\sEKey</sprite>
@@ -107,7 +108,6 @@
           <sprite>sprites\sUpKey</sprite>
           <sprite>sprites\sSpaceKey</sprite>
         </sprites>
-        <sprite>sprites\sChangeWeapon</sprite>
       </sprites>
     </sprites>
     <sprites name="Enemies">
@@ -178,6 +178,7 @@
     </backgrounds>
     <backgrounds name="Backgrounds">
       <background>background\bMainMenu</background>
+      <background>background\bCinematicPart2</background>
     </backgrounds>
     <backgrounds name="Texts">
       <background>background\bWhatYaWantText</background>
@@ -195,6 +196,7 @@
   <paths name="paths">
     <path>paths\pShockedBob</path>
     <path>paths\pBullet</path>
+    <path>paths\pArmPath</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\dialog.gml</script>
@@ -232,9 +234,11 @@
         <object>objects\oButton_Exit</object>
         <object>objects\oButton_BackCred</object>
         <object>objects\oButton_Credits</object>
-        <object>objects\oMessageBox</object>
         <object>objects\oFullscreen</object>
+        <object>objects\oReturnKL</object>
+        <object>objects\oReturnCK</object>
         <object>objects\oChangeWeapon</object>
+        <object>objects\oMessageBox</object>
         <object>objects\oMainMenuConfig</object>
         <object>objects\oFrame</object>
         <objects name="KeySelection">
@@ -255,14 +259,13 @@
     </objects>
     <objects name="Cinematic">
       <object>objects\oBobDylan</object>
-      <object>objects\oBoxCin</object>
-      <object>objects\oArmCin</object>
+      <object>objects\oBoxArmed</object>
       <object>objects\oRamBo</object>
       <object>objects\oFokinTree</object>
-      <object>objects\oFrameCinematic</object>
       <object>objects\oPanel1</object>
       <object>objects\oTreeDummy</object>
       <object>objects\oBulletDylan</object>
+      <object>objects\oControlCinPart2</object>
     </objects>
     <objects name="Enemies">
       <object>objects\oSlimMiB</object>

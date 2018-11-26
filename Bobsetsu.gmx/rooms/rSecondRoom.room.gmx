@@ -31,7 +31,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bCinematicPart2" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -51,11 +51,10 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="oArmCin" x="884" y="231" name="inst_9160519D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="25"/>
-    <instance objName="oBoxCin" x="827" y="274" name="inst_3C902FA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oRamBo" x="311" y="381" name="inst_C9082D66" locked="0" code="" scaleX="2.45026183128357" scaleY="2.36999988555908" colour="4294967295" rotation="0"/>
-    <instance objName="oFrameCinematic" x="-4" y="-1" name="inst_A932FF4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oPanel1" x="311" y="62" name="inst_904A8A19" locked="0" code="" scaleX="4.13684225082397" scaleY="2.3199999332428" colour="4294967295" rotation="0"/>
+    <instance objName="oRamBo" x="308" y="357" name="inst_9B3269C5" locked="0" code="" scaleX="3.45000004768372" scaleY="2.64545464515686" colour="4294967295" rotation="0"/>
+    <instance objName="oPanel1" x="309" y="52" name="inst_904A8A19" locked="0" code="" scaleX="4.72631597518921" scaleY="2.82105255126953" colour="4294967295" rotation="0"/>
+    <instance objName="oControlCinPart2" x="0" y="0" name="inst_C7651822" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oBoxArmed" x="791" y="111" name="inst_8F7AFB78" locked="0" code="" scaleX="2.77999997138977" scaleY="2.65625" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -54,6 +54,7 @@ global.keyboardLayout = 0;</code>
   <instances>
     <instance objName="oLeftKeyboardSelect" x="32" y="240" name="inst_2CBE90BF" locked="0" code="" scaleX="1.44000005722046" scaleY="0.560000002384186" colour="4294967295" rotation="0"/>
     <instance objName="oRightKeyboardSelect" x="624" y="240" name="inst_4D716082" locked="0" code="" scaleX="1.52380955219269" scaleY="0.560000002384186" colour="4294967295" rotation="0"/>
+    <instance objName="oReturnKL" x="1200" y="32" name="inst_D014E3CC" locked="0" code="" scaleX="1.5" scaleY="1.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bKeyboardLayoutText" x="160" y="80" w="980" h="64" xo="0" yo="0" id="10002415" name="inst_F783B4C2" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

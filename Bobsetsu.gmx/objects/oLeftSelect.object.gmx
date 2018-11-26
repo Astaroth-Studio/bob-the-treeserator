@@ -68,7 +68,7 @@ ini_write_real("Keys", "Interact", global.keyInteract);*/
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>rFirstLevel</room>
+            <room>rFirstRoom</room>
           </argument>
         </arguments>
       </action>

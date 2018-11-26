@@ -68,6 +68,7 @@
     <instance objName="oDKey" x="288" y="352" name="inst_30B1B1E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oDKey" x="864" y="352" name="inst_E6CBE77E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oRightSelect" x="688" y="208" name="inst_F45BB044" locked="0" code="" scaleX="1.12280702590942" scaleY="0.879999995231628" colour="4294967295" rotation="0"/>
+    <instance objName="oReturnCK" x="1200" y="32" name="inst_9F557993" locked="0" code="" scaleX="1.5" scaleY="1.5" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bWhatYaWantText" x="256" y="64" w="804" h="64" xo="0" yo="0" id="10002401" name="inst_1257D4D4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
