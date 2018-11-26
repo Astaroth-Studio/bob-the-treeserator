@@ -87,6 +87,8 @@
         <sprite>sprites\sReturnPressed</sprite>
         <sprites name="Keys">
           <sprite>sprites\sAKey</sprite>
+          <sprite>sprites\sZKey</sprite>
+          <sprite>sprites\sWKey</sprite>
           <sprite>sprites\sEKey</sprite>
           <sprite>sprites\sDKey</sprite>
           <sprite>sprites\sQKey</sprite>
@@ -94,8 +96,6 @@
           <sprite>sprites\sRightKey</sprite>
           <sprite>sprites\sUpKey</sprite>
           <sprite>sprites\sSpaceKey</sprite>
-          <sprite>sprites\sWKey</sprite>
-          <sprite>sprites\sZKey</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -198,6 +198,7 @@
   <objects name="objects">
     <object>objects\oCredits</object>
     <object>objects\oBob</object>
+    <object>objects\oMoneyItem</object>
     <objects name="Intro">
       <object>objects\oTeamLogo</object>
       <object>objects\oFadeOut</object>
@@ -236,6 +237,8 @@
           <object>objects\oLeftKeyboardSelect</object>
           <object>objects\oRightKeyboardSelect</object>
           <object>objects\oAKey</object>
+          <object>objects\oZKey</object>
+          <object>objects\oWKey</object>
           <object>objects\oEKey</object>
           <object>objects\oDKey</object>
           <object>objects\oQKey</object>
@@ -264,7 +267,6 @@
       <object>objects\oBullet</object>
       <object>objects\oSlimBullet</object>
     </objects>
-    <object>objects\oMoneyItem</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rIntro</room>
