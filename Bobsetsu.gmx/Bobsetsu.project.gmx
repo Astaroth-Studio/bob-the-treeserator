@@ -69,10 +69,10 @@
     </sprites>
     <sprites name="Interface">
       <sprites name="HUD">
-        <sprite>sprites\sAmmoHUD</sprite>
         <sprite>sprites\sFist</sprite>
         <sprite>sprites\sHealthBarFrame</sprite>
         <sprite>sprites\sHealthBarInner</sprite>
+        <sprite>sprites\sAmmoHUD</sprite>
       </sprites>
       <sprites name="GUI">
         <sprite>sprites\sButton</sprite>

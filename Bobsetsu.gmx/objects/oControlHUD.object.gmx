@@ -233,7 +233,7 @@ if(currentWeapon == 0) {
     draw_text(799, 2, ammoText);  
     draw_text(801, 0, ammoText); 
     //draw_text_colour(802, 3, string(playerAmmo[0]), c_black, c_black, c_black, c_black, 1);
-    draw_text_colour(800, 1, string(playerAmmo[0]), c_aqua, c_aqua, c_aqua, c_aqua, 1);
+    draw_text_colour(800, 1, string(playerAmmo[0]), c_red, c_red, c_red, c_red, 1);
 }
 </string>
           </argument>
