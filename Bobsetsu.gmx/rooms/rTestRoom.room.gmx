@@ -71,6 +71,7 @@
     <instance objName="oCollision" x="2240" y="768" name="inst_18AAF722" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBigBoi" x="1472" y="560" name="inst_3FCBDE6D" locked="0" code="" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="oShop" x="1040" y="608" name="inst_E49F22E5" locked="0" code="" scaleX="2.6875" scaleY="3.0625" colour="4294967295" rotation="0"/>
+    <instance objName="oBeer" x="1192" y="592" name="inst_F025F55B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bDesertTop" x="0" y="608" w="32" h="32" xo="0" yo="0" id="10000098" name="inst_2D390714" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

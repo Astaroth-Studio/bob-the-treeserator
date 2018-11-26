@@ -183,7 +183,7 @@ if(place_meeting(x, y, oMoneyItem)) {
 /*------[ Pickup beer ]------*/
 
 if(place_meeting(x, y, oBeer)) {
-    audio_play_sound(soPickup, 1, false);
+    audio_play_sound(soBobDrink, 1, false);
     with(instance_nearest(x,y, oBeer)) {
         playerHealth = 100;
         instance_destroy();
