@@ -32,7 +32,13 @@ slimWalkingImageSpeed = 0.5;
 slimIdleFiringImageSpeed = 0.10;
 phy_fixed_rotation = true;
 
+
 slimSpeed=4;
+
+bulletUntilDelay = 4;
+bulletsShot = 0;
+bulletDelay = 0.8;
+bulletDelayDone = true;
 
 //Stopping close to Bob
 minRange=150;
@@ -64,6 +70,32 @@ paddingHealthbar=15; //Distance from the sprite to the height of the healthBar
 barHeight=8;
 enemyHealth = 100;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>bulletDelayDone</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
           </argument>
         </arguments>
       </action>
@@ -116,7 +148,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.stopTime) { image_speed=0; exit; } else { image_speed=slimIdleImageSpeed; }
+            <string>if(global.stopTime) { image_speed=0; exit; } else if(isFiring) { image_speed=slimIdleFiringImageSpeed; } else { image_speed=slimIdleImageSpeed; }
 
 if(dying) exit;
 
@@ -246,7 +278,7 @@ if(distance_to_object(oBob) &lt; range) {
 if(isFiring)
 {
     if(floor(image_index)==1) {
-        if(canShoot) {
+        if(canShoot &amp;&amp; bulletDelayDone) {
             if(image_xscale == slimScale) {
                 bulletX = 16;
                 bulletY = -4;
@@ -263,6 +295,13 @@ if(isFiring)
             inst.phy_speed_x = bulletXspeed;
             inst.image_xscale = scale;
             canShoot = false;
+            
+            bulletsShot++;
+            if(bulletsShot &gt;= bulletUntilDelay) {
+                bulletDelayDone = false;
+                alarm[11] = bulletDelay*room_speed;
+                bulletsShot = 0;
+            }
         }
     } else {
         if(!canShoot) canShoot = true;
