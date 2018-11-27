@@ -245,6 +245,8 @@
         <object>objects\oButton_Exit</object>
         <object>objects\oButton_BackCred</object>
         <object>objects\oButton_Credits</object>
+        <object>objects\oButton_Continue</object>
+        <object>objects\oButton_MainMenu</object>
         <object>objects\oFullscreen</object>
         <object>objects\oReturnKL</object>
         <object>objects\oReturnCK</object>
