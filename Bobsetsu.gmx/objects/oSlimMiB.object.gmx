@@ -29,7 +29,7 @@
 slimIdleImageSpeed = 0.3;
 image_speed = slimIdleImageSpeed;
 slimWalkingImageSpeed = 0.5;
-slimIdleFiringImageSpeed = 0.10;
+slimIdleFiringImageSpeed = 0.2;
 phy_fixed_rotation = true;
 
 

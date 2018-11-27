@@ -18,7 +18,10 @@ if(playerHealth <= 0) {
     playerHealth = 0;
     //Dying
     instance_deactivate_all(true);
-        
+    audio_stop_all();
+    
+    audio_play_sound(soGameOver,10,false);   
+     
     draw_set_halign(fa_left);
     instance_create(view_xview[0], view_yview[0], oGameOverFade);
     var button1 = instance_create(view_xview[0]+325, view_yview[0]+500, oButton_Continue);

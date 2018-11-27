@@ -160,6 +160,33 @@ if (fade) {
         room_goto(rSecondLevel);
     }
 }
+
+/* Congraturation
+This story is happy end.
+Thank you.
+
+Being the wise and courageour
+knight that you are  you feel
+strongth welling.
+In your body.
+Return to starting point.
+Challenge again! 
+
+(*)R           (*)
+    --------
+    --------
+    --------
+    --------
+        
+      (_)
+      
+      ====
+
+R   Reverted 
+(*) Yoshi
+--- Texte
+(_) Bob
+=== MainMenu button*/
 </string>
           </argument>
         </arguments>

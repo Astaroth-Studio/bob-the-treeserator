@@ -77,9 +77,10 @@ fadeDone = false;
           <argument>
             <kind>1</kind>
             <string>if(fadeDone) {
-    draw_set_halign(fa_center);
-    outlinedText(view_wview[0]/2, 200, "Game Mower", c_black, c_white);
+
 }
+draw_set_halign(fa_center);
+outlinedText(view_wview[0]/2, 200, "Game Mower", c_black, c_white);
 </string>
           </argument>
         </arguments>

@@ -9,8 +9,9 @@
       <sound>sound\soBuy</sound>
       <sound>sound\soBack</sound>
       <sound>sound\soConfirm</sound>
-      <sound>sound\soundDialog</sound>
       <sound>sound\soPickup</sound>
+      <sound>sound\soGameOver</sound>
+      <sound>sound\soundDialog</sound>
       <sound>sound\soWalkingSand01</sound>
       <sound>sound\soWalkingSand02</sound>
       <sounds name="Bob">
@@ -51,6 +52,7 @@
       <sprite>sprites\sFirstPanel</sprite>
       <sprite>sprites\sBoxArmed</sprite>
       <sprite>sprites\sDirtFloor</sprite>
+      <sprite>sprites\sSurprise</sprite>
     </sprites>
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
