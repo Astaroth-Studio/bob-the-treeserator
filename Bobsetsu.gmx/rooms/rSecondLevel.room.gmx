@@ -116,7 +116,6 @@
     <instance objName="oBeer" x="1632" y="352" name="inst_1E57B341" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oBeer" x="4608" y="576" name="inst_699DCC58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oControlExit" x="4992" y="384" name="inst_C86BF701" locked="0" code="" scaleX="1" scaleY="7" colour="4294967295" rotation="0"/>
-    <instance objName="oControlExit" x="3232" y="1824" name="inst_C345FC7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bExitSign" x="4896" y="541" w="76" h="69" xo="0" yo="0" id="10004614" name="inst_F4A56836" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -171,7 +170,6 @@
     <tile bgName="bTrashBall" x="3776" y="448" w="48" h="48" xo="0" yo="0" id="10004704" name="inst_39F396AB" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="3744" y="448" w="48" h="48" xo="0" yo="0" id="10004705" name="inst_3641C151" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="3744" y="432" w="48" h="48" xo="0" yo="0" id="10004706" name="inst_182A2B64" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="" x="5216" y="672" w="16" h="16" xo="0" yo="0" id="10004713" name="inst_CBFDDC7E" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bDesertTop" x="416" y="608" w="32" h="32" xo="0" yo="0" id="10000111" name="inst_2616E759" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bDesertTop" x="448" y="608" w="32" h="32" xo="0" yo="0" id="10000112" name="inst_57B005A0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bDesertTop" x="512" y="608" w="32" h="32" xo="0" yo="0" id="10000113" name="inst_92D56F9B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -98,6 +98,7 @@
         <sprite>sprites\sGameLogo</sprite>
         <sprite>sprites\sCredits</sprite>
         <sprite>sprites\sBorder</sprite>
+        <sprite>sprites\sGaeOver</sprite>
         <sprite>sprites\sChangeWeapon</sprite>
         <sprite>sprites\sFullscreen</sprite>
         <sprite>sprites\sFullscreenPressed</sprite>
@@ -254,6 +255,7 @@
         <object>objects\oMessageBox</object>
         <object>objects\oMainMenuSickMusic</object>
         <object>objects\oFrame</object>
+        <object>objects\oGameOverFade</object>
         <objects name="KeySelection">
           <object>objects\oLeftSelect</object>
           <object>objects\oRightSelect</object>
@@ -270,7 +272,6 @@
           <object>objects\oUpKey</object>
           <object>objects\oSpaceKey</object>
         </objects>
-        <object>objects\oGameOverFade</object>
       </objects>
     </objects>
     <objects name="Cinematic">
@@ -317,12 +318,6 @@
   <help>
     <rtf>help.rtf</rtf>
   </help>
-  <audiogroups name="audiogroups">
-    <audiogroup name="audiogroup_default"/>
-    <audiogroup name="Music"/>
-    <audiogroup name="GameSounds"/>
-    <audiogroup name="Entities"/>
-  </audiogroups>
   <TutorialState>
     <IsTutorial>0</IsTutorial>
     <TutorialName></TutorialName>

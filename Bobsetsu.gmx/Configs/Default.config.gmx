@@ -203,10 +203,7 @@
     <option_androidtv_texture_page>1024</option_androidtv_texture_page>
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
     <option_argumenterrors>True</option_argumenterrors>
-    <option_audioGroup1_targets>202375362</option_audioGroup1_targets>
-    <option_audioGroup2_targets>202375362</option_audioGroup2_targets>
-    <option_audioGroup3_targets>202375362</option_audioGroup3_targets>
-    <option_audioGroupCount>4</option_audioGroupCount>
+    <option_audioGroupCount>1</option_audioGroupCount>
     <option_author>LERAN Studio</option_author>
     <option_backimage>nil</option_backimage>
     <option_borderless>False</option_borderless>

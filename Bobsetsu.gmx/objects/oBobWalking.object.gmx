@@ -53,6 +53,7 @@
 //global.prevEnemiesKilled = 4;
 //global.prevTreesPlanted = 5;
 
+fade = false;
 scoreTree = 0;
 scoreEnemies = 0;
 scoreCount = 0;
@@ -91,7 +92,7 @@ timeBetweenTicks = maxTimeBetweenTicks;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -112,7 +113,7 @@ timeBetweenTicks = maxTimeBetweenTicks;
 
 draw_set_halign(fa_center);
 
-outlinedText(640, 200, "Trees "+string(global.prevTreesPlanted)+ "     "+string(scoreTree), c_black, c_white);
+outlinedText(640, 200, "Trees: "+string(global.prevTreesPlanted)+ "                     "+string(scoreTree), c_black, c_white);
 if(!startCounting) exit;
 
 if(global.prevTreesPlanted &gt; 0) {
@@ -125,7 +126,7 @@ if(global.prevTreesPlanted &gt; 0) {
     exit;
 }
 
-outlinedText(640, 250, "Enemies Killed "+string(global.prevEnemiesKilled)+ "     "+string(scoreEnemies), c_black, c_white);
+outlinedText(640, 250, "Enemies Killed: "+string(global.prevEnemiesKilled)+ "                     "+string(scoreEnemies), c_black, c_white);
 if(global.prevEnemiesKilled &gt; 0) {
     timeBetweenTicks--;
     if(timeBetweenTicks &lt;= 0) {
@@ -138,10 +139,10 @@ if(global.prevEnemiesKilled &gt; 0) {
 
 
 fullScore = (scoreEnemies+scoreTree);
-outlinedText(640, 350, "Score    "+string(floor(scoreCount)), c_black, c_white);
+outlinedText(640, 350, "Score: "+string(round(scoreCount)), c_black, c_white);
 
 if(fullScore &gt; scoreCount) {
-    scoreCount+=fullScore/1000; 
+    scoreCount+=fullScore/250; 
    
     if(scoreCount &gt; fullScore) scoreCount = fullScore;
     
@@ -149,10 +150,15 @@ if(fullScore &gt; scoreCount) {
     outlinedText(640, 450, "Press Enter to continue", c_black, c_white);
 
     if(keyboard_check_released(vk_enter)) {
-        room_goto(rSecondLevel);
-        
-    }
+        fade = true;
+        instance_create(x, y, oFadeOut);
 
+    }
+}
+if (fade) {
+    if (oFadeOut.image_alpha &gt;= 1) { 
+        room_goto(rSecondLevel);
+    }
 }
 </string>
           </argument>
