@@ -6,6 +6,7 @@
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="SoundEffects">
+      <sound>sound\soBuy</sound>
       <sound>sound\soBack</sound>
       <sound>sound\soConfirm</sound>
       <sound>sound\soundDialog</sound>
@@ -30,7 +31,9 @@
     <sounds name="Musics">
       <sound>sound\so_TeamLogo</sound>
       <sound>sound\soMainMenu</sound>
+      <sound>sound\soCinematic</sound>
       <sound>sound\soMusicFirstLevel</sound>
+      <sound>sound\soMusicSecondLevel</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -201,7 +204,6 @@
   <paths name="paths">
     <path>paths\pShockedBob</path>
     <path>paths\pBullet</path>
-    <path>paths\pArmPath</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\dialog.gml</script>
