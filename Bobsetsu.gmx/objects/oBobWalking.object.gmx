@@ -33,6 +33,131 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//global.prevScore = 1000;
+//global.prevEnemiesKilled = 4;
+//global.prevTreesPlanted = 5;
+
+scoreTree = 0;
+scoreEnemies = 0;
+scoreCount = 0;
+startCounting = false;
+alarm[9] = 120;
+maxTimeBetweenTicks=10;
+timeBetweenTicks = maxTimeBetweenTicks;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>startCounting</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>true</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>oBobWalking</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+
+draw_set_halign(fa_center);
+
+outlinedText(640, 200, "Trees "+string(global.prevTreesPlanted)+ "     "+string(scoreTree), c_black, c_white);
+if(!startCounting) exit;
+
+if(global.prevTreesPlanted &gt; 0) {
+    timeBetweenTicks--;
+    if(timeBetweenTicks &lt;= 0) {
+        global.prevTreesPlanted--;
+        scoreTree += 200;
+        timeBetweenTicks = maxTimeBetweenTicks;
+    }
+    exit;
+}
+
+outlinedText(640, 250, "Enemies Killed "+string(global.prevEnemiesKilled)+ "     "+string(scoreEnemies), c_black, c_white);
+if(global.prevEnemiesKilled &gt; 0) {
+    timeBetweenTicks--;
+    if(timeBetweenTicks &lt;= 0) {
+        global.prevEnemiesKilled--;
+        scoreEnemies += 100;
+        timeBetweenTicks = maxTimeBetweenTicks;
+    }
+    exit;
+}
+
+
+fullScore = (scoreEnemies+scoreTree);
+outlinedText(640, 350, "Score    "+string(floor(scoreCount)), c_black, c_white);
+
+if(fullScore &gt; scoreCount) {
+    scoreCount+=fullScore/1000; 
+   
+    if(scoreCount &gt; fullScore) scoreCount = fullScore;
+    
+} else {
+    outlinedText(640, 450, "Press Enter to continue", c_black, c_white);
+
+    if(keyboard_check_released(vk_enter)) {
+        room_goto(rSecondLevel);
+        
+    }
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>

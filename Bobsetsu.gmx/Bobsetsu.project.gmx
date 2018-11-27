@@ -207,6 +207,7 @@
     <script>scripts\dialog.gml</script>
     <script>scripts\takeDamage.gml</script>
     <script>scripts\floatingText.gml</script>
+    <script>scripts\outlinedText.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_mm</font>
@@ -247,7 +248,7 @@
         <object>objects\oReturnCK</object>
         <object>objects\oChangeWeapon</object>
         <object>objects\oMessageBox</object>
-        <object>objects\oMainMenuConfig</object>
+        <object>objects\oMainMenuSickMusic</object>
         <object>objects\oFrame</object>
         <objects name="KeySelection">
           <object>objects\oLeftSelect</object>

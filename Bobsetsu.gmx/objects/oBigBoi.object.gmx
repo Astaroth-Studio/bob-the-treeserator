@@ -96,6 +96,8 @@ with(money) {
     value = irandom(bigBoiMoneyDropMax)+1;
 }
 
+global.prevEnemiesKilled++;
+
 instance_destroy();
 </string>
           </argument>
@@ -164,6 +166,7 @@ if(isHurt) {
     image_blend = c_red;
     
     if(enemyHealth &lt;= 0) {
+        phy_speed_x = 0;
         dying = true;
         alarm[10] = 0.5 * room_speed; //DeathTimer
     }

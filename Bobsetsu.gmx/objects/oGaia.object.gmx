@@ -75,7 +75,7 @@
             <string>if(place_meeting(x, y, oBob)) {
     if(!sawDialog) {
         sawDialog = true;
-        dialog("Thank you for replanting trees. You can get some ammo with the vending machine right there. Now go, and save the nature!",0.75,16,16, noone, noone, true);
+        dialog("Thank you for replanting trees.#You can get some ammo with the vending machine right there.#Now go, and save the nature!",0.75,16,16, noone, noone, true);
     }
 } else if(sawDialog) {
     sawDialog = false;

@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -40,7 +40,7 @@ Up: 38
 Right: 39
 Left: 37*/
 
-ini_open("config.ini");
+/*ini_open("config.ini");
 
 //Read the keyys
 global.keyLeft = ini_read_real("Keys", "Left", "81");
@@ -52,7 +52,31 @@ global.keyAttackRight = ini_read_real("Keys", "AttackRight", "39");
 global.keySwitch = ini_read_real("Keys", "Switch", "65");
 global.keyInteract = ini_read_real("Keys", "Interact", "69");
 
-ini_close();
+ini_close();*/
+audio = audio_play_sound(soMainMenu, 0, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(room == rFirstRoom) {    audio_stop_sound(audio); instance_destroy();    }
 </string>
           </argument>
         </arguments>
