@@ -5,7 +5,7 @@
   <origname>sound\audio\soCinematic.ogg</origname>
   <effects>0</effects>
   <volume>
-    <volume>1</volume>
+    <volume>0.56</volume>
   </volume>
   <pan>0</pan>
   <bitRates>
@@ -25,5 +25,5 @@
   <compressed>0</compressed>
   <streamed>0</streamed>
   <uncompressOnLoad>0</uncompressOnLoad>
-  <audioGroup>0</audioGroup>
+  <audioGroup>1</audioGroup>
 </sound>

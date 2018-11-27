@@ -37,6 +37,7 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprite>sprites\sBeer</sprite>
     <sprite>sprites\sGaia</sprite>
     <sprite>sprites\sShop</sprite>
     <sprite>sprites\sCollision</sprite>
@@ -136,7 +137,6 @@
       <sprite>sprites\sSlimBullet</sprite>
       <sprite>sprites\sBullet</sprite>
     </sprites>
-    <sprite>sprites\sBeer</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="SkyBox">
@@ -317,6 +317,12 @@
   <help>
     <rtf>help.rtf</rtf>
   </help>
+  <audiogroups name="audiogroups">
+    <audiogroup name="audiogroup_default"/>
+    <audiogroup name="Music"/>
+    <audiogroup name="GameSounds"/>
+    <audiogroup name="Entities"/>
+  </audiogroups>
   <TutorialState>
     <IsTutorial>0</IsTutorial>
     <TutorialName></TutorialName>
