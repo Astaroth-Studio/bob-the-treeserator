@@ -50,7 +50,13 @@ audio_play_sound(so_TeamLogo,0,false);*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rTestRoom);
+            <string>if(!audio_group_is_loaded(Music)) audio_group_load(Music);
+if(!audio_group_is_loaded(GameSounds)) audio_group_load(GameSounds);
+if(!audio_group_is_loaded(Entities)) audio_group_load(Entities);
+
+if(audio_group_is_loaded(Music) &amp;&amp; audio_group_is_loaded(GameSounds) &amp;&amp; audio_group_is_loaded(Entities)) {
+    room_goto(rMainMenu);
+}
 // DON'T FORGET TO UNCOMMENT
 /*if (timer &lt;= 20 &amp;&amp; timer &gt;= 0) {
     instance_create(room_width/2, room_height/2, oFadeOut)
