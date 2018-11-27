@@ -48,8 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (image_alpha &lt; 1)//note: can't use less than or greater than symbols in this description, just place the correct symbol in the place of the words.
-{ 
+            <string>if (image_alpha &lt; 1) { 
     image_alpha += 0.007 //smaller value here increases fade time.
 }
 </string>
