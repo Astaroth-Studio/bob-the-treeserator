@@ -17,4 +17,16 @@ global.endXHealthBar = (264*(playerHealth/100));
 if(playerHealth <= 0) {
     playerHealth = 0;
     //Dying
+    instance_deactivate_all(true);
+        
+    draw_set_halign(fa_left);
+    instance_create(view_xview[0], view_yview[0], oGameOverFade);
+    var button1 = instance_create(view_xview[0]+325, view_yview[0]+500, oButton_Continue);
+    button1.image_xscale = 2;
+    button1.image_yscale = 2;
+    var button2 = instance_create(view_xview[0]+view_wview[0]-517, view_yview[0]+500, oButton_MainMenu);
+    button2.image_xscale = 2;
+    button2.image_yscale = 2;
+    
+    oBob.depth = -51;
 }

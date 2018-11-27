@@ -270,6 +270,7 @@
           <object>objects\oUpKey</object>
           <object>objects\oSpaceKey</object>
         </objects>
+        <object>objects\oGameOverFade</object>
       </objects>
     </objects>
     <objects name="Cinematic">

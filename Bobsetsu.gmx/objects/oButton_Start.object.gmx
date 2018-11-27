@@ -259,6 +259,8 @@ disableButtons = false;
           <argument>
             <kind>1</kind>
             <string>draw_self();
+draw_set_halign(fa_left);
+draw_set_color(c_white);
 draw_set_font(font_mm);
 draw_set_alpha(image_alpha);
 draw_text(x+63, y+34, "PLAY");

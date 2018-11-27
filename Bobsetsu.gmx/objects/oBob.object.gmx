@@ -140,6 +140,8 @@ if(isHurt) {
     exit;
 }
 
+if(playerHealth &lt;= 0) { sprite_index = sBobHurt; exit; }
+
 /*-------[ Slowing down ]-------*/
 phy_speed_x = max(min(phy_speed_x, maxXSpeed), -maxXSpeed);
 isMoving = false;
@@ -259,12 +261,12 @@ if(place_meeting(x, y, oSlimBullet)) {
     if(recoveryTimeCooldown &lt;= 0) {
         recoveryTimeCooldown = recoveryTimeMaxCooldown;
         
-        //playerHealth -= global.slimBulletDamage;
-        takeDamage(global.slimBulletDamage);
-        
         hurtTimer = hurtTimerMax;
         isHurt = true;
         sprite_index = sBobHurt;
+        
+        //playerHealth -= global.slimBulletDamage;
+        takeDamage(global.slimBulletDamage);
     }
 }
 /*-------[ Punched detection ]-------*/
