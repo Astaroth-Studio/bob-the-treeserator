@@ -5,21 +5,33 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\soWalkingSand02</sound>
-    <sound>sound\soWalkingSand01</sound>
-    <sound>sound\soSlimHurt02</sound>
-    <sound>sound\soSlimHurt01</sound>
-    <sound>sound\soBigBoiHurt02</sound>
-    <sound>sound\soBigBoiHurt01</sound>
-    <sound>sound\soBobHurt</sound>
-    <sound>sound\soBobShooting</sound>
-    <sound>sound\soPunch</sound>
-    <sound>sound\soWoosh</sound>
-    <sound>sound\soSlimDying</sound>
-    <sound>sound\so_TeamLogo</sound>
-    <sound>sound\soundDialog</sound>
-    <sound>sound\soPickup</sound>
-    <sound>sound\soBobDrink</sound>
+    <sounds name="SoundEffects">
+      <sound>sound\soBack</sound>
+      <sound>sound\soConfirm</sound>
+      <sound>sound\soundDialog</sound>
+      <sound>sound\soPickup</sound>
+      <sound>sound\soWalkingSand01</sound>
+      <sound>sound\soWalkingSand02</sound>
+      <sounds name="Bob">
+        <sound>sound\soPunch</sound>
+        <sound>sound\soWoosh</sound>
+        <sound>sound\soBobHurt</sound>
+        <sound>sound\soBobDrink</sound>
+        <sound>sound\soBobShooting</sound>
+      </sounds>
+      <sounds name="Enemies">
+        <sound>sound\soSlimDying</sound>
+        <sound>sound\soSlimHurt01</sound>
+        <sound>sound\soSlimHurt02</sound>
+        <sound>sound\soBigBoiHurt01</sound>
+        <sound>sound\soBigBoiHurt02</sound>
+      </sounds>
+    </sounds>
+    <sounds name="Musics">
+      <sound>sound\so_TeamLogo</sound>
+      <sound>sound\soMainMenu</sound>
+      <sound>sound\soMusicFirstLevel</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sGaia</sprite>
@@ -34,6 +46,7 @@
       <sprite>sprites\sRamBob</sprite>
       <sprite>sprites\sFirstPanel</sprite>
       <sprite>sprites\sBoxArmed</sprite>
+      <sprite>sprites\sDirtFloor</sprite>
     </sprites>
     <sprites name="Bob">
       <sprite>sprites\sBobIdle</sprite>
@@ -162,6 +175,7 @@
       <background>background\bTheCrib</background>
       <background>background\bTrashBall</background>
       <background>background\bFridge</background>
+      <background>background\bExitSign</background>
     </backgrounds>
     <backgrounds name="Logos">
       <background>background\bLogoGameoof</background>
@@ -209,6 +223,7 @@
     </objects>
     <objects name="World">
       <object>objects\oCollision</object>
+      <object>objects\oControlExit</object>
       <object>objects\oCollisionBase</object>
       <object>objects\oWhereToPlant</object>
       <object>objects\oShop</object>
@@ -254,6 +269,7 @@
     </objects>
     <objects name="Cinematic">
       <object>objects\oBobDylan</object>
+      <object>objects\oBobWalking</object>
       <object>objects\oBoxArmed</object>
       <object>objects\oRamBo</object>
       <object>objects\oFokinTree</object>
@@ -261,6 +277,7 @@
       <object>objects\oTreeDummy</object>
       <object>objects\oBulletDylan</object>
       <object>objects\oControlCinPart2</object>
+      <object>objects\oDirtFloor</object>
     </objects>
     <objects name="Enemies">
       <object>objects\oSlimMiB</object>
@@ -285,7 +302,9 @@
     </rooms>
     <rooms name="Levels">
       <room>rooms\rFirstLevel</room>
+      <room>rooms\rSecondLevel</room>
     </rooms>
+    <room>rooms\rTransitionRoom</room>
     <room>rooms\rCredits</room>
     <room>rooms\rTestRoom</room>
   </rooms>
