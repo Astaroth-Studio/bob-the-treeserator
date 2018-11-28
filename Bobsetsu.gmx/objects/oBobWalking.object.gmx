@@ -11,6 +11,52 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//global.prevScore = 1000;
+//global.prevEnemiesKilled = 4;
+//global.prevTreesPlanted = 5;
+
+//ENDGAME
+
+endGame = false;
+madeButton = false;
+
+//POINTS
+
+fade = false;
+addedScore = false;
+
+countingDone = false;
+skipped = false;
+
+scoreTree = 0;
+scoreEnemies = 0;
+treeCount = 0;
+enemiesCount = 0;
+scoreCount = 0;
+startCounting = false;
+alarm[9] = 120;
+maxTimeBetweenTicks=10;
+timeBetweenTicks = maxTimeBetweenTicks;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>611</id>
         <kind>6</kind>
         <userelative>-1</userelative>
@@ -30,38 +76,6 @@
           <argument>
             <kind>0</kind>
             <string>0.25</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//global.prevScore = 1000;
-//global.prevEnemiesKilled = 4;
-//global.prevTreesPlanted = 5;
-
-fade = false;
-scoreTree = 0;
-scoreEnemies = 0;
-scoreCount = 0;
-startCounting = false;
-alarm[9] = 120;
-maxTimeBetweenTicks=10;
-timeBetweenTicks = maxTimeBetweenTicks;
-</string>
           </argument>
         </arguments>
       </action>
@@ -113,24 +127,63 @@ timeBetweenTicks = maxTimeBetweenTicks;
 
 draw_set_halign(fa_center);
 
-outlinedText(640, 200, "Trees: "+string(global.prevTreesPlanted)+ "                     "+string(scoreTree), c_black, c_white);
+if(endGame) {
+    //draw_sprite_ext(sSurprise, -1, 20, 25, -1, 1, 0, -1, 1);
+    
+    draw_sprite_ext(sSurprise, -1, 320, 25, -1, 1, 0, -1, 1);
+    
+    draw_sprite(sSurprise, -1, 960, 25);
+
+    outlinedText(640, 100, "Congraturation
+    This story is happy end.
+    Thank you.
+    
+    Being the wise and courageour
+    knight that you are you feel
+    strongth welling.
+    In your body.
+    Return to starting point.
+    Challenge again!", c_black, c_white);
+    
+    if(!madeButton) {
+        var o = instance_create(544, 600, oButton_MainMenu);
+        o.image_xscale = 2;
+        o.image_yscale = 2;
+        madeButton = true;
+    }
+    exit;
+}
+
+outlinedText(640, 200, "Trees: "+string(treeCount)+ "                     "+string(scoreTree), c_black, c_white);
+
+if(!countingDone &amp;&amp; keyboard_check_released(vk_enter)) {
+    treeCount = global.prevTreesPlanted;
+    scoreTree = global.prevTreesPlanted*200;
+    
+    enemiesCount = global.prevEnemiesKilled;
+    scoreEnemies = global.prevEnemiesKilled*100;
+    
+    scoreCount = scoreEnemies+scoreTree;
+    skipped = true;
+}
+
 if(!startCounting) exit;
 
-if(global.prevTreesPlanted &gt; 0) {
+if(global.prevTreesPlanted &gt; treeCount) {
     timeBetweenTicks--;
     if(timeBetweenTicks &lt;= 0) {
-        global.prevTreesPlanted--;
+        treeCount++;
         scoreTree += 200;
         timeBetweenTicks = maxTimeBetweenTicks;
     }
     exit;
 }
 
-outlinedText(640, 250, "Enemies Killed: "+string(global.prevEnemiesKilled)+ "                     "+string(scoreEnemies), c_black, c_white);
-if(global.prevEnemiesKilled &gt; 0) {
+outlinedText(640, 250, "Enemies Killed: "+string(enemiesCount)+ "                     "+string(scoreEnemies), c_black, c_white);
+if(global.prevEnemiesKilled &gt; enemiesCount) {
     timeBetweenTicks--;
     if(timeBetweenTicks &lt;= 0) {
-        global.prevEnemiesKilled--;
+        enemiesCount++;
         scoreEnemies += 100;
         timeBetweenTicks = maxTimeBetweenTicks;
     }
@@ -141,18 +194,28 @@ if(global.prevEnemiesKilled &gt; 0) {
 fullScore = (scoreEnemies+scoreTree);
 outlinedText(640, 350, "Score: "+string(round(scoreCount)), c_black, c_white);
 
+if(!addedScore) {
+    global.allTheScores += fullScore;
+    addedScore = true;
+}
+
 if(fullScore &gt; scoreCount) {
     scoreCount+=fullScore/250; 
    
     if(scoreCount &gt; fullScore) scoreCount = fullScore;
     
 } else {
+    countingDone = true;
     outlinedText(640, 450, "Press Enter to continue", c_black, c_white);
 
-    if(keyboard_check_released(vk_enter)) {
-        fade = true;
-        instance_create(x, y, oFadeOut);
-
+    if(skipped)
+    {
+        skipped = false;
+    } else {
+        if(keyboard_check_released(vk_enter)) {
+            fade = true;
+            instance_create(x, y, oFadeOut);
+        }
     }
 }
 if (fade) {

@@ -76,11 +76,14 @@ fadeDone = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(fadeDone) {
+            <string>draw_set_halign(fa_center);
 
+if(fadeDone) {
+    outlinedText(view_wview[0]/2, 300, "Score: "+string(global.allTheScores+global.prevTreesPlanted*200+global.prevEnemiesKilled*100), c_black, c_white);
 }
-draw_set_halign(fa_center);
-outlinedText(view_wview[0]/2, 200, "Game Mower", c_black, c_white);
+
+draw_sprite(sGaeOver, 0, view_wview[0]/2, 200);
+//outlinedText(view_wview[0]/2, 200, "Game Mower", c_black, c_white);
 </string>
           </argument>
         </arguments>

@@ -31,23 +31,30 @@ global.prevTreesPlanted = 0;
 globalvar yPosBloodHealthbar;
 globalvar bloodHealthbarAlpha;
 globalvar playerHealth;
-globalvar playerMoney;
-globalvar playerAmmo;
 
 yPosBloodHealthbar = 0;
 bloodHealthbarAlpha = 1;
 playerHealth = 100;
-playerMoney = 0;
 
-playerAmmo = array_create(1);
-playerAmmo[0] = 200;
+//DON'T FORGET TO UNCOMMENT
+//if(room == rFirstLevel) {
+    global.allTheScores = 0;
+    
+    globalvar playerMoney;
+    playerMoney = 0;
+    
+    globalvar playerAmmo;
+    playerAmmo = array_create(1);
+    playerAmmo[0] = 200;
+    
+//}
 
 global.greyHealthBarDowning = false;
 hbStartToDown = false;
 
 /* Temporary Reading Keys config */
 
-ini_open("config.ini");
+//ini_open("config.ini");
 
 
 //Don't forget to comment
