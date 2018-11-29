@@ -17,7 +17,8 @@ Heaven Sings, written and produced by Ove Melaa (omsoftware@hotmail.com)
 * 1st level: The Critical Areas by Hendy Marvin
 * 2nd level: The Story Continues by... by Hendy Marvin
 * 3rd level: Victory by -wait for it- Hendy Marvin
-(from https://marvin-z.itch.io/chiptune-music and https://marvin-z.itch.io/chiptune-music-2)
+* 4th level: Fight Them Until We Can't by Zander Noriega (https://opengameart.org/content/fight-them-until-we-cant)
+(All the music, except the fourth level, came from https://marvin-z.itch.io/chiptune-music and https://marvin-z.itch.io/chiptune-music-2)
 
 ### Font used
 EquipmentPro by Humble Fonts-free (https://somepx.itch.io/humble-fonts-free)

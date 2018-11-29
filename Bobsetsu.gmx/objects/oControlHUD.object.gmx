@@ -404,7 +404,7 @@ if(currentWeapon == 0) {
             <kind>1</kind>
             <string>if debug_mode
 {
-    game_end();
+    room_restart();
 }
 </string>
           </argument>

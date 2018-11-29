@@ -37,6 +37,7 @@
       <sound>sound\soMusicFirstLevel</sound>
       <sound>sound\soMusicSecondLevel</sound>
       <sound>sound\soMusicThirdLevel</sound>
+      <sound>sound\soMusicFourthLevel</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -315,6 +316,7 @@
       <room>rooms\rFirstLevel</room>
       <room>rooms\rSecondLevel</room>
       <room>rooms\rThirdLevel</room>
+      <room>rooms\rFourthLevel</room>
     </rooms>
     <room>rooms\rTransitionRoom</room>
     <room>rooms\rCredits</room>

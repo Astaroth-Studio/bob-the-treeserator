@@ -25,15 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//global.prevScore = 1000;
-//global.prevEnemiesKilled = 4;
-//global.prevTreesPlanted = 5;
-
-//ENDGAME
-//if(global.lastRoom == rFourthRoom) {
-    //endGame = true;
-//} else { 
-endGame = false; //}
+            <string>//ENDGAME
+if(global.lastRoom == rFourthLevel) {
+    endGame = true;
+} else { 
+    endGame = false; 
+}
 madeButton = false;
 
 //POINTS
@@ -153,8 +150,7 @@ draw_set_halign(fa_center);
 if(endGame) {
     //draw_sprite_ext(sSurprise, -1, 20, 25, -1, 1, 0, -1, 1);
     
-    draw_sprite_ext(sSurprise, -1, 320, 25, -1, 1, 0, -1, 1);
-    
+    draw_sprite_ext(sSurprise, -1, 320, 25, -1, 1, 0, -1, 1);    
     draw_sprite(sSurprise, -1, 960, 25);
 
     outlinedText(640, 100, "Congraturation
@@ -224,7 +220,7 @@ if(!addedScore) {
 }
 
 if(fullScore &gt; scoreCount) {
-    scoreCount+=fullScore/250; 
+    scoreCount+=fullScore/200; 
     audio_play_sound(soDing, 1, false);
     if(scoreCount &gt; fullScore) scoreCount = fullScore;
 } else {
@@ -247,8 +243,7 @@ if (fade) {
         else if(global.lastLevel == rSecondLevel)
             room_goto(rThirdLevel);
         else if(global.lastLevel == rThirdLevel)
-            show_debug_message("ToFourthLvl");
-            //room_goto(rFourthLevel);
+            room_goto(rFourthLevel);
     }
 }
 </string>

@@ -87,6 +87,7 @@ if (passed == true) {
             <string>audio_stop_sound(soMusicFirstLevel);
 audio_stop_sound(soMusicSecondLevel);
 audio_stop_sound(soMusicThirdLevel);
+audio_stop_sound(soMusicFourthLevel);
 </string>
           </argument>
         </arguments>
