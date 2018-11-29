@@ -8,7 +8,7 @@ Bob was a simple man, living in a simple crib, when one day, he discovered that 
 It's the project of the game with everything you need to compile it with GameMaker Studio. It was done with the version 1.4.9999 so we don't know if it works with GMS2. It's also used for participating in the GitHub's Game Jam 2018 on itch.io (https://itch.io/jam/game-off-2018).
 
 ## Assets used
-### Logo song 
+### LERAN Studio's logo song
 Heaven Sings, written and produced by Ove Melaa (omsoftware@hotmail.com)
 
 ### Music
