@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="oCredits" x="320" y="88" name="inst_BB2FF9D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oMessageBox" x="320" y="63" name="inst_C688B888" locked="0" code="" scaleX="4.94117641448975" scaleY="5.18918895721436" colour="4294967295" rotation="0"/>
+    <instance objName="oMessageBox" x="320" y="60" name="inst_C688B888" locked="0" code="" scaleX="4.94117641448975" scaleY="5.48181819915771" colour="4294967295" rotation="0"/>
     <instance objName="oButton_BackCred" x="64" y="96" name="inst_92022EDB" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
