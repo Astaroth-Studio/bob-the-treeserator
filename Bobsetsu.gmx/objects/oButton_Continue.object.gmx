@@ -33,7 +33,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0.35</string>
           </argument>
         </arguments>
       </action>
@@ -63,7 +63,7 @@
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0.35</string>
           </argument>
         </arguments>
       </action>
@@ -83,8 +83,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//INSERT CONTINUE CODE HERE
-audio_stop_all();
+            <string>audio_stop_all();
 room_restart();
 </string>
           </argument>
@@ -106,7 +105,7 @@ room_restart();
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>soConfirm</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -140,7 +139,7 @@ room_restart();
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0.35</string>
           </argument>
         </arguments>
       </action>

@@ -283,7 +283,7 @@
     <tile bgName="bTrashBall" x="672" y="512" w="48" h="48" xo="0" yo="0" id="10000980" name="inst_E556B682" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="608" y="544" w="48" h="48" xo="0" yo="0" id="10000981" name="inst_ED149719" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="704" y="560" w="48" h="48" xo="0" yo="0" id="10000984" name="inst_3028FDE3" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bDirtPieceB" x="209" y="545" w="104" h="64" xo="0" yo="0" id="10001000" name="inst_2503AD5E" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="&lt;undefined&gt;" x="209" y="545" w="104" h="64" xo="0" yo="0" id="10001000" name="inst_2503AD5E" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bFridge" x="814" y="536" w="48" h="72" xo="0" yo="0" id="10001014" name="inst_9496D799" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>

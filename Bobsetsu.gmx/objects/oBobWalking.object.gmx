@@ -148,8 +148,6 @@ timeBetweenTicks = maxTimeBetweenTicks;
 draw_set_halign(fa_center);
 
 if(endGame) {
-    //draw_sprite_ext(sSurprise, -1, 20, 25, -1, 1, 0, -1, 1);
-    
     draw_sprite_ext(sSurprise, -1, 320, 25, -1, 1, 0, -1, 1);    
     draw_sprite(sSurprise, -1, 960, 25);
 

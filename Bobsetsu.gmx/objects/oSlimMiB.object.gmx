@@ -151,21 +151,6 @@ instance_destroy();
 
 if(dying) exit;
 
-/*if(!isHurt) {
-    if ((phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) &amp;&amp; (!place_meeting(x-1, y, oCollisionBase) || !place_meeting(x+1, y, oCollisionBase))) {
-        sprite_index = sSlimWalking;
-        image_speed = slimWalkingImageSpeed;
-    } else {
-        if(isFiring) {
-            sprite_index = sSlimIdleFiring;
-            image_speed = slimIdleFiringImageSpeed;
-        } else {
-            sprite_index = sSlimIdle;
-            image_speed = slimIdleImageSpeed;
-        }
-    }
-}*/
-
 /*-------[ Collision detection ]-------*/
 if(place_meeting(x, y, oBullet) || punched) {
     if(!punched) {
@@ -237,7 +222,6 @@ if(distance_to_object(oBob) &lt; range) {
                 sprite_index = sSlimIdle;
                 image_speed = slimIdleImageSpeed;
             }
-            
             /* --------- */
 
         }
@@ -272,8 +256,7 @@ if(distance_to_object(oBob) &lt; range) {
     /* --------- */
 }
 
-if(isFiring)
-{
+if(isFiring) {
     if(floor(image_index)==1) {
         if(canShoot &amp;&amp; bulletDelayDone) {
             if(image_xscale == slimScale) {
@@ -326,7 +309,7 @@ if(isFiring)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Fuck you baltimore 2</string>
+            <string>Fuck you, Baltimore</string>
           </argument>
         </arguments>
       </action>

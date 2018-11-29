@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>if(room == rFirstLevel) {
-    //if(global.keyAttackRight == 39) sprite_index = sRightKey;
     if(global.keyAttackRight == 68) sprite_index = sDKey;
 }
 </string>

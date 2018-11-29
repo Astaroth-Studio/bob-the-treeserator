@@ -57,7 +57,6 @@ global.greyHealthBarDowning = false;
 hbStartToDown = false;
 
 /* Temporary Reading Keys config */
-
 //ini_open("config.ini");
 
 
@@ -131,7 +130,6 @@ ini_close();*/
           <argument>
             <kind>1</kind>
             <string>//Making the grey health bar go down
-
 if(global.greyHealthBarDowning &amp;&amp; hbStartToDown) {
     global.oldXHealthBar--;
     if(global.oldXHealthBar &lt;= global.endXHealthBar) {
@@ -162,31 +160,13 @@ if(global.greyHealthBarDowning &amp;&amp; hbStartToDown) {
           <argument>
             <kind>1</kind>
             <string>//Draw fps in debug
-if debug_mode
-{
+if debug_mode {
     draw_set_halign(fa_left);
     draw_set_colour(c_black);
     draw_text(1150, 1, "FPS: " + string(fps));
 }
 
 //HealthBar creation linked to playerHealth variable
-//draw_healthbar(10, 10, 40, 700, playerHealth, c_black, c_red, c_red, 3, false, false);
-/*global.endXHealthBar = 10+(230*(playerHealth/100));
-
-//Draw Damage Bar behind the healthBar
-if(global.greyHealthBarDowning) {
-    draw_set_colour(c_gray);
-    draw_rectangle(global.endXHealthBar, 10, global.oldXHealthBar, 30, false);
-}
-
-if(playerHealth != 0) {
-    //Draw HealthBar
-    draw_set_colour(c_red);
-    draw_rectangle(10, 10, global.endXHealthBar, 30, false);
-}*/
-
-//HealthBar creation linked to playerHealth variable
-//draw_healthbar(10, 10, 40, 700, playerHealth, c_black, c_red, c_red, 3, false, false);
 global.endXHealthBar = (264*(playerHealth/100));
 
 //Draw Damage Bar behind the healthBar
@@ -198,38 +178,16 @@ if(global.greyHealthBarDowning) {
 if(playerHealth != 0) {
     //Draw HealthBar
     draw_set_colour(c_red);
-    
     draw_sprite_part(sHealthBarInner, 0, 0, 0, global.endXHealthBar, 48, 10, 10);
 }
-
 draw_sprite(sHealthBarFrame, 0, 10, 10);
-
-//Drawing healthbar sprite on top of it
-//draw_sprite(sPlaceholderHealthBar, -1, 10, 5);
-
-//Blood at the top of the healthbar
-/*yPosBloodHealthbar=yPosBloodHealthbar+1
-Add Blood in place of sPlaceholderHealthBar
-draw_sprite_ext(sPlaceholderHealthBar,-1,50,yPosBloodHealthbar,1,1,0,c_white,bloodHealthbarAlpha);*/
 
 //Money text creation linked to playerMoney variable
 draw_set_font(font_mm);
 draw_set_halign(fa_left);
-draw_set_colour(c_black);
-//draw_set_colour(c_black);
-//draw_text(1002, 3, "$"+string(playerMoney)+"AUS");
 
 var moneyText = "$"+string(playerMoney)+"AUS";
-draw_text(1001, 2, moneyText);  
-draw_text(999, 0, moneyText);  
-draw_text(1000, 2, moneyText);  
-draw_text(1001, 1, moneyText);  
-draw_text(1000, 0, moneyText);  
-draw_text(999, 1, moneyText);  
-draw_text(999, 2, moneyText);  
-draw_text(1001, 0, moneyText);  
-
-draw_text_colour(1000, 1, moneyText, c_green, c_green, c_green, c_green, 1);
+outlinedText(1000,1,moneyText,c_black,c_green);
 
 //Ammo sprite and text creation linked to playerAmmo[0]
 if(currentWeapon == 0) {
@@ -238,16 +196,7 @@ if(currentWeapon == 0) {
     draw_sprite(sAmmoHUD, -1, 763, 1);
     
     var ammoText = string(playerAmmo[0]);
-    draw_text(801, 2, ammoText);  
-    draw_text(799, 0, ammoText);  
-    draw_text(800,   2, ammoText);  
-    draw_text(801,   1, ammoText);  
-    draw_text(800,   0, ammoText);  
-    draw_text(799,   1, ammoText);  
-    draw_text(799, 2, ammoText);  
-    draw_text(801, 0, ammoText); 
-    //draw_text_colour(802, 3, string(playerAmmo[0]), c_black, c_black, c_black, c_black, 1);
-    draw_text_colour(800, 1, string(playerAmmo[0]), c_red, c_red, c_red, c_red, 1);
+    outlinedText(800,1,ammoText,c_black,c_red);
 }
 </string>
           </argument>
@@ -255,6 +204,26 @@ if(currentWeapon == 0) {
       </action>
     </event>
     <event eventtype="10" enumb="116">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>F5 = Create a BigBoiMiB</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -271,8 +240,7 @@ if(currentWeapon == 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if debug_mode
-{
+            <string>if debug_mode {
     var inst = instance_create(oBob.x, oBob.y-100, oBigBoi);
     inst.image_xscale = 3;
     inst.image_yscale = 3;
@@ -285,12 +253,12 @@ if(currentWeapon == 0) {
     <event eventtype="10" enumb="115">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>605</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
@@ -299,16 +267,10 @@ if(currentWeapon == 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if debug_mode
-{
-    playerMoney = 1000;
-}
-</string>
+            <string>F4 = Create a SlimMiB</string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="10" enumb="114">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -325,60 +287,7 @@ if(currentWeapon == 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if debug_mode
-{
-    playerAmmo[0] = 900;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="113">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if debug_mode
-{
-    playerHealth = 100;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="10" enumb="112">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if debug_mode
-{
+            <string>if debug_mode {
     var inst = instance_create(oBob.x, oBob.y-100, oSlimMiB);
     inst.image_xscale = 2;
     inst.image_yscale = 2;
@@ -388,7 +297,27 @@ if(currentWeapon == 0) {
         </arguments>
       </action>
     </event>
-    <event eventtype="10" enumb="27">
+    <event eventtype="10" enumb="114">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>F3 = Money set to $1000</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -405,8 +334,142 @@ if(currentWeapon == 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if debug_mode
-{
+            <string>if debug_mode {
+    playerMoney = 1000;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="113">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>F2 = Ammo set to 900</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if debug_mode {
+    playerAmmo[0] = 900;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="112">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>F1 = Full Life</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if debug_mode {
+    playerHealth = 100;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="27">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Esc = Restart the room</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if debug_mode {
     room_restart();
 }
 </string>

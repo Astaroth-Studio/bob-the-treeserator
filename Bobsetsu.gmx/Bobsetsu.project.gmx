@@ -179,8 +179,6 @@
       <background>background\bBarrier</background>
       <background>background\bDescarA</background>
       <background>background\bDescarB</background>
-      <background>background\bDirtPieceA</background>
-      <background>background\bDirtPieceB</background>
       <background>background\bTheCrib</background>
       <background>background\bTrashBall</background>
       <background>background\bFridge</background>
@@ -195,16 +193,17 @@
       <background>background\bCinematicPart2</background>
     </backgrounds>
     <backgrounds name="Texts">
-      <background>background\bWhatYaWantText</background>
-      <background>background\bMovingText</background>
-      <background>background\bShootingText</background>
-      <background>background\bJumpingText</background>
-      <background>background\bKeyboardLayoutText</background>
+      <background>background\bArrow</background>
+      <background>background\bPressF</background>
       <background>background\bAzertyText</background>
       <background>background\bQwertyText</background>
       <background>background\bDontForget</background>
-      <background>background\bArrow</background>
-      <background>background\bPressF</background>
+      <background>background\bMovingText</background>
+      <background>background\bShootingText</background>
+      <background>background\bJumpingText</background>
+      <background>background\bWhatYaWantText</background>
+      <background>background\bKeyboardLayoutText</background>
+      <background>background\bUseYourFistsAndNotYourMouth</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths">
@@ -267,11 +266,11 @@
           <object>objects\oLeftKeyboardSelect</object>
           <object>objects\oRightKeyboardSelect</object>
           <object>objects\oAKey</object>
+          <object>objects\oQKey</object>
           <object>objects\oZKey</object>
           <object>objects\oWKey</object>
           <object>objects\oEKey</object>
           <object>objects\oDKey</object>
-          <object>objects\oQKey</object>
           <object>objects\oLeftKey</object>
           <object>objects\oRightKey</object>
           <object>objects\oUpKey</object>

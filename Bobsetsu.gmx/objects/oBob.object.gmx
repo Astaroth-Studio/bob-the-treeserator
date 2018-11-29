@@ -132,9 +132,6 @@ if(global.stopTime) { image_speed = 0; exit; }
 if(isHurt) {
     hurtTimer -= delta_time/1000;
     if(hurtTimer &lt;= 0) {
-        /*if(playerHealth &lt;= 0) {
-            //Dying
-        }*/
         isHurt = false;
     }
     exit;
@@ -172,7 +169,6 @@ if (phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) {
 }
 
 /*------[ Pickup money ]------*/
-
 if(place_meeting(x, y, oMoneyItem)) {
     audio_play_sound(soPickup, 1, false);
     with(instance_nearest(x,y, oMoneyItem)) {
@@ -183,7 +179,6 @@ if(place_meeting(x, y, oMoneyItem)) {
 }
 
 /*------[ Pickup beer ]------*/
-
 if(place_meeting(x, y, oBeer)) {
     audio_play_sound(soBobDrink, 1, false);
     with(instance_nearest(x,y, oBeer)) {
@@ -192,7 +187,7 @@ if(place_meeting(x, y, oBeer)) {
     }
 }
 
-/*------[ Walking Sounds ! + Jumping ! ]------*/
+/*------[ Walking Sounds + Jumping ]------*/
 if(place_meeting(x,y+1,oCollisionBase)) {
     if(keyboard_check_pressed(global.keyJump))
         phy_linear_velocity_y = -jumpPower;
@@ -220,36 +215,19 @@ if(place_meeting(x,y+1,oCollisionBase)) {
     }
 }
 
-
-/*------[ Falling is bad ]------*/
-
-/*if(phy_speed_y &gt; 1.2){
-    controls = false;
-    if(sprite_index != sBobWalking) {
-        sprite_index = sBobFalling;
-    }
-} else {
-    if(instance_number(oDialog) == 0) {
-        controls = true;
-    }
-}*/
-
 /*-------[ Moving ]-------*/
 if (controls) {
-    //if keyboard_check(ord('D')) {
     if keyboard_check(global.keyRight) {
         if (!isFighting) {
             image_xscale = BOB_SCALE;
         }
-        //image_speed = walkSpeed;
         physics_apply_force(x,y,moveSpeed,-100);
     }
-    //if keyboard_check(ord('Q')) {
+
     if keyboard_check(global.keyLeft) {
         if (!isFighting) {
             image_xscale = -BOB_SCALE;
         }
-        //image_speed = -walkSpeed;
         physics_apply_force(x,y,-moveSpeed,-100);
     }
 }
@@ -264,8 +242,7 @@ if(place_meeting(x, y, oSlimBullet)) {
         hurtTimer = hurtTimerMax;
         isHurt = true;
         sprite_index = sBobHurt;
-        
-        //playerHealth -= global.slimBulletDamage;
+
         takeDamage(global.slimBulletDamage);
     }
 }
@@ -273,8 +250,7 @@ if(place_meeting(x, y, oSlimBullet)) {
 if(punched) {
     if(recoveryTimeCooldown &lt;= 0) {
         recoveryTimeCooldown = recoveryTimeMaxCooldown;
-        
-        //playerHealth -= global.bigBoiDamage;
+
         takeDamage(global.bigBoiDamage);
         
         hurtTimer = hurtTimerMax;
@@ -292,17 +268,16 @@ if(recoveryTimeCooldown &gt;= 0) {
         blinkingInvert = !blinkingInvert;
         blinkingSteps = 0;
     }
-    if(blinkingInvert)
+    if(blinkingInvert) {
         image_alpha = 0;
-    else
+    } else {
         image_alpha = 1;
+    }
 } else if(blinkingInvert) {
     blinkingInvert = false;
 }
 
 /*-------[ Combat System - Switching Weapon ]-------*/
-
-//if (keyboard_check_released(ord('A'))) {
 if (keyboard_check_released(global.keySwitch)) {
     if(currentWeapon == 1) currentWeapon = 0; else currentWeapon++;
 }
@@ -312,9 +287,7 @@ if(shootingCooldown &gt;= 0) {
     shootingCooldown-=(delta_time/1000); // delta_time is in microseconds
 }
 
-/* Need to simplify */
 if (controls) {
-    //if(playerAmmo[0] &gt; 0) {
     if(currentWeapon == 1) {
         //Bullet X spawn position
         bulletX = 0;
@@ -325,21 +298,18 @@ if (controls) {
         bulletYspeed = 0;
     
         //Switch sprite xscale depending on key and setting isFiring
-        //if keyboard_check(vk_left) {
         if keyboard_check(global.keyAttackLeft) {
             isShooting = true;
             isFighting = true;
             if (image_xscale != -BOB_SCALE) {
                image_xscale = -BOB_SCALE;
             }
-        //} else if keyboard_check(vk_right) {
         } else if keyboard_check(global.keyAttackRight) {
             isShooting = true;
             isFighting = true;
             if (image_xscale != BOB_SCALE) {
                image_xscale = BOB_SCALE;
             }
-        //} else if keyboard_check(vk_up) {
         } else if keyboard_check(global.keyAttackUp) {
             isShooting = true;
             isFighting = true;
@@ -358,10 +328,8 @@ if (controls) {
         }
         
         //Up Left
-        //if keyboard_check(vk_left) &amp;&amp; keyboard_check(vk_up) {
         if keyboard_check(global.keyAttackLeft) &amp;&amp; keyboard_check(global.keyAttackUp) {
-            if(isMoving)
-            {
+            if(isMoving) {
                 if (sprite_index != sBobWalkingFiringUpward) {
                     sprite_index = sBobWalkingFiringUpward;
                 }
@@ -376,18 +344,16 @@ if (controls) {
             bulletY = -24;
             bulletXspeed = -bulletSpeed;
             bulletYspeed = -bulletSpeed*0.5;
-        //} else if keyboard_check(vk_right) &amp;&amp; keyboard_check(vk_up) {
+            
         } else if keyboard_check(global.keyAttackRight) &amp;&amp; keyboard_check(global.keyAttackUp) {
         //Angle 45
-            if(isMoving)
-            {
+            if(isMoving) {
                 if (sprite_index != sBobWalkingFiringUpward) {
                     sprite_index = sBobWalkingFiringUpward;
                 }
             } else {
                 if (sprite_index != sBobIdleFiringUpward) {
                     sprite_index = sBobIdleFiringUpward;
-                    
                 }
             }
         
@@ -395,11 +361,10 @@ if (controls) {
             bulletY = -24;
             bulletXspeed = bulletSpeed;
             bulletYspeed = -bulletSpeed*0.5;
-        //} else if keyboard_check(vk_left) {
+            
         } else if keyboard_check(global.keyAttackLeft) {
         //Angle 180
-            if(isMoving)
-            {
+            if(isMoving) {
                 if (sprite_index != sBobWalkingFiring) {
                     sprite_index = sBobWalkingFiring;
                 }
@@ -414,7 +379,6 @@ if (controls) {
             bulletXspeed = -bulletSpeed;
             bulletYspeed = 0;
             
-        //} else if keyboard_check(vk_right) {
         } else if keyboard_check(global.keyAttackRight) {
         //Angle 0
             if(isMoving)
@@ -431,7 +395,7 @@ if (controls) {
             bulletY = 0;
             bulletXspeed = bulletSpeed;
             bulletYspeed = 0;
-        //} else if keyboard_check(vk_up) {
+
         } else if keyboard_check(global.keyAttackUp) {
         //Angle 90
             if(isMoving)
@@ -467,7 +431,6 @@ if (controls) {
         }
     /*-------[ Combat System - Punch ]-------*/
     } else if(currentWeapon == 0 &amp;&amp; !inPunch) {
-        //if keyboard_check_released(vk_left) {
         if keyboard_check_released(global.keyAttackLeft) {
             isFighting = true;
             if (image_xscale != -BOB_SCALE) {
@@ -479,13 +442,12 @@ if (controls) {
                 sprite_index = sBobFight2;
             }
             inPunch = true;
-            
-            //show_debug_message("Test");
+
             collision_object = collision_rectangle(x-16,y+16,x-32,y-16, oSlimMiB, false, true);
             if(collision_object == noone) {
                 collision_object = collision_rectangle(x-16,y+16,x-32,y-16, oBigBoi, false, true);
             }
-            if(collision_object != noone &amp;&amp; collision_object.enemyHealth &gt; 0)/*|| place_meeting(x-16, y, oBigMiB)*/{
+            if(collision_object != noone &amp;&amp; collision_object.enemyHealth &gt; 0) {
                 
                 currentX = view_xview[0];
                 if(irandom(1)==0) currentRandomX = -32; else currentRandomX =32;
@@ -502,9 +464,8 @@ if (controls) {
             } else {
                 audio_play_sound(soWoosh,1,0);
             }
-        //} else if keyboard_check_released(vk_right) {
-        } else if keyboard_check_released(global.keyAttackRight) {
-            
+
+        } else if keyboard_check_released(global.keyAttackRight) {        
             isFighting = true;
             if (image_xscale != BOB_SCALE) {
                 image_xscale = BOB_SCALE;
@@ -520,7 +481,7 @@ if (controls) {
             if(collision_object == noone) {
                 collision_object = collision_rectangle(x+16,y+16,x+32,y-16, oBigBoi, false, true);
             }
-            if(collision_object != noone &amp;&amp; collision_object.enemyHealth &gt; 0)/*|| place_meeting(x-16, y, oBigMiB)*/{
+            if(collision_object != noone &amp;&amp; collision_object.enemyHealth &gt; 0) {
                 
                 currentX = view_xview[0];
                 if(irandom(1)==0) currentRandomX = -32; else currentRandomX =32;
@@ -585,24 +546,10 @@ if (controls) {
           <argument>
             <kind>1</kind>
             <string>draw_self();
-
 if(distance_to_object(oShop) == 0) {
-    draw_set_color(c_black);
-    draw_set_halign(fa_center);
-    
     shopText = "10 ammos = $10AUS";
-
-    draw_text(x+1, y-sprite_height+1, shopText);  
-    draw_text(x-1, y-sprite_height-1, shopText);  
-    draw_text(x, y-sprite_height+1, shopText);  
-    draw_text(x+1, y-sprite_height, shopText);  
-    draw_text(x, y-sprite_height-1, shopText);  
-    draw_text(x-1, y-sprite_height, shopText);  
-    draw_text(x-1, y-sprite_height+1, shopText);  
-    draw_text(x+1, y-sprite_height-1, shopText);
-    
-    draw_set_color(c_white);
-    draw_text(x, y-sprite_height, shopText);
+    draw_set_halign(fa_center);   
+    outlinedText(x,y, shopText, c_black, c_white);
 }
 
 </string>
