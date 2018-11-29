@@ -1,5 +1,4 @@
 //takeDamage(damage);
-//If augmenting player's health: set global.greyHealthBarDowning to false;
 
 if(!global.greyHealthBarDowning) {
     global.greyHealthBarDowning = true;
