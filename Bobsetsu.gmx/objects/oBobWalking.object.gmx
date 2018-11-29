@@ -30,7 +30,9 @@
 //global.prevTreesPlanted = 5;
 
 //ENDGAME
-endGame = false;
+//if(global.lastRoom == rFourthRoom) {
+    //endGame = true;
+//} else { endGame = false; }
 madeButton = false;
 
 //POINTS
@@ -238,7 +240,13 @@ if(fullScore &gt; scoreCount) {
 }
 if (fade) {
     if (oFadeOut.image_alpha &gt;= 1) { 
-        room_goto(rSecondLevel);
+        if(global.lastLevel == rFirstLevel)
+            room_goto(rSecondLevel);
+        else if(global.lastLevel == rSecondLevel)
+            room_goto(rThirdLevel);
+        else if(global.lastLevel == rThirdLevel)
+            show_debug_message("ToFourthLvl");
+            //room_goto(rFourthLevel);
     }
 }
 </string>

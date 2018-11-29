@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>global.prevEnemiesKilled = 0;
 global.prevTreesPlanted = 0;
+global.lastLevel = room;
 
 globalvar yPosBloodHealthbar;
 globalvar bloodHealthbarAlpha;
