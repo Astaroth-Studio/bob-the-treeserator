@@ -38,6 +38,9 @@ Thumbs.db
 
 # Ignore Config Files #
 #######################
+Bobsetsu.gmx/Configs/Default/windows/Runner_header.bmp
+Bobsetsu.gmx/Configs/Default/windows/Runner_finish.bmp
+Bobsetsu.gmx/Configs/Default/windows/RunnerInstaller.nsi
 Bobsetsu.gmx/Configs/Default/WindowsUAP/logos/WideLogo.scale-100.png
 Bobsetsu.gmx/Configs/Default/WindowsUAP/logos/StoreLogo.scale-100.png
 Bobsetsu.gmx/Configs/Default/WindowsUAP/logos/SmallishLogo.scale-100.png
