@@ -31,5 +31,6 @@ if(playerHealth <= 0) {
     button2.image_xscale = 2;
     button2.image_yscale = 2;
     
+    oBob.phy_speed_x = 0;
     oBob.depth = -51;
 }

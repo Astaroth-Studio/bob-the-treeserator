@@ -32,7 +32,8 @@
 //ENDGAME
 //if(global.lastRoom == rFourthRoom) {
     //endGame = true;
-//} else { endGame = false; }
+//} else { 
+endGame = false; //}
 madeButton = false;
 
 //POINTS
@@ -196,6 +197,7 @@ if(global.prevTreesPlanted &gt; treeCount) {
     if(timeBetweenTicks &lt;= 0) {
         treeCount++;
         scoreTree += 200;
+        audio_play_sound(soDing, 1, false);
         timeBetweenTicks = maxTimeBetweenTicks;
     }
     exit;
@@ -207,6 +209,7 @@ if(global.prevEnemiesKilled &gt; enemiesCount) {
     if(timeBetweenTicks &lt;= 0) {
         enemiesCount++;
         scoreEnemies += 100;
+        audio_play_sound(soDing, 1, false);
         timeBetweenTicks = maxTimeBetweenTicks;
     }
     exit;
@@ -222,9 +225,8 @@ if(!addedScore) {
 
 if(fullScore &gt; scoreCount) {
     scoreCount+=fullScore/250; 
-   
+    audio_play_sound(soDing, 1, false);
     if(scoreCount &gt; fullScore) scoreCount = fullScore;
-    
 } else {
     countingDone = true;
     outlinedText(640, 450, "Press Enter to continue", c_black, c_white);

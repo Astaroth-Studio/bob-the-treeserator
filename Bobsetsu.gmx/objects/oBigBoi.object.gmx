@@ -135,31 +135,6 @@ if(dying) exit;
     }
 }*/
 
-/*-------[ Hurt Animation ]-------*/
-if(isHurt) {
-    hurtTimer -= delta_time/1000;
-    image_blend = c_red;
-    
-    if(enemyHealth &lt;= 0) {
-        phy_speed_x = 0;
-        dying = true;
-        alarm[10] = 0.5 * room_speed; //DeathTimer
-    }
-    
-    if(hurtTimer &lt;= 0) {
-        hurtTimer = hurtTimerMax;
-
-
-        
-        sprite_index = sBigBoiIdle;
-        image_speed = bigBoiIdleImageSpeed;
-        
-        isHurt = false;
-        image_blend = c_white;
-    }
-    exit;
-}
-
 /*-------[ Collision detection ]-------*/
 if(place_meeting(x, y, oBullet) || punched) {
     if(!punched) {
@@ -186,6 +161,33 @@ if(place_meeting(x, y, oBullet) || punched) {
         enemyHealth = 0;
     }
 }
+
+/*-------[ Hurt Animation ]-------*/
+if(isHurt) {
+    hurtTimer -= delta_time/1000;
+    image_blend = c_red;
+    
+    if(enemyHealth &lt;= 0) {
+        phy_speed_x = 0;
+        dying = true;
+        alarm[10] = 0.5 * room_speed; //DeathTimer
+    }
+    
+    if(hurtTimer &lt;= 0) {
+        hurtTimer = hurtTimerMax;
+
+
+        
+        sprite_index = sBigBoiIdle;
+        image_speed = bigBoiIdleImageSpeed;
+        
+        isHurt = false;
+        image_blend = c_white;
+    }
+    exit;
+}
+
+
 
 /*-------[ Distance Detection ]-------*/
 distanceToBob = distance_to_object(oBob);

@@ -28,6 +28,7 @@
         <sound>sound\soBigBoiHurt01</sound>
         <sound>sound\soBigBoiHurt02</sound>
       </sounds>
+      <sound>sound\soDing</sound>
     </sounds>
     <sounds name="Musics">
       <sound>sound\so_TeamLogo</sound>
