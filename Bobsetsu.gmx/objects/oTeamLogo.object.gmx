@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>//DON'T FORGET TO UNCOMMENT
-/*timer=360;
-audio_play_sound(so_TeamLogo,0,false);*/
+timer=360;
+audio_play_sound(so_TeamLogo,0,false);
 </string>
           </argument>
         </arguments>
@@ -50,14 +50,13 @@ audio_play_sound(so_TeamLogo,0,false);*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rCredits);
-// DON'T FORGET TO UNCOMMENT
-/*if (timer &lt;= 20 &amp;&amp; timer &gt;= 0) {
+            <string>// DON'T FORGET TO UNCOMMENT
+if (timer &lt;= 20 &amp;&amp; timer &gt;= 0) {
     instance_create(room_width/2, room_height/2, oFadeOut)
 } else if (timer &lt; 0) {
     room_goto(rMainMenu);
 } 
-timer -= 1;*/
+timer -= 1;
 </string>
           </argument>
         </arguments>

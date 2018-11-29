@@ -41,7 +41,7 @@ global.prevTrees = instance_number(oWhereToPlant);
 global.prevEnemies = instance_number(oSlimMiB)+instance_number(oBigBoi);
 
 //DON'T FORGET TO UNCOMMENT
-//if(room == rFirstLevel) {
+if(room == rFirstLevel) {
     global.allTheScores = 0;
     
     globalvar playerMoney;
@@ -51,7 +51,7 @@ global.prevEnemies = instance_number(oSlimMiB)+instance_number(oBigBoi);
     playerAmmo = array_create(1);
     playerAmmo[0] = 200;
     
-//}
+}
 
 global.greyHealthBarDowning = false;
 hbStartToDown = false;
@@ -61,7 +61,7 @@ hbStartToDown = false;
 
 
 //Don't forget to comment
-global.keyLeft = 81; //Q
+/*global.keyLeft = 81; //Q
 global.keyRight = 68;//D
 global.keyJump = 32;//Space
 global.keyAttackLeft = 37;//Left
@@ -69,7 +69,7 @@ global.keyAttackRight = 39;//Right
 global.keyAttackUp = 38;//Up
 global.keyInteract = 69;//E
 global.keySwitch = 65; //A
-
+*/
 /*//Read the keyys
 global.keyLeft = ini_read_string("Keys", "Left", "81");
 global.keyRight = ini_read_string("Keys", "Right", "68");
