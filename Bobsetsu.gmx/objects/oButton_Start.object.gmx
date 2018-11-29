@@ -58,7 +58,6 @@ disableButtons = false;
     } else {
         makeDissapear = false;
         disableButtons = true;
-
         alarm[0] = 3;
     }
     
@@ -104,7 +103,7 @@ disableButtons = false;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0.35</string>
           </argument>
         </arguments>
       </action>
@@ -134,7 +133,7 @@ disableButtons = false;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0.35</string>
           </argument>
         </arguments>
       </action>
@@ -212,7 +211,7 @@ disableButtons = false;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>1</string>
+            <string>0.35</string>
           </argument>
         </arguments>
       </action>

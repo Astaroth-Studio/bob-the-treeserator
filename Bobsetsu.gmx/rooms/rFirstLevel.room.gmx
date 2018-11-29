@@ -78,7 +78,7 @@
     <instance objName="oCollision" x="3104" y="480" name="inst_E5E36ABB" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCollision" x="3264" y="512" name="inst_4D2D155D" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oCollision" x="3296" y="576" name="inst_CBF6F222" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oCollision" x="3424" y="608" name="inst_612EA9EC" locked="0" code="" scaleX="64" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oCollision" x="3424" y="608" name="inst_612EA9EC" locked="0" code="" scaleX="54" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oControlHUD" x="0" y="0" name="inst_AE40DA82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWhereToPlant" x="3008" y="480" name="inst_FF919BBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oWhereToPlant" x="3232" y="448" name="inst_C6BB1805" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -717,9 +717,7 @@
     <tile bgName="bArrow" x="2996" y="378" w="60" h="88" xo="0" yo="0" id="10002426" name="inst_F56B17F6" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bPressF" x="4597" y="460" w="362" h="34" xo="0" yo="0" id="10002427" name="inst_729D45B4" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bExitSign" x="4897" y="540" w="152" h="138" xo="0" yo="0" id="10002428" name="inst_54B1AF6D" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="" x="5440" y="704" w="16" h="16" xo="0" yo="0" id="10004707" name="inst_8AB808E1" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="" x="5440" y="672" w="16" h="16" xo="0" yo="0" id="10004709" name="inst_4E5487E7" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="" x="5440" y="640" w="16" h="16" xo="0" yo="0" id="10004711" name="inst_69AF5391" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bUseYourFistsAndNotYourMouth" x="1824" y="192" w="506" h="60" xo="0" yo="0" id="10013788" name="inst_EC61F82A" depth="1000005" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="0" y="576" w="48" h="48" xo="0" yo="0" id="10000922" name="inst_A8C8476C" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="-10" y="605" w="48" h="48" xo="0" yo="0" id="10000923" name="inst_8E8E2527" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="64" y="608" w="48" h="48" xo="0" yo="0" id="10000924" name="inst_441A6FA3" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -928,7 +926,7 @@
     <tile bgName="bTrashBall" x="704" y="512" w="48" h="48" xo="0" yo="0" id="10000979" name="inst_6790B2EF" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="608" y="544" w="48" h="48" xo="0" yo="0" id="10000981" name="inst_ED149719" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="704" y="560" w="48" h="48" xo="0" yo="0" id="10000984" name="inst_3028FDE3" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bDirtPieceB" x="209" y="545" w="104" h="64" xo="0" yo="0" id="10001000" name="inst_2503AD5E" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="&lt;undefined&gt;" x="209" y="545" w="104" h="64" xo="0" yo="0" id="10001000" name="inst_2503AD5E" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bFridge" x="814" y="536" w="48" h="72" xo="0" yo="0" id="10001014" name="inst_9496D799" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bFridge" x="2111" y="504" w="48" h="72" xo="0" yo="0" id="10001972" name="inst_95203907" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bTrashBall" x="2071" y="499" w="48" h="48" xo="0" yo="0" id="10001973" name="inst_D2DC8FA5" depth="999999" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

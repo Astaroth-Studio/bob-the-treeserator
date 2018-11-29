@@ -28,7 +28,6 @@
             <string>if(room == rFirstLevel) {
     if(global.keyAttackUp == 90) sprite_index = sZKey;
     if(global.keyAttackUp == 87) sprite_index = sWKey;
-    //if(global.keyAttackUp == 38) sprite_index = sUpKey;
 }
 </string>
           </argument>

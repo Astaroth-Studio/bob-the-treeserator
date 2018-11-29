@@ -123,7 +123,7 @@
     <instance objName="oCollision" x="6720" y="480" name="inst_0F06F656" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oCollision" x="6752" y="544" name="inst_B899CBB9" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCollision" x="6976" y="576" name="inst_CF3ABFD6" locked="0" code="" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="oCollision" x="7008" y="640" name="inst_48C2BB82" locked="0" code="" scaleX="36.1290321350098" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oCollision" x="7008" y="640" name="inst_48C2BB82" locked="0" code="" scaleX="40.2580642700195" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCollision" x="7808" y="480" name="inst_63CD499C" locked="0" code="" scaleX="11" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCollision" x="7712" y="448" name="inst_7F093F9F" locked="0" code="" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oCollision" x="7648" y="416" name="inst_6C9B0D28" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>

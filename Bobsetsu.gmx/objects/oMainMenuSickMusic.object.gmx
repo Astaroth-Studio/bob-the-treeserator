@@ -76,7 +76,10 @@ audio = audio_play_sound(soMainMenu, 0, true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(room == rFirstRoom) {    audio_stop_sound(audio); instance_destroy();    }
+            <string>if(room == rFirstRoom) {  
+    audio_stop_sound(audio); 
+    instance_destroy();    
+}
 </string>
           </argument>
         </arguments>

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha = 0.05; //this is the start fade for going into the next room.
+            <string>image_alpha = 0.05;
 fadeDone = false;
 </string>
           </argument>
@@ -50,7 +50,7 @@ fadeDone = false;
           <argument>
             <kind>1</kind>
             <string>if (image_alpha &lt; 0.7) { 
-    image_alpha += 0.007 //smaller value here increases fade time.
+    image_alpha += 0.007 //smaller value increases fade time.
 } else if(!fadeDone) {
     fadeDone = true;
 }
@@ -83,7 +83,6 @@ if(fadeDone) {
 }
 
 draw_sprite(sGaeOver, 0, view_wview[0]/2, 200);
-//outlinedText(view_wview[0]/2, 200, "Game Mower", c_black, c_white);
 </string>
           </argument>
         </arguments>
