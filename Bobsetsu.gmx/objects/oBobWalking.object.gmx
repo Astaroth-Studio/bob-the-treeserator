@@ -30,12 +30,10 @@
 //global.prevTreesPlanted = 5;
 
 //ENDGAME
-
 endGame = false;
 madeButton = false;
 
 //POINTS
-
 fade = false;
 addedScore = false;
 
@@ -106,6 +104,28 @@ timeBetweenTicks = maxTimeBetweenTicks;
         </arguments>
       </action>
     </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>212</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_end_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>soMainMenu</sound>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -139,7 +159,7 @@ if(endGame) {
     Thank you.
     
     Being the wise and courageour
-    knight that you are you feel
+    knight that you are  you feel
     strongth welling.
     In your body.
     Return to starting point.
@@ -190,7 +210,6 @@ if(global.prevEnemiesKilled &gt; enemiesCount) {
     exit;
 }
 
-
 fullScore = (scoreEnemies+scoreTree);
 outlinedText(640, 350, "Score: "+string(round(scoreCount)), c_black, c_white);
 
@@ -208,8 +227,7 @@ if(fullScore &gt; scoreCount) {
     countingDone = true;
     outlinedText(640, 450, "Press Enter to continue", c_black, c_white);
 
-    if(skipped)
-    {
+    if(skipped) {
         skipped = false;
     } else {
         if(keyboard_check_released(vk_enter)) {
@@ -223,33 +241,6 @@ if (fade) {
         room_goto(rSecondLevel);
     }
 }
-
-/* Congraturation
-This story is happy end.
-Thank you.
-
-Being the wise and courageour
-knight that you are  you feel
-strongth welling.
-In your body.
-Return to starting point.
-Challenge again! 
-
-(*)R           (*)
-    --------
-    --------
-    --------
-    --------
-        
-      (_)
-      
-      ====
-
-R   Reverted 
-(*) Yoshi
---- Texte
-(_) Bob
-=== MainMenu button*/
 </string>
           </argument>
         </arguments>

@@ -26,12 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>slimScale = 2;
-slimIdleImageSpeed = 0.3;
+slimIdleImageSpeed = 0.25;
 image_speed = slimIdleImageSpeed;
 slimWalkingImageSpeed = 0.5;
 slimIdleFiringImageSpeed = 0.2;
 phy_fixed_rotation = true;
-
 
 slimSpeed=4;
 
@@ -43,7 +42,7 @@ bulletDelayDone = true;
 //Stopping close to Bob
 minRange=150;
 //Detection range to Bob
-range=600;
+range=450;
 
 //Stop if next to bob and fire
 isFiring = false;
@@ -151,8 +150,6 @@ instance_destroy();
             <string>if(global.stopTime) { image_speed=0; exit; } else if(isFiring) { image_speed=slimIdleFiringImageSpeed; } else { image_speed=slimIdleImageSpeed; }
 
 if(dying) exit;
-
-//show_debug_message(distance_to_object(oBob));
 
 /*if(!isHurt) {
     if ((phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) &amp;&amp; (!place_meeting(x-1, y, oCollisionBase) || !place_meeting(x+1, y, oCollisionBase))) {

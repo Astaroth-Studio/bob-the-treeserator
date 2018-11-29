@@ -35,6 +35,7 @@
       <sound>sound\soCinematic</sound>
       <sound>sound\soMusicFirstLevel</sound>
       <sound>sound\soMusicSecondLevel</sound>
+      <sound>sound\soMusicThirdLevel</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -312,6 +313,7 @@
     <rooms name="Levels">
       <room>rooms\rFirstLevel</room>
       <room>rooms\rSecondLevel</room>
+      <room>rooms\rThirdLevel</room>
     </rooms>
     <room>rooms\rTransitionRoom</room>
     <room>rooms\rCredits</room>

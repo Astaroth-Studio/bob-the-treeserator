@@ -86,6 +86,7 @@ if (passed == true) {
             <kind>1</kind>
             <string>audio_stop_sound(soMusicFirstLevel);
 audio_stop_sound(soMusicSecondLevel);
+audio_stop_sound(soMusicThirdLevel);
 </string>
           </argument>
         </arguments>
