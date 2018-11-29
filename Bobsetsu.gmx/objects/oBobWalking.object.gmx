@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//ENDGAME
-if(global.lastRoom == rFourthLevel) {
+if(global.lastLevel == rFourthLevel) {
     endGame = true;
 } else { 
     endGame = false; 
@@ -162,6 +162,8 @@ if(endGame) {
     Return to starting point.
     Challenge again!", c_black, c_white);
     
+    outlinedText(640, 450, "Score: "+string(global.allTheScores), c_black, c_white);
+    
     if(!madeButton) {
         var o = instance_create(544, 600, oButton_MainMenu);
         o.image_xscale = 2;
@@ -171,7 +173,7 @@ if(endGame) {
     exit;
 }
 
-outlinedText(640, 200, "Trees: "+string(treeCount)+ "                     "+string(scoreTree), c_black, c_white);
+outlinedText(640, 200, "Trees: "+string(treeCount)+ "/"+ string(global.prevTrees) +"                     "+string(scoreTree), c_black, c_white);
 
 if(!countingDone &amp;&amp; keyboard_check_released(vk_enter)) {
     treeCount = global.prevTreesPlanted;
@@ -197,7 +199,7 @@ if(global.prevTreesPlanted &gt; treeCount) {
     exit;
 }
 
-outlinedText(640, 250, "Enemies Killed: "+string(enemiesCount)+ "                     "+string(scoreEnemies), c_black, c_white);
+outlinedText(640, 250, "Enemies Killed: "+string(enemiesCount)+ "/"+ string(global.prevEnemies) +"                     "+string(scoreEnemies), c_black, c_white);
 if(global.prevEnemiesKilled &gt; enemiesCount) {
     timeBetweenTicks--;
     if(timeBetweenTicks &lt;= 0) {
