@@ -35,7 +35,7 @@ bigBoiPunchingImageSpeed = 0.5;
 bigBoiSpeed=1;
 
 //Scale 3
-bigBoiScale = 3;
+bigBoiScale = 2;
 
 global.bigBoiDamage = 40;
 
