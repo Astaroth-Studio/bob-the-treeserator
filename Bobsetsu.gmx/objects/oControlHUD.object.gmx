@@ -49,7 +49,7 @@ if(room == rFirstLevel) {
     
     globalvar playerAmmo;
     playerAmmo = array_create(1);
-    playerAmmo[0] = 200;
+    playerAmmo[0] = 150;
     
 }
 

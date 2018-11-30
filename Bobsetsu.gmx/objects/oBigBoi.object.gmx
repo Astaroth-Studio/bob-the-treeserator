@@ -60,9 +60,6 @@ isHurt = false;
 hurtTimerMax = 250;
 hurtTimer = hurtTimerMax;
 
-globalvar bigBoiMoneyDropMax;
-bigBoiMoneyDropMax = 100; //Will be 101 coz +1
-
 //Healthbars
 paddingHealthbar=15; //Distance from the sprite to the height of the healthBar
 barHeight=8;
@@ -93,7 +90,7 @@ enemyHealth = enemyMaxHealth;
             <string>var money = instance_create(x, y, oMoneyItem);
             
 with(money) {
-    value = irandom(bigBoiMoneyDropMax)+1;
+    value = irandom(50)+50;
 }
 
 global.prevEnemiesKilled++;
@@ -124,16 +121,6 @@ instance_destroy();
             <string>if(global.stopTime) { image_speed=0; exit; } else { if(isWalking) { image_speed=bigBoiWalkingImageSpeed; } else if(punching) { image_speed=bigBoiPunchingImageSpeed; } else { image_speed=bigBoiIdleImageSpeed; }}
 
 if(dying) exit;
-
-/*if(!isHurt &amp;&amp; !punching) {
-    if ((phy_speed_x &gt; 0.1 || phy_speed_x &lt; -0.1) &amp;&amp; )) {
-        sprite_index = sBigBoiWalking;
-        image_speed = bigBoiWalkingImageSpeed;
-    } else {
-        sprite_index = sBigBoiIdle;
-        image_speed = bigBoiIdleImageSpeed;
-    }
-}*/
 
 /*-------[ Collision detection ]-------*/
 if(place_meeting(x, y, oBullet) || punched) {
@@ -175,8 +162,11 @@ if(isHurt) {
     
     if(hurtTimer &lt;= 0) {
         hurtTimer = hurtTimerMax;
-
-
+        
+        punchTimer = punchTimerMax;
+        finalPunch = false;
+        punching = false;
+        depth = 0;
         
         sprite_index = sBigBoiIdle;
         image_speed = bigBoiIdleImageSpeed;

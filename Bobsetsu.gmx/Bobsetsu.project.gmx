@@ -100,6 +100,7 @@
         <sprite>sprites\sButton</sprite>
         <sprite>sprites\sButtonPressed</sprite>
         <sprite>sprites\sMessageBox</sprite>
+        <sprite>sprites\sDialog</sprite>
         <sprite>sprites\sGameLogo</sprite>
         <sprite>sprites\sCredits</sprite>
         <sprite>sprites\sBorder</sprite>

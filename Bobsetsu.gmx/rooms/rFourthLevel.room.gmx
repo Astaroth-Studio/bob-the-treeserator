@@ -176,6 +176,7 @@
     <instance objName="oCollision" x="7456" y="544" name="inst_7A05CC79" locked="0" code="" scaleX="38" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oControlExit" x="8500" y="352" name="inst_ECBC758B" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="oCollision" x="2208" y="384" name="inst_E5CD01CE" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oCollision" x="0" y="512" name="inst_81FD9117" locked="0" code="" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bExitSign" x="8416" y="480" w="76" h="69" xo="0" yo="0" id="10012333" name="inst_E0020C47" depth="1000001" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
