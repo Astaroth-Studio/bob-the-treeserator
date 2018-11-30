@@ -47,8 +47,10 @@ global.fistDamage = 60;
 bulletSpeed = 15;
 fullShootingCooldown = 400; // Cooldown in milliseconds
 shootingCooldown = fullShootingCooldown; // Time changing each step
-globalvar currentWeapon;
-currentWeapon = 1;
+if(room == rFirstLevel) {
+    globalvar currentWeapon;
+    currentWeapon = 1;
+}
 
 recoveryTimeMaxCooldown = 1000;
 recoveryTimeCooldown = 0;
